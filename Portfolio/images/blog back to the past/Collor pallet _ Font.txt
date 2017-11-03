@@ -1,0 +1,8 @@
+Orange - #ff8c00
+Nav gray - #222222
+Header background - #333333
+Background - #ffffff
+
+FONT:
+Oleo Script - headers
+Junction - Paragraphs

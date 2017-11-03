@@ -1,0 +1,519 @@
+@import 'css/reset';
+//SCSS Variables
+//Color Scheme
+$blue: #247ba0;
+$light-blue: #70c1b3;
+$neutral-blue: #b2dbbf;
+$neutral-beige: #f3ffbd;
+$accent: #ff1654;
+$background-gray: #ECF0F1;
+$text-color: #333;
+$white-text-color: #fff;
+//Skip-link-made-invisible-----------------------------------------------
+.skip {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    text-align: left;
+    overflow: hidden;
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
+
+//SELECTION-COLOR----------------------------------------------------
+::selection {
+    background: $accent;
+}
+
+//FONTs-----------------------------------------------------------
+$primary-fonts:'Open Sans',
+sans-serif;
+$secondary-fonts: 'Comfortaa',
+cursive;
+nav {
+    font-family: $secondary-fonts;
+    font-size: 1rem;
+}
+
+.button {
+    font-family: $secondary-fonts;
+}
+
+body {
+    font-family: $primary-fonts;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+footer {
+    font-family: $primary-fonts;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $secondary-fonts;
+}
+
+//HEADING styling size
+h1 {
+    margin: 60px auto 60px auto;
+    font-size: 3rem
+}
+
+h2 {
+    margin: 60px auto;
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+
+h3 {
+    font-size: 2.5rem;
+    margin: 80px auto 80px auto;
+    text-align: center;
+    text-transform: lowercase;
+    font-weight: bold;
+    color: $light-blue;
+}
+
+//NAVIGATION---------------------------------------------
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+    z-index: 100;
+    ul {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0px -1px 6px #333333;
+        width: 100%;
+        margin: 0;
+        padding: 0.8rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        position: fixed;
+        bottom: 0;
+    }
+    a {
+        padding: 0.7rem 0.4rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #333;
+    }
+    //NOT LIKE THIS -------------------------------------
+    .current {
+        text-decoration: underline $accent;
+    }
+}
+
+//HEADER------------------------------------------------------
+header {
+    padding: 0px 20px 0 20px;
+}
+
+.header-home {
+    height: 90vh;
+    position: relative;
+    span {
+        color: $accent;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+//Header-BLOG-------------------------------------------
+.header-blog {
+    background-image: url(../images/low-poly-background.png);
+    background-position: center;
+    background-size: cover;
+    h1 {
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding: 60px 0 60px 0;
+    }
+}
+
+//Header-BLOG-Topic------------------------------------------
+.header-blog-topic {
+    h1 {
+        margin: 10px auto;
+        font-size: 2rem;
+    }
+    h2 {
+        margin: 10px auto;
+        text-transform: lowercase;
+        font-size: 1.5rem;
+    }
+    background-image: linear-gradient(rgba(112, 193, 179, 0.8), rgba(112, 193, 179, 0.8)),
+    url(../images/sand-watch.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px solid #333;
+    padding: 60px 0;
+}
+
+//Header-Projects------------------------------------------
+.header-project {
+    h1 {
+        margin: 10px auto;
+        font-size: 2rem;
+    }
+    h2 {
+        margin: 10px auto;
+        text-transform: lowercase;
+        font-size: 1.5rem;
+    }
+    background-image : url(../images/low-poly-background.png);
+    background-position: center;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95.5%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 95.5%, 0 100%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px solid #333;
+    padding: 60px 0;
+}
+
+//BUTTONS---------------------------------------------
+.buttons {
+    margin-top: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    .button {
+        width: calc(45.5% - 10px);
+    }
+}
+
+.button {
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 10px;
+    z-index: 3;
+}
+//Home-Buttons---------------------------------------------
+.button-cv {
+    background: $accent;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.button-contact-me {
+    color: $accent;
+    border: 2px solid $accent;
+}
+//Project-Buttons---------------------------------------------
+.button-project-link{
+    border: 2px solid #fff;
+    color: #fff;
+    width: 60%;
+    margin: 0 auto;
+}
+//WAVE CLIP PATH ANIMATION------------------------------------------------
+.wave {
+    div {
+        width: 100%;
+        height: 300px;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        background: $light-blue;
+        clip-path: polygon(0 100%, 0 87%, 14% 84%, 29% 86%, 49% 84%, 62% 83%, 77% 82%, 88% 80%, 100% 80%, 100% 100%);
+        animation: wave 11s infinite linear;
+    }
+    @keyframes wave {
+        0% {
+            clip-path: polygon(0 100%, 0 87%, 14% 84%, 29% 86%, 49% 84%, 62% 83%, 77% 82%, 88% 80%, 100% 80%, 100% 100%);
+        }
+        10% {
+            clip-path: polygon(0 100%, 0 87%, 14% 81%, 29% 81%, 48% 84%, 62% 86%, 76% 90%, 88% 88%, 100% 88%, 100% 100%);
+        }
+        25% {
+            clip-path: polygon(0 100%, 0 87%, 14% 85%, 31% 79%, 47% 81%, 61% 84%, 76% 89%, 88% 92%, 100% 90%, 100% 100%);
+        }
+        40% {
+            clip-path: polygon(0 100%, 0 89%, 14% 87%, 30% 83%, 48% 77%, 64% 80%, 78% 86%, 89% 91%, 100% 93%, 100% 100%);
+        }
+        55% {
+            clip-path: polygon(0 100%, 0 91%, 14% 90%, 29% 88%, 48% 80%, 65% 77%, 79% 81%, 91% 86%, 100% 90%, 100% 100%);
+        }
+        70% {
+            clip-path: polygon(0 100%, 0 92%, 15% 91%, 30% 90%, 51% 86%, 66% 76%, 81% 76%, 93% 81%, 100% 83%, 100% 100%);
+        }
+        85% {
+            clip-path: polygon(0 100%, 0 92%, 12% 94%, 33% 93%, 50% 89%, 67% 81%, 80% 74%, 91% 71%, 100% 69%, 100% 100%);
+        }
+        96% {
+            clip-path: polygon(0 100%, 0 86%, 8% 85%, 25% 86%, 43% 83%, 56% 79%, 79% 79%, 91% 77%, 100% 75%, 100% 100%);
+        }
+        100% {
+            clip-path: polygon(0 100%, 0 87%, 14% 84%, 29% 86%, 49% 84%, 62% 83%, 77% 82%, 88% 80%, 100% 80%, 100% 100%);
+        }
+    }
+}
+
+.wave-bottom {
+    //    position:absolute;
+    //    top: 0;
+    height: 200px;
+    width: 100%;
+    background: $light-blue;
+}
+
+//MAIN CONTENT-------------------------------------------------------------------------------
+main {
+    //    padding: 0px 0px 0px 0px;
+    //    background: $light-blue;
+}
+
+main h3:first-child {
+    margin: 60px auto;
+}
+
+//INTRODUCTION SECTION-----------------------------------------------------------
+.introduction {
+    //    margin-top: 90px;
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    article {
+        padding: 20px;
+    }
+    .selfie {
+        -webkit-clip-path: polygon(100% 31%, 100% 46%, 23% 100%, 0 18%);
+        clip-path: polygon(100% 31%, 100% 46%, 23% 100%, 0 18%);
+        margin-bottom: 50px;
+    }
+}
+
+//EUROPE ANIMATION---------------------------------------------------
+.europe {
+    background: $background-gray;
+    padding: 30px;
+    height: auto;
+    display: block;
+    left: 0;
+    -webkit-clip-path: polygon(0 4.5%, 100% 0, 100% 95.5%, 0 100%);
+    clip-path: polygon(0 4.5%, 100% 0, 100% 95.5%, 0 100%);
+}
+
+//PROJECTS-----------------------------------------------------
+.projects {
+    padding: 20px;
+    //    background-image: url(images/low-poly-background.png);
+    background-image: url(/../images/low-poly-background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    h2 {
+        color: #fff;
+        font-size: 3rem;
+    }
+    h4 {
+        //        color: #fff;
+        font-size: 1.6rem;
+        //        text-shadow: 0px 0px 7px #fff;
+    }
+}
+
+//PROJECT BOX---------------------------------------------
+.project-grid a {
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-position: center;
+    background-size: cover;
+}
+
+//HORIZONTAL LINE     
+.horizontal-line {
+    height: 3px;
+    border-radius: 3px;
+    margin: 0 auto;
+    width: 1rem;
+    background: $accent;
+}
+
+//Blog cards----------------------------------------------------
+.cards {
+    padding: 30px 11px;
+    background: $background-gray;
+}
+
+.card {
+    background: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0px 0px 3px #333;
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+    h4 {
+        font-size: 1.4rem;
+    }
+}
+
+.card-date {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    color: #fff;
+    background: $light-blue;
+    padding: 10px 7px;
+    font-size: 1rem;
+    box-shadow: 0px 0px 3px #333;
+}
+
+.read-more {
+    position: absolute;
+    right: -5px;
+    top: -23px;
+    background: $light-blue;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 1px 0px 3px #333;
+}
+
+.card-content {
+    position: relative;
+    padding: 10px;
+}
+
+//Blog-topic-content-----------------------------------------------------
+.blog-topic-content p{
+    padding: 20px;
+}
+//Project-main-content-----------------------------------------------------
+.main-project-content {
+    p { 
+        padding: 20px;
+    }
+}
+
+.project-link-box {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    background: $light-blue;
+    
+}
+.project-link-box-image{
+    padding: 40px 20px;
+    background: $blue;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 0);
+clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 0);
+    
+}
+.project-link-box-link{
+    display: flex;
+    flex-flow: column;
+    height: 30vh;
+    padding: 20px 20px 50px 20px;
+    
+    
+    span{
+        padding: 30px 20px;
+        font-size: 2.5rem;
+        font-family: $secondary-fonts;
+        font-weight: bold;
+        text-transform: lowercase;
+        color: #fff;
+    }
+}
+//Contact-me-button on top of Swap buttons-------------------------------------
+.contact-me-button{
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    background: #fff;
+    border: 4px solid $accent;
+    color: $accent;
+}
+//Project-swap buttons-------------------------------------------------
+.project-swap{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+    background-image: url(../images/low-poly-background.png);
+    margin-bottom: 50px;
+    a{
+        flex-grow: 1;
+        text-align: center;
+        padding: 20px 10px;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: $secondary-fonts;
+        color: #fff;
+//        border-top: 3px solid ;
+//        border-bottom: 3px solid ;
+    }
+    a:first-of-type{
+        border-right: 1px solid #fff;
+    }
+    a:nth-child(2){
+        border-left: 1px solid #fff;
+    }
+}
+//FOOTER-button---------------------------------------------------
+.footer-button{
+    padding:  0;
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-family: $secondary-fonts;
+        font-size: 1.6rem;
+    }
+    img{
+        height: 1.9rem;
+        width: auto;
+        padding-left: 1.5rem;
+    }
+}
+.contact-button-content{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+.contact-button-text{
+    border-right: 2px solid #fff;
+    padding-right: 1.5rem;
+}
+//FOOTER-Home---------------------------------------------------
+footer {
+    background: $accent;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 45px;
+}

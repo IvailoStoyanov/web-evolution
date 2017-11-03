@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="utf-8">
+    <title>IA AM A TEST</title>
+    <!--Description-->
+    <meta name="description" content="Ivaylo Stoyanov - Web Developer An inspired and passionate second year student from Manchester Metropolitan (MMU) - specialising in web design and front end development - Capable of developing and creating websites for any use">
+    <!--Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--KeyWords-->
+    <meta name="keywords" content="Ivaylo Stoyanov portfolio, Web development, student, Web design, UX, UI, Manchester Metropolitan University, Html, site, blog, portfolio, manchester, CV, contact, junior developer, junior developer manchester, Ivailo, Stoyanov">
+    <!--STYLESHEET-->
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Css/reset.css">
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans" rel="stylesheet">
+    <!--ICONS-->
+    <!--FAVICON-->
+    <link rel="shortcut icon" type="image/png" href="Ai-logo/favicon.png" />
+    <!--    <link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png" />-->
+
+
+    <style>
+        /*---------------------PARALAXX-------------------*/
+
+        body {
+            perspective: 1px;
+            height: 100vh;
+            /*            width: 100vw;*/
+            /*            background: whitesmoke;*/
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .parallax_layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .parallax_layer-base {
+            transform: translateZ(0);
+            /*            background: lightgray;*/
+            background-image: url(images/front-wave.png);
+            background-position: center;
+            background-repeat: repeat-x;
+        }
+
+        .parallax_layer-middle {
+            transform: translateZ(-1px) scale(2.05);
+            /*            background: lightgray;*/
+            background-image: url(images/middle-wave.png);
+            background-position: center;
+            background-repeat: repeat-x;
+        }
+
+        .parallax_layer-back {
+            transform: translateZ(-2px) scale(3.05);
+            background-image: url(images/back-wave.png);
+            background-position: center;
+            background-repeat: repeat-x;
+        }
+
+        .content {
+            perspective: none;
+            padding: 20px;
+            transform: translateZ(0);
+            background: #b2dbbf;
+            position: relative;
+            /*            width: 60%;*/
+            top: 110vh;
+            height: 100%;
+            /*            bottom: -200px;*/
+            /*            width: 100%;*/
+        }
+
+        /*        demo styles      */
+
+        /*
+        .parallax {
+            font-size: 200%;
+        }
+*/
+
+        /*        ADD SOME PADDING TO FORCE SCROLLING    */
+
+        .intro {
+            position: absolute;
+            top: 3rem;
+            background: white;
+
+            /*            padding-left: 15%;*/
+            /*            position: relative;*/
+            /*            top: 20px;*/
+        }
+
+    </style>
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+<body class="parallax">
+    <div class="intro">
+        <header>
+            <h1>Ivaylo Stoyanov</h1>
+            <span>Web Developer</span>
+            <p>With a particular interest in web design, front-end development and UX/UI Design.</p>
+            <a class="button button-cv" href="#" title="">CV</a>
+            <a class="button button-cv" href="#" title="">Contact Me</a>
+            <!--NAVIGATION-->
+            <nav id="navigation">
+                <ul>
+                    <!-- -------------------------------------NOT LIKE THIS---------------------------------->
+                    <li> <a class="current" href="index.html" title="">Home</a></li>
+                    <li> <a class="" href="index.html" title="">Projects</a></li>
+                    <li> <a class="" href="blog.html" title="Go to Blog">Blog</a></li>
+                    <li> <a class="" href="#" title="">Contact me</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <a href="#content" class="skip">Skip to content</a>
+    <a href="#navigation" class="skip">Skip to navigation</a>
+
+    <div class="parallax_layer parallax_layer-back">
+        back
+    </div>
+    <div class="parallax_layer parallax_layer-middle">
+        Middle
+    </div>
+    <div class="parallax_layer parallax_layer-base">
+        BASE
+    </div>
+
+    <!--HEADER -->
+
+    <!------------------------------------------------------------------------------------       
+                                            MAIN CONTENT
+    ------------------------------------------------------------------------------------->
+    <main>
+        <section class="content">
+            <!------------------------------------------------------------------------------------           
+                                            Page content goes here
+        ------------------------------------------------------------------------------------->
+            <img src="images/europe.png" alt="satelite view image of some of the countries in europe">
+            <!------------------------------------------------------------------------------------  
+                                                     INTRODUCTION
+        ------------------------------------------------------------------------------------->
+            <div class="intro">
+                <h>Introduction</h>
+                <p>My name is Ivaylo Stoyanov. I am Manchester Metropolitan student, studying Web Development. Just starting the third year of my course and I feel really inspired and driven by the knowledge I am learning.
+                </p>
+            </div>
+            <h>Background</h>
+            <p>I am a really passionate driven person and I tend to follow my own dreams and life goals. Coming from another country (Bulgaria) I have had to overcome a lot of minor and major tasks in my path in order to follow my dream. Designing and creating websites has always been a passion of mine, and I feel really excited to share my work and knowledge with you and others.</p>
+            <!------------------------------------------------------------------------------------           
+                                            Projects
+        ------------------------------------------------------------------------------------->
+            <section class="projects" id="projects">
+                <p>Projects I have worked on, for the past academic years...</p>
+                <div class="project-grid">
+                    <div class="" title="Link to my restourant menu prject">
+                        <!--                        <a href="http://www.15082862.webdevmmu.uk/webtech/AJAX/ACW%203%20files/menu.html">-->
+                        <a href="projects/project-food-menu.html">
+                            <div class="">
+                                <h>Food menu</h>
+                                <p>Restaurant menu adapting according to day of week</p>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="" title="Link to my Encryptor/Decryptor prject">
+                        <!--                        <a href="http://www.15082862.webdevmmu.uk/webtech/Task%201&2%20year%202/encryptor-decryptor.html">-->
+                        <a href="projects/project-encryptor-decryptor.html">
+                            <div class="">
+                                <h>Encryptor / Decryptor</h>
+                                <p>Word Encryptor/Decryptor with 5 difficulties</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="" title="Link to my Order Form for T-shirts prject">
+                        <!--                        <a href="http://www.15082862.webdevmmu.uk/webtech/Task%201&2%20year%202/orderForm.html">-->
+                        <a href="projects/project-order-form.html">
+                            <div class="">
+                                <h>Order Form</h>
+                                <p>Checout form for a T-shirt company</p>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="" title="Link to The Student's Guide to Manchester home page">
+                        <div class="">
+                            <!--                            <a href="http://www.15101016.webdevmmu.uk/TeamResonant/index.php">-->
+                            <a href="projects/project-student-guide-to-manchester.html">
+                                <div class="">
+                                    <h>The Student's Guide to Manchester</h>
+                                    <p>A guiding platform for future students</p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="" title="Link to the Student Search website home page">
+                        <!--                        <a href="http://www.15101016.webdevmmu.uk/TeamEnigmaDPM/index.htm">-->
+                        <a href="projects/porject-student-search.html">
+                            <div class="">
+                                <h>Student Search</h>
+                                <p>Website Guide for the Northern Quarter</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--
+                <div class="contact-me projects">
+                    <a href="#contact-me">Contact Me</a>
+                </div>
+-->
+
+            </section>
+        </section>
+    </main>
+    <!-- Gem jQuery -->
+
+    <!-- FOOTER -->
+    <footer>
+        <h>Contact Me.</h>
+        <p>Dont feel like writing an email, you can fill in the form, or simply give me a call.
+        </p>
+        <!------------------------------------------------------------------------------------      
+                                                 THE FORM
+        ------------------------------------------------------------------------------------->
+        <!--
+            <form class="form" method="POST" action="http://formspree.io/ivailo.stoyanov.work@gmail.com">
+                <div class="name-and-email">
+                    <input class="inputName" type="text" name="Name" placeholder="Your name">
+                    <input class="inputEmail" type="email" name="email" placeholder="Your email">
+                </div>
+                <div>
+                    <textarea class="inputMessage" name="message" placeholder="Your message"></textarea>
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <input type="hidden" name="_next" value="//site.io/thanks.html" />
+                </div>
+                <button type="submit">Send</button>
+            </form>
+-->
+    </footer>
+</body>
+
+</html>

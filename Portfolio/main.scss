@@ -6,9 +6,14 @@ $light-blue: #70c1b3;
 $neutral-blue: #b2dbbf;
 $neutral-beige: #f3ffbd;
 $accent: #ff1654;
-$background-gray: #ECF0F1;
+$gray: #ECF0F1;
 $text-color: #333;
 $white-text-color: #fff;
+//Browser brake points
+$break-to-tablet: 426px;
+$break-to-laptop: 769px;
+$break-to-desctop: 1025px;
+$break-to-4k: 1441px;
 //Skip-link-made-invisible-----------------------------------------------
 .skip {
     position: absolute;
@@ -43,6 +48,9 @@ cursive;
 nav {
     font-family: $secondary-fonts;
     font-size: 1rem;
+    @media screen and (min-width:$break-to-laptop){
+        font-size: 1.2rem;
+    }
 }
 
 .button {
@@ -72,7 +80,7 @@ h6 {
 
 //HEADING styling size
 h1 {
-    margin: 60px auto 60px auto;
+    margin: 60px 0 60px 0;
     font-size: 3rem
 }
 
@@ -81,26 +89,45 @@ h2 {
     text-align: center;
     font-size: 2.5rem;
     text-transform: capitalize;
+    @media screen and (min-width:$break-to-laptop){
+            font-size: 3.5rem;
+        }
 }
 
 h3 {
     font-size: 2.5rem;
-    margin: 80px auto 80px auto;
+    margin: 80px auto 20px auto;
     text-align: center;
     text-transform: lowercase;
     font-weight: bold;
     color: $light-blue;
+    @media screen and (min-width:$break-to-laptop){
+        font-size: 3rem;
+        margin: 80px auto 40px auto;
+    }
+    @media screen and (min-width:$break-to-desctop){
+        font-size: 3.5rem;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //NAVIGATION---------------------------------------------
 nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    transition: 0.5s all ease-in-out;
-    z-index: 100;
+
     ul {
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0px -1px 6px #333333;
@@ -113,34 +140,125 @@ nav {
         list-style: none;
         position: fixed;
         bottom: 0;
+        z-index: 50;
+        box-sizing: border-box;
+        
+        @media screen and (min-width:$break-to-tablet) {
+        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        padding: 1.3rem 0;
+        
+        }
+        @media screen and (min-width:$break-to-laptop) {
+           padding: 1.3rem 10%; 
+        }
     }
+    
     a {
         padding: 0.7rem 0.4rem;
         font-weight: bold;
         text-decoration: none;
         color: #333;
+        transition: 0.2s ease-in-out;
+        @media screen and (min-width:$break-to-tablet) {
+            padding: 1rem 1rem;
+        }   
+        &:hover{
+        color: $accent;
+    }
     }
     //NOT LIKE THIS -------------------------------------
-    .current {
-        text-decoration: underline $accent;
+//    .current {
+//        color: $accent;
+//    }
+    
+}
+.wordmark{
+    position: fixed;
+    top: 20px;
+    z-index: 100;
+    display: none;
+    @media screen and (min-width:$break-to-tablet) {
+    display: block;
+    }
+    @media screen and (min-width:$break-to-laptop) {
+        padding-left: 10%;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //HEADER------------------------------------------------------
 header {
     padding: 0px 20px 0 20px;
 }
 
+//Header-HOME---------------------------------------------------
 .header-home {
-    height: 90vh;
+    height: 80vh;
     position: relative;
     span {
         color: $accent;
         font-size: 1.2rem;
         font-weight: bold;
     }
+    @media screen and (min-width:$break-to-tablet) {
+        padding: 0 60px;
+        margin-top: 150px;
+        h1 {
+            max-width: 450px;
+            font-size: 3.5rem;
+        }
+        p {
+            max-width: 380px;
+        }
+    }
+    @media screen and (min-width:$break-to-laptop){
+        padding: 0 0 0 23%;
+        h1{
+            font-size: 4rem;
+            margin-top: 140px;
+        }
+    }
+    @media screen and (min-width:$break-to-desctop){
+       h1{
+        font-size: 5rem;
+        }
+    }
 }
 
+//@media screen and (min-width:$break-to-tablet){
+//    .header-home h1{
+//        width: 60%;
+//        font-size: 3.5rem;
+//    }
+//    .header-home{
+//        padding: 0 60px 0 60px;
+//    }
+//    .header-home p{
+//        max-width: 380px;
+//    }
+//}
 //Header-BLOG-------------------------------------------
 .header-blog {
     background-image: url(../images/low-poly-background.png);
@@ -151,6 +269,13 @@ header {
         text-align: center;
         margin: 0;
         padding: 60px 0 60px 0;
+        @media screen and (min-width:$break-to-tablet){
+            padding: 130px 0 100px 0;
+            font-size: 3.5rem;
+        }
+        @media screen and (min-width:$break-to-tablet){
+            padding: 160px 0 100px 0;
+        }
     }
 }
 
@@ -159,11 +284,17 @@ header {
     h1 {
         margin: 10px auto;
         font-size: 2rem;
+        @media screen and (min-width:$break-to-desctop){
+            font-size: 2.5rem;
+        }
     }
     h2 {
         margin: 10px auto;
         text-transform: lowercase;
         font-size: 1.5rem;
+        @media screen and (min-width:$break-to-desctop){
+            font-size: 2rem;
+        }
     }
     background-image: linear-gradient(rgba(112, 193, 179, 0.8), rgba(112, 193, 179, 0.8)),
     url(../images/sand-watch.jpg);
@@ -173,20 +304,17 @@ header {
     color: #fff;
     text-shadow: 5px solid #333;
     padding: 60px 0;
+    @media screen and (min-width:$break-to-tablet){
+         padding: 150px 0 100px 0;  
+        }
+    @media screen and (min-width:$break-to-desctop){
+       padding: 200px 0 150px 0;
+    }
 }
 
 //Header-Projects------------------------------------------
 .header-project {
-    h1 {
-        margin: 10px auto;
-        font-size: 2rem;
-    }
-    h2 {
-        margin: 10px auto;
-        text-transform: lowercase;
-        font-size: 1.5rem;
-    }
-    background-image : url(../images/low-poly-background.png);
+    background-image: url(../images/low-poly-background.png);
     background-position: center;
     background-size: cover;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 95.5%, 0 100%);
@@ -195,44 +323,92 @@ header {
     color: #fff;
     text-shadow: 5px solid #333;
     padding: 60px 0;
+    position: relative;
+    h1 {
+        margin: 10px auto;
+        font-size: 2rem;
+    }
+    h2 {
+        margin: 10px auto;
+        text-transform: lowercase;
+        font-size: 1.5rem;
+        
+    }
+    img {
+        height: 35px;
+        width: auto;
+        padding: 5px;
+        position: absolute;
+        bottom: 3px;
+    }
 }
 
 //BUTTONS---------------------------------------------
 .buttons {
     margin-top: 10vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: flex; //    justify-content: center;
     justify-content: space-between;
-    .button {
-        width: calc(45.5% - 10px);
+    @media screen and (min-width: $break-to-tablet) {
+        justify-content: flex-start;
     }
+    a {
+        margin: auto 0;
+        @media screen and (min-width: $break-to-tablet) {
+            margin: auto 5px auto 0;
+        }
+    }
+
 }
 
 .button {
+    width: calc(45.5% - 10px);
     text-align: center;
     text-decoration: none;
     padding: 15px 10px;
     z-index: 3;
+//    border: 1.5px solid $accent;
+
+    @media screen and (min-width: $break-to-tablet) {
+        max-width: 140px;
+    }   
+    
 }
+
 //Home-Buttons---------------------------------------------
 .button-cv {
     background: $accent;
     color: white;
     letter-spacing: 3px;
+    transition: 0.3s ease-in-out;
+    &:hover{
+//       background:$light-blue;
+//        color: #fff;
+        background:#333;
+    }
 }
 
 .button-contact-me {
-    color: $accent;
-    border: 2px solid $accent;
+    color: $accent; //    border: 2px solid $accent;
+    border: 1.5px solid $accent;
+    transition: 0.3s ease-in-out;
+    &:hover{
+//        color: $accent;
+//        background: $gray;
+        border-color: transparent;
+        color: #fff;
+        background: $light-blue;
+    }
 }
+
 //Project-Buttons---------------------------------------------
-.button-project-link{
+.button-project-link {
     border: 2px solid #fff;
     color: #fff;
     width: 60%;
     margin: 0 auto;
 }
+
 //WAVE CLIP PATH ANIMATION------------------------------------------------
 .wave {
     div {
@@ -279,9 +455,68 @@ header {
 .wave-bottom {
     //    position:absolute;
     //    top: 0;
+    position: relative;
     height: 200px;
     width: 100%;
     background: $light-blue;
+}
+
+.wave-bottom img {
+    position: absolute;
+    height: 35px;
+    width: auto;
+}
+
+.wave-bottom img:nth-child(1) {
+    left: 10%;
+    bottom: 10px;
+    animation: float1 7s infinite alternate;
+}
+
+.wave-bottom img:nth-child(2) {
+    left: 30%;
+    bottom: 10px;
+    animation: float1 11s infinite alternate;
+}
+
+.wave-bottom img:nth-child(3) {
+    left: 60%;
+    bottom: 20px;
+    animation: float2 7s 3s infinite alternate;
+}
+
+.wave-bottom img:nth-child(4) {
+    left: 80%;
+    bottom: 20px;
+    animation: float2 5s infinite alternate;
+}
+
+//--------float 1-----------------------------------------
+@keyframes float1 {
+    0% {
+        bottom: 10px
+    }
+    50% {
+        bottom: 70px
+    }
+    100% {
+        bottom: 140px;
+        transform: scale(0.7);
+    }
+}
+
+//--------float2-----------------------------------
+@keyframes float2 {
+    0% {
+        bottom: 20px
+    }
+    50% {
+        bottom: 70px
+    }
+    100% {
+        bottom: 140px;
+        transform: scale(0.6);
+    }
 }
 
 //MAIN CONTENT-------------------------------------------------------------------------------
@@ -290,9 +525,7 @@ main {
     //    background: $light-blue;
 }
 
-main h3:first-child {
-    margin: 60px auto;
-}
+
 
 //INTRODUCTION SECTION-----------------------------------------------------------
 .introduction {
@@ -301,29 +534,64 @@ main h3:first-child {
     position: relative;
     article {
         padding: 20px;
+        @media screen and (min-width: $break-to-tablet) {
+//            padding: 20px 60px 150px 60px;
+            width: 60%;
+            margin: 0 auto 80px auto;
+        }
+        @media screen and (min-width: $break-to-desctop) {
+//            padding: 70px 100px 150px 100px;
+            width:50%;
+            margin: 0 auto 130px auto;
+        }
+        @media screen and (min-width: $break-to-4k) {
+            width: 38%;
+        }
     }
     .selfie {
         -webkit-clip-path: polygon(100% 31%, 100% 46%, 23% 100%, 0 18%);
         clip-path: polygon(100% 31%, 100% 46%, 23% 100%, 0 18%);
         margin-bottom: 50px;
+        @media screen and (min-width: $break-to-tablet) {
+            width: 60%;
+            margin: 0 auto 50px auto;
+        }
+        @media screen and (min-width: $break-to-laptop) {
+            max-width: 390px;
+        }
+        @media screen and (min-width: $break-to-desctop) {
+            margin: 0 auto 90px auto;
+        }
     }
+
 }
 
 //EUROPE ANIMATION---------------------------------------------------
 .europe {
-    background: $background-gray;
+    background: $gray;
     padding: 30px;
     height: auto;
     display: block;
     left: 0;
     -webkit-clip-path: polygon(0 4.5%, 100% 0, 100% 95.5%, 0 100%);
     clip-path: polygon(0 4.5%, 100% 0, 100% 95.5%, 0 100%);
+    @media screen and (min-width: $break-to-tablet) {
+        padding: 70px 90px;
+    }
+    @media screen and (min-width: $break-to-laptop) {
+        padding: 100px 250px;
+    }
+    @media screen and (min-width: $break-to-desctop) {
+        padding: 100px 400px;
+    }
+    @media screen and (min-width: $break-to-4k) {
+        padding: 100px 600px;
+    }
 }
 
 //PROJECTS-----------------------------------------------------
 .projects {
-    padding: 20px;
-    //    background-image: url(images/low-poly-background.png);
+    padding: 20px; //    background-image: url(images/low-poly-background.png);
     background-image: url(/../images/low-poly-background.png);
     background-position: center;
     background-size: cover;
@@ -331,11 +599,12 @@ main h3:first-child {
     h2 {
         color: #fff;
         font-size: 3rem;
+        @media screen and (min-width:$break-to-laptop){
+            font-size: 3.5rem;
+        }
     }
     h4 {
-        //        color: #fff;
-        font-size: 1.6rem;
-        //        text-shadow: 0px 0px 7px #fff;
+        font-size: 1.6rem; //        text-shadow: 0px 0px 7px #fff;
     }
 }
 
@@ -352,6 +621,32 @@ main h3:first-child {
     margin-bottom: 20px;
     background-position: center;
     background-size: cover;
+    @media screen and (min-width: $break-to-tablet) {
+        flex-grow: 0;
+        flex-basis: calc(50% - 54px);
+        margin: 5px;
+
+    }
+    @media screen and (min-width:$break-to-laptop) {
+        flex-basis: calc(33% - 54px);
+    }
+    @media screen and (min-width:$break-to-4k) {
+        flex-basis: calc(25% - 54px);
+    }
+}
+
+.project-box img {
+    height: 50px;
+    width: auto;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:$break-to-tablet) {
+    .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
 }
 
 //HORIZONTAL LINE     
@@ -363,10 +658,51 @@ main h3:first-child {
     background: $accent;
 }
 
+.horizontal-line.white {
+    background: #fff;
+    margin: 30px auto;
+}
+
+//GitHub Link---------------------------------------------------
+.github {
+    background: $gray;
+    padding: 200px 10px;
+    h3 {
+        margin: 0;
+        color: $accent;
+        text-transform: none;
+        @media screen and (min-width:$break-to-laptop){
+            font-size: 2.5rem;
+        }
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+            //            text-decoration: underline;
+        }
+    }
+
+}
+
+.github-mark {
+    img {
+        height: 40px;
+        width: auto;
+        padding: 20px;
+        margin: 0 auto;
+    }
+}
+
 //Blog cards----------------------------------------------------
 .cards {
     padding: 30px 11px;
-    background: $background-gray;
+    background: $gray;
+    @media screen and (min-width:$break-to-tablet){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
 }
 
 .card {
@@ -379,7 +715,16 @@ main h3:first-child {
         color: #333;
     }
     h4 {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
+        color: $light-blue;
+    }
+    @media screen and (min-width:$break-to-tablet){
+        width: calc(50% - 20px);
+        margin: 10px;
+//        box-sizing: border-box;
+    }
+    @media screen and (min-width:$break-to-laptop){
+        width: calc(33% - 20px);
     }
 }
 
@@ -397,7 +742,7 @@ main h3:first-child {
 .read-more {
     position: absolute;
     right: -5px;
-    top: -23px;
+    bottom: -17px;
     background: $light-blue;
     color: #fff;
     padding: 10px;
@@ -410,12 +755,13 @@ main h3:first-child {
 }
 
 //Blog-topic-content-----------------------------------------------------
-.blog-topic-content p{
+.blog-topic-content p {
     padding: 20px;
 }
+
 //Project-main-content-----------------------------------------------------
 .main-project-content {
-    p { 
+    p {
         padding: 20px;
     }
 }
@@ -425,23 +771,21 @@ main h3:first-child {
     display: flex;
     flex-flow: column;
     background: $light-blue;
-    
 }
-.project-link-box-image{
+
+.project-link-box-image {
     padding: 40px 20px;
     background: $blue;
     -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 0);
-clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 0);
-    
+    clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 0);
 }
-.project-link-box-link{
+
+.project-link-box-link {
     display: flex;
     flex-flow: column;
     height: 30vh;
     padding: 20px 20px 50px 20px;
-    
-    
-    span{
+    span {
         padding: 30px 20px;
         font-size: 2.5rem;
         font-family: $secondary-fonts;
@@ -450,8 +794,9 @@ clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 0);
         color: #fff;
     }
 }
+
 //Contact-me-button on top of Swap buttons-------------------------------------
-.contact-me-button{
+.contact-me-button {
     text-decoration: none;
     padding: 15px;
     display: block;
@@ -460,60 +805,160 @@ clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0% 100%, 0 0);
     border: 4px solid $accent;
     color: $accent;
 }
+
 //Project-swap buttons-------------------------------------------------
-.project-swap{
+.project-swap {
     display: flex;
     flex-flow: row;
     justify-content: center;
     width: 100%;
     background-image: url(../images/low-poly-background.png);
     margin-bottom: 50px;
-    a{
+    a {
         flex-grow: 1;
         text-align: center;
         padding: 20px 10px;
         text-decoration: none;
         font-weight: bold;
         font-family: $secondary-fonts;
-        color: #fff;
-//        border-top: 3px solid ;
-//        border-bottom: 3px solid ;
+        color: #fff; //        border-top: 3px solid ;
+        //        border-bottom: 3px solid ;
     }
-    a:first-of-type{
+    a:first-of-type {
         border-right: 1px solid #fff;
     }
-    a:nth-child(2){
+    a:nth-child(2) {
         border-left: 1px solid #fff;
     }
 }
+
+.project-swap img {
+    padding: 10px;
+    height: 30px;
+    width: auto;
+    margin: 0 auto;
+}
+
 //FOOTER-button---------------------------------------------------
-.footer-button{
-    padding:  0;
-    a{
+.footer-button {
+    padding: 0;
+    a {
         text-decoration: none;
         color: #fff;
         font-family: $secondary-fonts;
         font-size: 1.6rem;
     }
-    img{
+    img {
         height: 1.9rem;
         width: auto;
         padding-left: 1.5rem;
     }
 }
-.contact-button-content{
+
+.contact-button-content {
     display: flex;
     padding: 20px;
     justify-content: center;
 }
-.contact-button-text{
+
+.contact-button-text {
     border-right: 2px solid #fff;
     padding-right: 1.5rem;
+    margin: auto 0;
 }
+
 //FOOTER-Home---------------------------------------------------
 footer {
     background: $accent;
     color: #fff;
     padding: 20px;
     margin-bottom: 45px;
+    @media screen and (min-width:$break-to-tablet) {
+        margin-bottom: 0;
+    }
+    img {
+        height: 30px;
+        width: auto;
+        padding-right: 10px;
+    }
+    p {
+        margin: 60px 0;
+        text-align: center;
+    }
 }
+
+//Contact me section------------------------------------------
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    a {
+        color: #fff;
+        margin: auto 0;
+    }
+}
+
+.email {
+    display: flex;
+    justify-content: center;
+    padding: 10px; //    margin: 0 auto;
+    a {
+        color: #fff;
+        margin: auto 0;
+    }
+}
+
+.phone {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    span {
+        margin: auto 0;
+    }
+}
+//FORM STYLING--------------------------------------------------
+.inputName,.inputEmail,.inputMessage{
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    color: #333;
+    background: $gray;
+    &:focus {
+        outline: none;
+        background: #fff;
+    }
+    
+}
+
+.form{
+    margin-bottom: 100px;
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    button{
+        background: none;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        padding: 10px 30px;
+        float:right;
+        transition: 0.4s ease-in-out;
+        &:hover {
+            background: #fff;
+            color: $accent;
+        }
+    }
+@media screen and (min-width:$break-to-tablet){
+        width: 50%;
+        margin:0 auto 100px auto;
+    }
+    @media screen and (min-width:$break-to-laptop){
+        width: 35%;
+    }
+}
+
+
+

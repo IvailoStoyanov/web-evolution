@@ -1,0 +1,28 @@
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  src: local("Rawline Regular"),url("../public/fonts/Lato/Lato-Light.ttf") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  src: local("Rawline Regular"),url("../public/fonts/Lato/Lato-LightItalic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  src: local("Rawline Regular"),url("../public/fonts/Lato/Lato-Regular.ttf") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  src: local("Rawline Regular"),url("../public/fonts/Lato/Lato-Bold.ttf") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  src: local("Rawline Regular"),url("../public/fonts/Lato/Lato-Black.ttf") format("woff");
+}
+
+$main: "Lato", sans-serif;

@@ -11,9 +11,25 @@
   padding: 0 20px;
   background: $white;
   transition: all ease 1s;
+  z-index: 1;
 
   @media screen and (min-width: $break-to-desktop) {
     overflow: hidden;
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    width: calc(100% - (100% - 1100px));
+    padding: 0 calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    width: calc(100% - (100% - 1190px));
+    padding: 0 calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    width: calc(100% - (100% - 1230px));
+    padding: 0 calc((100% - 1230px) / 2);
   }
 
   &___scrolled {
@@ -54,18 +70,18 @@
         padding: 0;
         margin: auto 20px;
       }
-      
+
       a {
         color: $white;
         font-weight: 700;
         font-size: 36px;
-        
+
         @media screen and (min-width: $break-to-desktop) {
           color: $black;
           font-size: 14pt;
           padding: 38px 0;
           transition: padding ease 0.2s;
-          
+
           &:hover {
             padding-bottom: 27px;
             border-bottom: 12px solid $yellow;

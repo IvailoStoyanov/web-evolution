@@ -133,7 +133,7 @@ class MainNavigation extends React.Component<
           <Link href="/">
             <a className={styles.Logo}>
               <Image
-                src="/we-logo.svg"
+                src="/logo/we-logo.svg"
                 alt="Web Evolution Logo"
                 width={100}
                 height={50}

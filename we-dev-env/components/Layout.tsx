@@ -1,4 +1,6 @@
 import Navigation from "./navigation/Navigation";
+import Link from "next/link";
+import Image from "next/image";
 
 function Layout(props: { children: {} }) {
   return (
@@ -14,18 +16,45 @@ function Layout(props: { children: {} }) {
 
       {props.children}
 
-      <footer id="contactInfo">
-        <div>WE - logo</div>
-        <div>
-          <h3>Web Evolution</h3>
-          <p>Bulgaria, Address of the Firm itslef, And the post code, 1119 or whatever it is.</p>
+      <footer>
+        <div className="footer_container">
+          <div className="footer_col">
+            <Link href="/">
+              <a className="footer_logo">
+                <Image
+                  src="/logo/we-logo-white.svg"
+                  alt="Web Evolution Logo"
+                  width={100}
+                  height={50}
+                />
+              </a>
+            </Link>
+            <div className="footer_location">
+              <h3>Web Evolution</h3>
+              <p>
+                Str. Liditse 7 <br />
+                Bulgaria - Sofia, 1113
+              </p>
+            </div>
+          </div>
+          <div className="footer_col">
+            <div className="footer_contact">
+              <h3>Contact</h3>
+              <p>
+                <a href="tel:+359 (0)886020965">+359 (0)886020965</a>
+              </p>
+              <p>
+                <a href="mailto:i.stoyanov.work@gmail.com">
+                  i.stoyanov.work@gmail.com
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="footer_info">
+            <p>© 2021–Today Web Evolution Ltd.</p>
+            <a href="">Privacu Policy</a>
+          </div>
         </div>
-        <div>
-          <h3>Contact</h3>
-          <a href="">+359 (0)886020965</a>
-          <a href="">i.stoyanov.work@gmail.com</a>
-        </div>
-        <div>© 2021–Today Web Evolution | <a href="">Privacu Policy</a></div>
       </footer>
     </div>
   );

@@ -7,7 +7,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: $main;
-  font-size: 14pt;
+  font-size: 18.5px;
   background: #f1f1f1;
 }
 
@@ -15,6 +15,7 @@ h1,
 h2,
 h3 {
   font-weight: 700;
+  font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
   margin: 0;
 }
 
@@ -24,13 +25,62 @@ h3 {
 }
 
 p {
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
+  font-size: 12pt;
+  word-spacing: 1px;
   margin: 0;
+
+  @media screen and (min-width: $break-to-desktop) {
+    font-size: 17px;
+  }
 }
 
 a {
   text-decoration: none;
+}
+
+.button {
+  position: absolute;
+  padding: 14px 40px 14px 18px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: $black;
+  color: $white;
+  font-weight: 700;
+  
+  &:hover {
+    @media screen and (min-width: $break-to-desktop) {
+      .button_text {
+        color: $black;
+      }
+      .button_circle {
+        // background: $blue;
+        transform: scale(40);
+      }
+    }
+  }
+
+  &_text {
+    position: relative;
+    transition: all ease-in-out 0.2s;
+
+    @media screen and (min-width: $break-to-desktop) {
+      z-index: 1;
+    }
+  }
+
+  &_circle {
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 12px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: $yellow;
+    border-radius: 50%;
+    transition: all ease-in-out 0.32s;
+  }
 }
 
 * {

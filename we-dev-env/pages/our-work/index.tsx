@@ -5,6 +5,8 @@ import fs from "fs";
 // import WorkPageProps from "../../interfaces/interfaces";
 import styles from "./OurWork.module.scss";
 
+import TextSectionWithCta from "../../components/text-section-with-cta/TextSectionWithCta";
+
 // export default function Projects(props: WorkPageProps) {
 export default function Projects(props: any) {
   const { projectsData } = props;
@@ -13,7 +15,10 @@ export default function Projects(props: any) {
     <>
       <Head>
         <title>Work</title>
-        <meta name="description" content="Olga Golant Work - Condenced view upon my Business building, Residential building and Sports center projects with a brief description to each including illustrations" />
+        <meta
+          name="description"
+          content="Olga Golant Work - Condenced view upon my Business building, Residential building and Sports center projects with a brief description to each including illustrations"
+        />
       </Head>
 
       <header className={styles.Header}>
@@ -23,20 +28,21 @@ export default function Projects(props: any) {
       </header>
 
       <main className={styles.Content}>
-        {projectsData.map((post: string) => {          
+        {projectsData.map((post: string) => {
           const data = JSON.parse(post);
 
-          return (
-            <div key={post}>
-              {post}
-              <Link href={data.url}>
-                <a>
-                  {/* <WorkDisplayItem {...data}></WorkDisplayItem> */}
-                </a>
-              </Link>
-            </div>
-          );
+          return <div key={post}>{post}</div>;
         })}
+
+        <TextSectionWithCta
+          headline="Do you have a projecy in mind?"
+          paragraphs={[
+            "You can guide us through your problems and desired goals while we focus on the solution and create the best client experience.",
+          ]}
+          ctaButtonText="CTA BUTTon"
+          ctaButtonLocation="/"
+          grayBackground
+        ></TextSectionWithCta>
       </main>
     </>
   );

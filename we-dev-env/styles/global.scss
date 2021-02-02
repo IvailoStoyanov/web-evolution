@@ -60,14 +60,13 @@ a {
   background: $black;
   color: $white;
   font-weight: 700;
-  
-  &:hover {
-    @media screen and (min-width: $break-to-desktop) {
+
+  @media screen and (min-width: $break-to-desktop) {
+    &:hover {
       .button_text {
         color: $black;
       }
       .button_circle {
-        // background: $blue;
         transform: scale(40);
       }
     }
@@ -92,6 +91,27 @@ a {
     background: $yellow;
     border-radius: 50%;
     transition: all ease-in-out 0.32s;
+  }
+
+  &___white {
+    background: $yellow;
+    border: 2px solid $yellow;
+
+    @media screen and (min-width: $break-to-desktop) {
+      &:hover {
+        border: 2px solid $yellow;
+        .button_text {
+          color: $white;
+        }
+      }
+    }
+    .button_text {
+      color: $black;
+    }
+
+    .button_circle {
+      background: $black;
+    }
   }
 }
 

@@ -1,0 +1,86 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.wrapper {
+  background: $white;
+  position: fixed;
+  top: 0;
+  left: 1vw;
+  height: 100%;
+  width: calc(98vw - 20px);
+  // height: 90vh;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+  overflow: auto;
+
+  form {
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 18px;
+
+    input {
+      padding: 0 15px;
+      margin-top: 5px;
+      min-height: 33px;
+      border: none;
+      border: 1px solid $gray;
+      background: #f5f8fa;
+      border-radius: 5px;
+
+      &:focus {
+        outline: none;
+        border-color: rgba(82, 168, 236, 0.8);
+      }
+    }
+  }
+
+  .submitButton {
+    padding: 14px 24px;
+    font-family: $main;
+    font-size: 16px;
+    background: $black;
+    color: $white;
+    border: none;
+    border-radius: 3px;
+  }
+
+  .intro {
+    font-size: 12px;
+    padding: 20px 0 15px 5px;
+  }
+
+  .closeSurveyIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .privacyPolicy {
+    display: flex;
+    flex-flow: row;
+    padding-bottom: 35px;
+
+    span {
+      margin: auto 0 auto 7px;
+    }
+  }
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $black;
+  opacity: 0.7;
+  z-index: 3;
+}

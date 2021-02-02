@@ -1,0 +1,29 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+
+  @media screen and (min-width: $break-to-desktop) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  div {
+    height: 30vh;
+
+    @media screen and (min-width: $break-to-desktop) {
+      height: 100%;
+    }
+  }
+
+  .image {
+    object-fit: cover;
+  }
+
+  .overlay {
+      z-index: 1;
+      opacity: 0.7;
+  }
+}

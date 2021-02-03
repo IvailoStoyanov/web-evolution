@@ -1,7 +1,7 @@
 import Head from "next/head";
 import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
-import SurveyTeaser from "../components/survey-teaser/SurveyTeaser";
+import SurveyPopup from "../components/survey-teaser/SurveyTeaser";
 
 export default function Home() {
   return (
@@ -27,11 +27,11 @@ export default function Home() {
           ctaButtonText="View our services"
           ctaButtonLocation="/our-services"
         ></TextSectionWithCta>
-        <SurveyTeaser 
+        <SurveyPopup 
         headline="Let’s check your digital effectiveness"
         paragraph="No matter the size of the business there is allways room to improve. Looking at your business data and highlighting potential opportunities to grow."
         ctaButtonText="Request a survey"
-        ></SurveyTeaser>
+        ></SurveyPopup>
       </main>
     </div>
   );

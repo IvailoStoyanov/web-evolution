@@ -21,7 +21,7 @@ class SurveyPopup extends React.Component<SurveyPopupProps> {
         <div className={styles.wrapper}>
           <div className={styles.intro}>Get in touch</div>
           <h2>Just fill in the form and we will be in touch.</h2>
-          <form action="">
+          <form action="contact">
             <div>
               <label>
                 Name
@@ -58,7 +58,6 @@ class SurveyPopup extends React.Component<SurveyPopupProps> {
                 Yes I agree to Web Evolution's <a>Privacy Policy</a>
               </span>
             </label>
-
             <input
               className={styles.submitButton}
               type="submit"

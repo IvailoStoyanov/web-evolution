@@ -7,7 +7,8 @@
   position: fixed;
   top: 0;
   left: 1vw;
-  height: 100%;
+  height: auto;
+  max-height: 100vh;
   width: calc(98vw - 20px);
   // height: 90vh;
   padding: 10px;
@@ -15,8 +16,29 @@
   z-index: 10;
   overflow: auto;
 
+  @media screen and (min-width: $break-to-tablet) {
+    left: 10vw;
+    top: calc(5vh - 25px);
+    padding: 20px 30px 30px 30px;
+    width: calc(80vw - 40px);
+    height: 90vh;
+
+    h2 {
+      max-width: 80%;
+    }
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    max-width: 600px;
+    left: calc(50% - 330px);
+  }
+
   form {
     margin-bottom: 30px;
+
+    @media screen and (min-width: $break-to-tablet) {
+      margin-bottom: 0;
+    }
   }
 
   label {
@@ -39,6 +61,10 @@
         outline: none;
         border-color: rgba(82, 168, 236, 0.8);
       }
+
+      @media screen and (min-width: $break-to-tablet) {
+        max-width: 400px;
+      }
     }
   }
 
@@ -46,10 +72,18 @@
     padding: 14px 24px;
     font-family: $main;
     font-size: 16px;
+    font-weight: 600;
     background: $black;
     color: $white;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: $yellow;
+      color: $black;
+    }
   }
 
   .intro {
@@ -66,7 +100,8 @@
   .privacyPolicy {
     display: flex;
     flex-flow: row;
-    padding-bottom: 35px;
+    padding-bottom: 0;
+    margin-bottom: 35px;
 
     span {
       margin: auto 0 auto 7px;

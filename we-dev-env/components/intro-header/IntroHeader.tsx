@@ -8,31 +8,37 @@ function IntroHeader(props: any) {
   return (
     <header className={styles.Intro}>
       <ImageWithOverlay
+        page={props.page}
         src={props.imageUrl}
-        alt="hamburger icon"
+        alt="hand holding phone showcasing Olga Golant's website"
         height={35}
         width={35}
       />
       <div className={styles.textWrapper}>
         {!!props.logoUrl ? (
-          <Image
-            src={props.logoUrl}
-            alt="web evolution logo"
-            width={40}
-            height={20}
-          />
+          <div>
+            <img
+              src={require("../../public/logo/we-logo.svg")}
+              className={styles.image}
+              alt="Web Evolution Logo"
+              height="20px"
+              width="40px"
+            />
+          </div>
         ) : null}
         {!!props.headline ? <h1>{props.headline}</h1> : null}
         {!!props.headlineSmall ? (
           <h1 className={styles.headlineSmall}>{props.headlineSmall}</h1>
         ) : null}
         <p>{props.paragraph}</p>
-        {!!props.ctaButtonText ? <Link href="/our-services">
-          <a className="button button___black">
-            <span className="button_text">{props.ctaButtonText}</span>{" "}
-            <span className="button_circle"></span>
-          </a>
-        </Link> : null}
+        {!!props.ctaButtonText ? (
+          <Link href="/our-services">
+            <a className="button button___black">
+              <span className="button_text">{props.ctaButtonText}</span>{" "}
+              <span className="button_circle"></span>
+            </a>
+          </Link>
+        ) : null}
       </div>
     </header>
   );

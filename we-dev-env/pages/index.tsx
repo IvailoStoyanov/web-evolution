@@ -1,7 +1,7 @@
 import Head from "next/head";
 import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
-import SurveyTeaser from "../components/survey-teaser/SurveyTeaser";
+import SurveyPopup from "../components/survey-teaser/SurveyTeaser";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <IntroHeader
         headline="We help others evolve in the digital world"
-        imageUrl="/images/olga-project/home-hand-wide.jpg"
+        imageUrl="../../public/images/olga-project/home-hand-wide.jpg"
         imageAlt="A hand holding up a mobile phone displaying one of the pages of our client's work on a faded green background."
         paragraph="While guiding you through the digital customer world we build amazng customer experiences and maintain a high quality standard."
         ctaButtonText="View our services"
@@ -27,11 +27,11 @@ export default function Home() {
           ctaButtonText="View our services"
           ctaButtonLocation="/our-services"
         ></TextSectionWithCta>
-        <SurveyTeaser 
+        <SurveyPopup 
         headline="Let’s check your digital effectiveness"
         paragraph="No matter the size of the business there is allways room to improve. Looking at your business data and highlighting potential opportunities to grow."
         ctaButtonText="Request a survey"
-        ></SurveyTeaser>
+        ></SurveyPopup>
       </main>
     </div>
   );

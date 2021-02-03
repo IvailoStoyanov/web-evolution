@@ -1,22 +1,31 @@
-import Image from "next/image";
 import React from "react";
 import styles from "./ImageWithOverlay.module.scss";
 
 const ImageWithOverlay = ({ ...props }) => {
   return (
     <div className={styles.wrapper}>
-      <Image
-        className={styles.overlay}
-        src="/icons/image-overlay.svg"
-        layout="fill"
+      <img
+        src={require("../../public/icons/overlay-test.svg")}
+        className={`${styles.overlay} ${styles.overlay___reverse}`}
       />
-      <Image
-        className={styles.image}
-        src={props.src}
-        layout="responsive"
-        width={props.width}
-        height={props.height}
-      />
+
+      {props.page === "about" ? (
+        <img
+          src={require("../../public/images/other/ivo-mugshot.jpg")}
+          className={`${styles.image} ${styles.image___about}`}
+          alt={props.alt}
+          width={props.width}
+          height={props.height}
+        />
+      ) : (
+        <img
+          src={require("../../public/images/olga-project/home-hand-wide.jpg")}
+          className={styles.image}
+          alt={props.alt}
+          width={props.width}
+          height={props.height}
+        />
+      )}
     </div>
   );
 };

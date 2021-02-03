@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import styles from "./SurveyPopup.module.scss";
 
 interface SurveyPopupProps {
@@ -21,7 +20,7 @@ class SurveyPopup extends React.Component<SurveyPopupProps> {
         <div className={styles.wrapper}>
           <div className={styles.intro}>Get in touch</div>
           <h2>Just fill in the form and we will be in touch.</h2>
-          <form action="">
+          <form action="contact">
             <div>
               <label>
                 Name
@@ -58,7 +57,6 @@ class SurveyPopup extends React.Component<SurveyPopupProps> {
                 Yes I agree to Web Evolution's <a>Privacy Policy</a>
               </span>
             </label>
-
             <input
               className={styles.submitButton}
               type="submit"
@@ -67,11 +65,11 @@ class SurveyPopup extends React.Component<SurveyPopupProps> {
           </form>
 
           <div className={styles.closeSurveyIcon}>
-            <Image
-              src="/icons/close-survey.svg"
-              alt="Web Evolution Logo"
-              width={20}
-              height={20}
+            <img
+              src={require("../../public/icons/close-survey.svg")}
+              alt="close form popup"
+              height="20px"
+              width="20px"
               onClick={this.handleClick}
             />
           </div>

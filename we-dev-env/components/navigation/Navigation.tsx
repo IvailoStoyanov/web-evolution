@@ -1,7 +1,6 @@
 import React, { createRef } from "react";
 import Link from "next/link";
 import ActiveLink from "../ActiveLink";
-import Image from "next/image";
 import styles from "./Navigation.module.scss";
 class MainNavigation extends React.Component<
   {},
@@ -69,9 +68,6 @@ class MainNavigation extends React.Component<
 
     if (window.innerWidth >= this.breakToDesktop) {
       this.hamburgerIcon;
-      console.log(
-        this.hamburgerIcon.current.classList.add("Hamburger___invisible")
-      );
     }
   }
 
@@ -132,11 +128,12 @@ class MainNavigation extends React.Component<
         >
           <Link href="/">
             <a className={styles.Logo}>
-              <Image
-                src="/logo/we-logo.svg"
+              <img
+                src={require("../../public/logo/we-logo.svg")}
+                className={styles.image}
                 alt="Web Evolution Logo"
-                width={100}
-                height={50}
+                height="50px"
+                width="100px"
               />
             </a>
           </Link>
@@ -147,11 +144,11 @@ class MainNavigation extends React.Component<
               <div
                 className={`${styles.Navigation_mobileCloseEffect} closeButtonEffect`}
               />
-              <Image
-                src="/icons/close-mobile-nav.svg"
-                alt="hamburger menu close icon"
-                width={50}
-                height={50}
+              <img
+                src={require("../../public/icons/close-mobile-nav.svg")}
+                alt="close hamburger menu icon"
+                height="50px"
+                width="50px"
                 onClick={this.handleMenuCloseClick}
                 id="closeButton"
               />
@@ -184,11 +181,11 @@ class MainNavigation extends React.Component<
             ref={this.hamburgerIcon}
             onClick={this.handleHamburgerClick}
           >
-            <Image
-              src="/icons/hamburger.svg"
-              alt="hamburger icon"
-              width={40}
-              height={40}
+            <img
+              src={require("../../public/icons/hamburger.svg")}
+              alt="open hamburger menu icon"
+              height="40px"
+              width="40px"
             />
           </a>
           <div

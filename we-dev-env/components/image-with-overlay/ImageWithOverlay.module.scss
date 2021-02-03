@@ -2,16 +2,20 @@
 @import "../../styles/colors.scss";
 
 .wrapper {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  height: 30vh;
 
   @media screen and (min-width: $break-to-desktop) {
+    height: 90vh;
     grid-row-start: 1;
     grid-row-end: 2;
   }
 
-  div {
-    height: 30vh;
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 
     @media screen and (min-width: $break-to-desktop) {
       height: 100%;
@@ -20,10 +24,36 @@
 
   .image {
     object-fit: cover;
+    top: 0;
+    left: 0;
+
+    &___about {
+      object-position: 0px 30%;
+
+      @media screen and (min-width: $break-to-desktop) {
+        object-position: center;
+      }
+    }
   }
 
   .overlay {
-      z-index: 1;
-      opacity: 0.7;
+    height: auto;
+    width: 80%;
+    bottom: -2px;
+    right: -1px;
+    z-index: 1;
+
+    @media screen and (min-width: $break-to-tablet) {
+      width: 60%;
+    }
+    @media screen and (min-width: $break-to-desktop) {
+      width: 70%;
+    }
+
+    &___reverse {
+      right: auto;
+      left: -1px;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
   }
 }

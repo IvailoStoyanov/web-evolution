@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <IntroHeader
         headline="We help others evolve in the digital world"
-        imageUrl="/images/olga-project/home-hand-wide.jpg"
+        imageUrl="../../public/images/olga-project/home-hand-wide.jpg"
         imageAlt="A hand holding up a mobile phone displaying one of the pages of our client's work on a faded green background."
         paragraph="While guiding you through the digital customer world we build amazng customer experiences and maintain a high quality standard."
         ctaButtonText="View our services"

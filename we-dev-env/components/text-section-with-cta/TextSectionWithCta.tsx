@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "./TextSectionWithCta.module.scss";
@@ -29,12 +28,12 @@ const TextSectionWithCta = ({ ...props }) => {
       <Link href={props.ctaButtonLocation}>
         <a>
           <span>{props.ctaButtonText}</span>
-          <Image
-            src="/icons/arrow.svg"
+          <img
+            src={require("../../public/icons/arrow.svg")}
             alt="arrow right"
-            width={24}
-            height={14}
-          ></Image>
+            width="24px"
+            height="14px"
+          />
         </a>
       </Link>
     </div>

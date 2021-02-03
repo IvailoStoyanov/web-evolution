@@ -1,6 +1,5 @@
 import Navigation from "./navigation/Navigation";
 import Link from "next/link";
-import Image from "next/image";
 
 function Layout(props: { children: {} }) {
   return (
@@ -21,11 +20,11 @@ function Layout(props: { children: {} }) {
           <div className="footer_col">
             <Link href="/">
               <a className="footer_logo">
-                <Image
-                  src="/logo/we-logo-white.svg"
+                <img
+                  src={require("../public/logo/we-logo-white.svg")}
                   alt="Web Evolution Logo"
-                  width={100}
-                  height={50}
+                  width="100px"
+                  height="50px"
                 />
               </a>
             </Link>

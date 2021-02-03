@@ -10,6 +10,7 @@ export default function Home() {
       </Head>
 
       <IntroHeader
+        page="about"
         headlineSmall="Digital Agency"
         imageUrl="/images/other/ivo-mugshot.jpg"
         imageAlt="A hand holding up a mobile phone displaying one of the pages of our client's work on a faded green background."

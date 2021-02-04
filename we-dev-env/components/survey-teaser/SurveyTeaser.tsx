@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SurveyTeaser.module.scss";
-import SurveyPopup from "../survey-popup/SurveyPopup";
+import SurveyPopupForm from "../survey-popup-form/SurveyPopupForm";
 
 interface SurveyTeaserProps {
   headline?: string;
@@ -30,7 +30,7 @@ class SurveyTeaser extends React.Component <SurveyTeaserProps> {
             <span className="button_circle"></span>
           </a>
         </div>
-        {this.state.seen ? <SurveyPopup toggle={this.togglePop}/> : null}
+        {this.state.seen ? <SurveyPopupForm toggle={this.togglePop}/> : null}
         
       </div>
     );

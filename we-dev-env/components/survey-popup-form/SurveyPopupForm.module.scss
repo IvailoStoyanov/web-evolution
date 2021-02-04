@@ -10,7 +10,6 @@
   height: auto;
   max-height: 100vh;
   width: calc(98vw - 20px);
-  // height: 90vh;
   padding: 10px;
   border-radius: 5px;
   z-index: 10;
@@ -39,32 +38,36 @@
     @media screen and (min-width: $break-to-tablet) {
       margin-bottom: 0;
     }
+
+    div {
+      display: flex;
+      flex-flow: column;
+    }
   }
 
   label {
     font-size: 16px;
     font-weight: 500;
-    display: flex;
     flex-flow: column;
-    padding-bottom: 18px;
+    margin-top: 18px;
+  }
 
-    input {
-      padding: 0 15px;
-      margin-top: 5px;
-      min-height: 33px;
-      border: none;
-      border: 1px solid $gray;
-      background: #f5f8fa;
-      border-radius: 5px;
+  input {
+    padding: 0 15px;
+    margin-top: 5px;
+    min-height: 33px;
+    border: none;
+    border: 1px solid $gray;
+    background: #f5f8fa;
+    border-radius: 5px;
 
-      &:focus {
-        outline: none;
-        border-color: rgba(82, 168, 236, 0.8);
-      }
+    &:focus {
+      outline: none;
+      border-color: rgba(82, 168, 236, 0.8);
+    }
 
-      @media screen and (min-width: $break-to-tablet) {
-        max-width: 400px;
-      }
+    @media screen and (min-width: $break-to-tablet) {
+      max-width: 400px;
     }
   }
 

@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./SurveyPopup.module.scss";
+import styles from "./SurveyPopupForm.module.scss";
 
-interface SurveyPopupProps {
+interface SurveyPopupFormProps {
   toggle?: Function;
 }
 
-class SurveyPopup extends React.Component<SurveyPopupProps> {
+class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
   state = {
     seen: true,
   };
@@ -20,36 +20,32 @@ class SurveyPopup extends React.Component<SurveyPopupProps> {
         <div className={styles.wrapper}>
           <div className={styles.intro}>Get in touch</div>
           <h2>Just fill in the form and we will be in touch.</h2>
-          <form action="contact">
+          <form
+            name="contact"
+            action="contact"
+            method="Post"
+            data-netlify="true"
+          >
             <div>
-              <label>
-                Name
-                <input type="text" required />
+              <label htmlFor="name">Name
+              <input type="text" name="name" required />
               </label>
             </div>
             <div>
-              <label>
-                Last Name
-                <input type="text" />
-              </label>
+              <label>Last Name</label>
+              <input type="text" name="surname" />
             </div>
             <div>
-              <label>
-                Email
-                <input type="text" />
-              </label>
+              <label>Email</label>
+              <input type="text" name="email" />
             </div>
             <div>
-              <label>
-                Company
-                <input type="text" />
-              </label>
+              <label>Company</label>
+              <input type="text" name="company" />
             </div>
             <div>
-              <label>
-                Phone number
-                <input type="number" />
-              </label>
+              <label>Phone number</label>
+              <input type="number" name="phone" />
             </div>
             <label className={styles.privacyPolicy}>
               <input type="checkbox" />
@@ -80,4 +76,4 @@ class SurveyPopup extends React.Component<SurveyPopupProps> {
   }
 }
 
-export default SurveyPopup;
+export default SurveyPopupForm;

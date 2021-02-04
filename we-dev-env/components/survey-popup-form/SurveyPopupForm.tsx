@@ -27,9 +27,8 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
             data-netlify="true"
           >
             <div>
-              <label htmlFor="name">Name
+              <label htmlFor="name">Name</label>
               <input type="text" name="name" required />
-              </label>
             </div>
             <div>
               <label>Last Name</label>

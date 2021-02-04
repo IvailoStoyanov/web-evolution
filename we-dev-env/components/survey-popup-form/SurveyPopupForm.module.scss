@@ -38,12 +38,16 @@
     @media screen and (min-width: $break-to-tablet) {
       margin-bottom: 0;
     }
+
+    div {
+      display: flex;
+      flex-flow: column;
+    }
   }
 
   label {
     font-size: 16px;
     font-weight: 500;
-    display: flex;
     flex-flow: column;
     margin-top: 18px;
   }

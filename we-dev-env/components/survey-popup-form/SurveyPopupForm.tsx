@@ -26,6 +26,7 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
             method="Post"
             data-netlify="true"
           >
+            <input type="hidden" name="form-name" value="contact"/>
             <div>
               <label htmlFor="name">Name</label>
               <input type="text" name="name" required />

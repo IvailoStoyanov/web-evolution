@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ImageWithOverlay.module.scss";
 
 const ImageWithOverlay = ({ ...props }) => {
@@ -10,21 +9,41 @@ const ImageWithOverlay = ({ ...props }) => {
       />
 
       {props.page === "about" ? (
-        <img
-          src={require("../../public/images/other/ivo-mugshot.jpg")}
-          className={`${styles.image} ${styles.image___about}`}
-          alt={props.alt}
-          width={props.width}
-          height={props.height}
-        />
+        <picture>
+          <source
+            srcSet={require("../../public/images/other/ivo-mugshot.jpg?webp")}
+            type="image/webp"
+          />
+          <source
+            srcSet={require("../../public/images/other/ivo-mugshot.jpg")}
+            type="image/jpg"
+          />
+          <img
+            src={require("../../public/images/other/ivo-mugshot.jpg")}
+            className={`${styles.image} ${styles.image___about}`}
+            alt={props.alt}
+            width={props.width}
+            height={props.height}
+          />
+        </picture>
       ) : (
-        <img
-          src={require("../../public/images/olga-project/home-hand-wide.jpg")}
-          className={styles.image}
-          alt={props.alt}
-          width={props.width}
-          height={props.height}
-        />
+        <picture>
+          <source
+            srcSet={require("../../public/images/olga-project/home-hand-wide.jpg?webp")}
+            type="image/webp"
+          />
+          <source
+            srcSet={require("../../public/images/olga-project/home-hand-wide.jpg")}
+            type="image/jpg"
+          />
+          <img
+            src={require("../../public/images/olga-project/home-hand-wide.jpg")}
+            className={styles.image}
+            alt={props.alt}
+            width={props.width}
+            height={props.height}
+          />
+        </picture>
       )}
     </div>
   );

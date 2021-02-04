@@ -22,7 +22,7 @@ class MainNavigation extends React.Component<
     this.handleMenuCloseClick = this.handleMenuCloseClick.bind(this);
   }
 
-  private breakToDesktop = 768;
+  private breakToDesktop = 770;
   private yellow = "#F7E05F";
   private black = "#17161A";
 
@@ -39,7 +39,7 @@ class MainNavigation extends React.Component<
   }
 
   handleScroll() {
-    if (window.pageYOffset > 200) {
+    if (window.pageYOffset > 200 && !this.state.isMobileNavVisible) {
       this.setState(() => ({
         isScrolled: true,
       }));
@@ -67,7 +67,9 @@ class MainNavigation extends React.Component<
     window.addEventListener("resize", this.checkViewport);
 
     if (window.innerWidth >= this.breakToDesktop) {
-      this.hamburgerIcon;
+      this.setState(() => ({
+        mobileViewport: false
+      }));
     }
   }
 

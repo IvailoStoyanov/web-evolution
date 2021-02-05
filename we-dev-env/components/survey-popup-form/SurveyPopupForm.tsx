@@ -21,7 +21,7 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
           <div className={styles.intro}>Get in touch</div>
           <h2>Just fill in the form and we will be in touch.</h2>
         
-            <form name="contact" action="/formSuccess" method="POST" data-netlify="true">
+            <form name="contact" action="/form-success" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
             <p>
               <label htmlFor="name">Name</label>

@@ -22,9 +22,9 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
           <h2>Just fill in the form and we will be in touch.</h2>
           <form
             name="contact"
-            action="contact"
             method="Post"
             data-netlify="true"
+          
           >
             <input type="hidden" name="form-name" value="contact"/>
             <div>

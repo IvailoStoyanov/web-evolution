@@ -60,14 +60,13 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
             ></input>
           </form> */}
           <form
-            name="contactForm"
-            method="POST"
-            action="/"
+            name="contact"
+            method="post"
+            data-netlify="true"
             data-netlify-honeypot="bot-field"
-            netlify
-            id="contact-form"
-            className="contact-form"
           >
+            {/* You still need to add the hidden input with the form name to your JSX form */}
+            <input type="hidden" name="form-name" value="contact" />
             <p className="screen-reader-text">
               <label>
                 Don't fill this out if you're human: <input name="bot-field" />

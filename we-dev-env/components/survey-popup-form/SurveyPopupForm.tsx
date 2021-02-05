@@ -103,7 +103,6 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
                 name="message"
                 id="contant-form-message"
                 className="form-textarea"
-                rows="7"
               />
             </p>
             <input type="hidden" name="form-name" value="contactForm" />

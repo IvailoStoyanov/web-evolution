@@ -64,7 +64,7 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
             method="POST"
             action="/"
             data-netlify-honeypot="bot-field"
-            data-netlify="true"
+            netlify
             id="contact-form"
             className="contact-form"
           >

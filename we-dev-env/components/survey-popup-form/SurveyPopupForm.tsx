@@ -20,33 +20,29 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
         <div className={styles.wrapper}>
           <div className={styles.intro}>Get in touch</div>
           <h2>Just fill in the form and we will be in touch.</h2>
-          <form
-            name="contact"
-            method="Post"
-            data-netlify="true"
-          
-          >
-            <input type="hidden" name="form-name" value="contact"/>
-            <div>
+        
+            <form name="contact" action="/formSuccess" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <p>
               <label htmlFor="name">Name</label>
               <input type="text" name="name" required />
-            </div>
-            <div>
-              <label>Last Name</label>
+            </p>
+            <p>
+              <label htmlFor="surname">Last Name</label>
               <input type="text" name="surname" />
-            </div>
-            <div>
-              <label>Email</label>
+            </p>
+            <p>
+              <label htmlFor="email">Email</label>
               <input type="text" name="email" />
-            </div>
-            <div>
-              <label>Company</label>
+            </p>
+            <p>
+              <label htmlFor="company">Company</label>
               <input type="text" name="company" />
-            </div>
-            <div>
-              <label>Phone number</label>
+            </p>
+            <p>
+              <label htmlFor="phone">Phone number</label>
               <input type="number" name="phone" />
-            </div>
+            </p>
             <label className={styles.privacyPolicy}>
               <input type="checkbox" />
               <span>

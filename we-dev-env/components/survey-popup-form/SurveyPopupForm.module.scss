@@ -106,6 +106,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    cursor: pointer;
   }
 
   .privacyPolicy {
@@ -116,6 +117,10 @@
 
     span {
       margin: auto 0 auto 7px;
+    }
+
+    a {
+      color: $blue;
     }
   }
 }
@@ -130,7 +135,6 @@
   opacity: 0.7;
   z-index: 3;
   display: none;
-
 
   &___visible {
     display: block;

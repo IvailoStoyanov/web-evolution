@@ -114,8 +114,28 @@ a {
   }
 }
 
-* {
-  // box-sizing: border-box;
+.susscess-message-wrapper {
+  background: $white;
+  padding: 70px 20px 100px 20px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 10% 20px 15% 20px;
+  }
+
+  h1,h2,p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 18px;
+    color: $green;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
+  }
 }
 
 footer {

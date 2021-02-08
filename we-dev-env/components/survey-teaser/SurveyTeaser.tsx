@@ -8,16 +8,16 @@ interface SurveyTeaserProps {
   ctaButtonText?: string;
 }
 
-class SurveyTeaser extends React.Component <SurveyTeaserProps> {
+class SurveyTeaser extends React.Component<SurveyTeaserProps> {
   state = {
-    seen: false,
+    visible: false,
   };
 
   togglePop = () => {
     this.setState({
-      seen: !this.state.seen
+      visible: !this.state.visible,
     });
-   };
+  };
 
   render() {
     return (
@@ -30,8 +30,7 @@ class SurveyTeaser extends React.Component <SurveyTeaserProps> {
             <span className="button_circle"></span>
           </a>
         </div>
-        {this.state.seen ? <SurveyPopupForm toggle={this.togglePop}/> : null}
-        
+        <SurveyPopupForm toggle={this.togglePop} visible={this.state.visible} />
       </div>
     );
   }

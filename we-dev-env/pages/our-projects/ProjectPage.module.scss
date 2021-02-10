@@ -1,0 +1,39 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+
+.header {
+  background: $white;
+  padding: 20px 20px 0 20px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    h1,
+    p {
+      max-width: 65%;
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 20px calc((100% - 1230px) / 2);
+  }
+
+  p {
+    padding-bottom: 15px;
+  }
+}
+
+.content {
+  background: $white;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 0;
+  }
+}

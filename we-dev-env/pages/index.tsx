@@ -2,15 +2,14 @@ import Head from "next/head";
 import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
 import SurveyTeaser from "../components/survey-teaser/SurveyTeaser";
-import WorkTeaser from "../components/work-teasers/WorkTeasers";
+import WorkTeasers from "../components/work-teasers/WorkTeasers";
 import fs from "fs";
 
 export default function Home(props: any) {
-
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>WRITE A GOOD TITLE</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <IntroHeader
@@ -29,22 +28,22 @@ export default function Home(props: any) {
           ]}
           ctaButtonText="View our services"
           ctaButtonLocation="/our-services"
-        ></TextSectionWithCta>
+        />
         <SurveyTeaser
           headline="Let’s check your digital effectiveness"
           paragraph="No matter the size of the business there is allways room to improve. Looking at your business data we can highlighting potential opportunities to grow."
           ctaButtonText="Request a survey"
         />
-        <WorkTeaser data={props.projectsData}/>
+        <WorkTeasers data={props.projectsData} headline="Our work" />
       </main>
     </div>
   );
 }
 
 export const getStaticProps = () => {
-  const fileNames = fs.readdirSync("public/projectsData");
+  const fileNames = fs.readdirSync("data/projectsData");
   const projectsData = fileNames.map((fileName) => {
-    return fs.readFileSync("public/projectsData/" + fileName, "utf-8");
+    return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
   });
 
   return {

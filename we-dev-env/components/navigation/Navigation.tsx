@@ -125,7 +125,7 @@ class MainNavigation extends React.Component<
         <nav
           id="navigation"
           className={`${styles.navigation} ${
-            this.state.isScrolled ? styles.Navigation___scrolled : ""
+            this.state.isScrolled ? styles.navigation___scrolled : ""
           }`}
         >
           <Link href="/">
@@ -156,7 +156,7 @@ class MainNavigation extends React.Component<
               />
             </div>
             <li onClick={this.handleMenuCloseClick}>
-              <ActiveLink href="/our-work" activeClassName="active">
+              <ActiveLink href="/our-projects" activeClassName="active">
                 <a>Work</a>
               </ActiveLink>
             </li>

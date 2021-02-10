@@ -58,12 +58,18 @@
 
   &.grayBackground {
     background: $gray;
-    margin: 20px;
+    margin: 0 20px 20px 20px;
     padding-top: 30px;
     padding-bottom: 30px;
 
     @media screen and (min-width: $break-to-desktop) {
       margin: 0;
+      padding-top: 70px;
+      padding-bottom: 70px;
+
+      p {
+        width: 60%;
+      }
     }
   }
 }

@@ -17,11 +17,6 @@
   overflow: auto;
   visibility: hidden;
 
-  &___visible {
-    visibility: visible;
-    animation: appear-bottom 0.7s forwards;
-  }
-
   @media screen and (min-width: $break-to-tablet) {
     left: 10vw;
     top: calc(5vh - 25px);
@@ -122,6 +117,11 @@
     a {
       color: $blue;
     }
+  }
+
+  &___visible {
+    visibility: visible;
+    animation: appear-bottom 0.7s forwards;
   }
 }
 

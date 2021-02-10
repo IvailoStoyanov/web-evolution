@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function FormSuccess() {
   return (
-    <div className="susscess-message-wrapper">
+    <div className="susscessMessageWrapper">
       <h1>Successful submission!</h1>
       <h2>Thank you for filling out the form.</h2>
       <p>

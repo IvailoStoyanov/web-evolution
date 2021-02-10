@@ -6,7 +6,7 @@ import ImageWithOverlay from "../image-with-overlay/ImageWithOverlay";
 
 function IntroHeader(props: any) {
   return (
-    <header className={styles.Intro}>
+    <header className={`${styles.intro} ${props.page === "about" ? styles.intro___about : null}`}>
       <ImageWithOverlay
         page={props.page}
         src={props.imageUrl}

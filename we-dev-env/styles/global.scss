@@ -114,7 +114,49 @@ a {
   }
 }
 
-.susscess-message-wrapper {
+.centeredContent {
+  padding: 20px 20px 50px 20px;
+  background: $white;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 20px 17% 100px 17%;
+  }
+
+  &___about {
+    p {
+      padding-bottom: 30px;
+    }
+
+    .paragraphImageWrapper {
+      display: flex;
+      flex-flow: column;
+
+      @media screen and (min-width: $break-to-desktop) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        direction: rtl;
+        padding-bottom: 30px;
+
+        p {
+          text-align: left;
+        }
+      }
+
+      &_OReillyLogo {
+        max-width: calc(100% - 40px);
+        align-self: center;
+        margin-bottom: 50px;
+      }
+    }
+
+    .quotationParagraph {
+      color: $dark-gray;
+      opacity: 0.8;
+    }
+  }
+}
+
+.susscessMessageWrapper {
   background: $white;
   padding: 70px 20px 100px 20px;
 
@@ -122,7 +164,9 @@ a {
     padding: 10% 20px 15% 20px;
   }
 
-  h1,h2,p {
+  h1,
+  h2,
+  p {
     max-width: 600px;
     margin: 0 auto;
   }
@@ -138,7 +182,7 @@ a {
   }
 }
 
-footer {
+.footer {
   background: $dark-gray;
   color: $white;
   padding: 50px 0 40px 0;
@@ -155,77 +199,75 @@ footer {
     color: $white;
   }
 
-  .footer {
-    &_container {
-      padding: 0 20px;
-    }
+  &_container {
+    padding: 0 20px;
+  }
 
-    &_location,
-    &_contact,
-    &_info {
-      margin-top: 50px;
+  &_location,
+  &_contact,
+  &_info {
+    margin-top: 50px;
+  }
+
+  &_contact {
+    p {
+      margin: 10px auto 20px auto;
+    }
+  }
+
+  &_info {
+    padding-top: 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid $gray;
+
+    p {
+      padding-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    &_container {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     &_contact {
-      p {
-        margin: 10px auto 20px auto;
-      }
+      margin-top: 0;
     }
 
     &_info {
-      padding-top: 20px;
-      font-size: 0.8rem;
-      border-top: 1px solid $gray;
+      grid-row-start: 2;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      text-align: right;
+      margin-top: 60px;
+      font-size: 0.7rem;
 
       p {
-        padding-bottom: 10px;
+        float: left;
       }
     }
+  }
 
-    @media screen and (min-width: $break-to-desktop) {
-      &_container {
-        display: grid;
-        grid-auto-flow: row;
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      &_contact {
-        margin-top: 0;
-      }
-
-      &_info {
-        grid-row-start: 2;
-        grid-column-start: 1;
-        grid-column-end: 4;
-        text-align: right;
-        margin-top: 60px;
-        font-size: 0.7rem;
-
-        p {
-          float: left;
-        }
-      }
+  @media screen and (min-width: $break-to-big-desktop) {
+    &_container {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    @media screen and (min-width: $break-to-big-desktop) {
-      &_container {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      &_info {
-        margin-top: 90px;
-      }
+    &_info {
+      margin-top: 90px;
     }
-    @media screen and (min-width: $break-to-bigger-desktop) {
-      &_container {
-        max-width: 1190px;
-      }
+  }
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    &_container {
+      max-width: 1190px;
     }
-    @media screen and (min-width: $break-to-biggest-desktop) {
-      &_container {
-        max-width: 1230px;
-      }
+  }
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    &_container {
+      max-width: 1230px;
     }
   }
 }

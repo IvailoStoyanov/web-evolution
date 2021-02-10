@@ -124,12 +124,12 @@ class MainNavigation extends React.Component<
 
         <nav
           id="navigation"
-          className={`${styles.Navigation} ${
+          className={`${styles.navigation} ${
             this.state.isScrolled ? styles.Navigation___scrolled : ""
           }`}
         >
           <Link href="/">
-            <a className={styles.Logo}>
+            <a className={styles.logo}>
               <img
                 src={require("../../public/logo/we-logo.svg")}
                 className={styles.image}
@@ -141,10 +141,10 @@ class MainNavigation extends React.Component<
           </Link>
           <ul>
             <div
-              className={`${styles.Navigation_mobileCloseWrapper} closeButtonWrapper`}
+              className={`${styles.navigation_mobileCloseWrapper} closeButtonWrapper`}
             >
               <div
-                className={`${styles.Navigation_mobileCloseEffect} closeButtonEffect`}
+                className={`${styles.navigation_mobileCloseEffect} closeButtonEffect`}
               />
               <img
                 src={require("../../public/icons/close-mobile-nav.svg")}
@@ -191,11 +191,11 @@ class MainNavigation extends React.Component<
             />
           </a>
           <div
-            className={`${styles.Navigation_overlay} overlay`}
+            className={`${styles.navigation_overlay} overlay`}
             onClick={this.handleMenuCloseClick}
           ></div>
         </nav>
-        <div className={styles.NavigationCap}></div>
+        <div className={styles.navigationCap}></div>
       </>
     );
   }

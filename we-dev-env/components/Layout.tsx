@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Layout(props: { children: {} }) {
   return (
-    <div className="page-layout">
+    <div>
       {/* <a href="#navigation" className="skipLink">
         skip to nav
       </a>
@@ -15,7 +15,7 @@ function Layout(props: { children: {} }) {
 
       {props.children}
 
-      <footer>
+      <footer className="footer">
         <div className="footer_container">
           <div className="footer_col">
             <Link href="/">

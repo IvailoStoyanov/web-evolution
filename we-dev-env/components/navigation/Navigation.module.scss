@@ -2,7 +2,7 @@
 @import "../../styles/animations.scss";
 @import "../../styles/breakpoints.scss";
 
-.Navigation {
+.navigation {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -123,11 +123,11 @@
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
   }
 
-  .Logo {
+  .logo {
     margin: auto 0;
   }
 }
 
-.NavigationCap {
+.navigationCap {
   height: 100px;
 }

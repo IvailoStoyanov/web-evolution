@@ -2,8 +2,11 @@ import Head from "next/head";
 import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
 import SurveyTeaser from "../components/survey-teaser/SurveyTeaser";
+import WorkTeaser from "../components/work-teasers/WorkTeasers";
+import fs from "fs";
 
-export default function Home() {
+export default function Home(props: any) {
+
   return (
     <div>
       <Head>
@@ -12,7 +15,7 @@ export default function Home() {
       </Head>
       <IntroHeader
         headline="We help others evolve in the digital world"
-        imageUrl="../../public/images/olga-project/home-hand-wide.jpg"
+        imageUrl="olga-project/home-hand-wide.jpg"
         imageAlt="A hand holding up a mobile phone displaying one of the pages of our client's work on a faded green background."
         paragraph="While guiding you through the digital customer world we build amazng customer experiences and maintain a high quality standard."
         ctaButtonText="View our services"
@@ -29,10 +32,24 @@ export default function Home() {
         ></TextSectionWithCta>
         <SurveyTeaser
           headline="Let’s check your digital effectiveness"
-          paragraph="No matter the size of the business there is allways room to improve. Looking at your business data and highlighting potential opportunities to grow."
+          paragraph="No matter the size of the business there is allways room to improve. Looking at your business data we can highlighting potential opportunities to grow."
           ctaButtonText="Request a survey"
         />
+        <WorkTeaser data={props.projectsData}/>
       </main>
     </div>
   );
 }
+
+export const getStaticProps = () => {
+  const fileNames = fs.readdirSync("public/projectsData");
+  const projectsData = fileNames.map((fileName) => {
+    return fs.readFileSync("public/projectsData/" + fileName, "utf-8");
+  });
+
+  return {
+    props: {
+      projectsData,
+    },
+  };
+};

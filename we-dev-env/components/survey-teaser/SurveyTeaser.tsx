@@ -20,13 +20,15 @@ class SurveyTeaser extends React.Component<SurveyTeaserProps> {
   };
 
   render() {
+    const { headline, paragraph, ctaButtonText } = this.props;
+
     return (
       <div className={styles.wrapper}>
         <div className={styles.wrapper_container}>
-          <h2>{this.props.headline}</h2>
-          <p>{this.props.paragraph}</p>
+          <h2>{headline}</h2>
+          <p>{paragraph}</p>
           <a className="button button___white" onClick={this.togglePop}>
-            <span className="button_text">{this.props.ctaButtonText}</span>{" "}
+            <span className="button_text">{ctaButtonText}</span>{" "}
             <span className="button_circle"></span>
           </a>
         </div>

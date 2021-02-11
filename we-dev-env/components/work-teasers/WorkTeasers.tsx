@@ -3,16 +3,18 @@ import React from "react";
 import styles from "./WorkTeasers.module.scss";
 class WorkTeasers extends React.Component<any> {
   render() {
+    const { headline, data, showAll } = this.props;
+
     return (
       <div className={styles.parentWrapper}>
-        {this.props.headline ? <h2>{this.props.headline}</h2> : null}
-        {this.props.data.map((post: string, index: number) => {
+        {headline ? <h2>{headline}</h2> : null}
+        {data.map((post: string, index: number) => {
           const project = JSON.parse(post);
-          
-          if (index <= 1 && !this.props.showAll) {
+
+          if (index <= 1 && !showAll) {
             return this.renderElement(project, index);
           }
-          if (this.props.showAll) {
+          if (showAll) {
             return this.renderElement(project, index);
           }
         })}

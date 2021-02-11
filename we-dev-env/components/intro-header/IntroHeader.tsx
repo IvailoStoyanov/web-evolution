@@ -13,6 +13,7 @@ function IntroHeader(props: any) {
         alt="hand holding phone showcasing Olga Golant's website"
         height={35}
         width={35}
+        reverse
       />
       <div className={styles.textWrapper}>
         {!!props.logoUrl ? (

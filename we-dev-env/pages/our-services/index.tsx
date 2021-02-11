@@ -1,9 +1,10 @@
 import Head from "next/head";
+import Link from "next/link";
 import fs from "fs";
-import TextSectionWithCta from "../../components/text-section-with-cta/TextSectionWithCta";
+import ServiceTeasers from "../../components/service-teasers/ServiceTeasers";
 import WorkTeasers from "../../components/work-teasers/WorkTeasers";
 // import WorkPageProps from "../../interfaces/interfaces";
-import styles from "./ProjectPage.module.scss";
+import styles from "./ServicesPage.module.scss";
 
 export default function Projects(props: any) {
   const { projectsData } = props;
@@ -17,22 +18,16 @@ export default function Projects(props: any) {
 
       <header className={styles.header}>
         <div className={styles.header_textContainer}>
-          <p>Our work</p>
-          <h1>Helping businesseses fulfill their full potential</h1>
+          <p>Our services</p>
+          <h1>What can we offer to help you evolve your business?</h1>
         </div>
       </header>
 
       <main className={styles.content}>
-        <WorkTeasers data={projectsData} showAll />
-        <TextSectionWithCta
-          grayBackground
-          headline="Do you have a projecy in mind?"
-          paragraphs={[
-            "You can guide us through your problems and desired goals while we focus on the solution and create the best client experience.",
-          ]}
-          ctaButtonText="Contact us"
-          ctaButtonLocation="/contact"
+        <ServiceTeasers
+          data={props.servicesData}
         />
+        <WorkTeasers data={projectsData} headline="Our work" />
       </main>
     </>
   );
@@ -44,9 +39,15 @@ export const getStaticProps = async () => {
     return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
   });
 
+  const servicesFileNames = fs.readdirSync("data/servicesData");
+  const servicesData = servicesFileNames.map((fileName) => {
+    return fs.readFileSync("data/servicesData/" + fileName, "utf-8");
+  });
+
   return {
     props: {
       projectsData,
+      servicesData
     },
   };
 };

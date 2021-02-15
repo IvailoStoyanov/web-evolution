@@ -2,7 +2,7 @@ import styles from "./ImageWithOverlay.module.scss";
 
 const ImageWithOverlay = ({ ...props }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${props.thin ? styles.wrapper___thin: null}`}>
       <img
         src={require("../../public/icons/overlay-test.svg")}
         className={`${styles.overlay} ${props.reverse ? styles.overlay___reverse : null}`}

@@ -5,9 +5,10 @@ import styles from "./TextSectionWithCta.module.scss";
 const TextSectionWithCta = ({ ...props }) => {
   return (
     <div
-      className={`${styles.wrapper} ${
-        !!props.grayBackground ? `${styles.grayBackground}` : null
-      }`}
+      className={`${styles.wrapper} 
+      ${!!props.grayBackground ? `${styles.grayBackground}` : null} 
+      ${!!props.thin ? `${styles.wrapper___thin}` : null}
+      `}
     >
       <h2>{props.headline}</h2>
 

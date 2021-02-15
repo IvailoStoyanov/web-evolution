@@ -60,11 +60,6 @@
     }
     .textWrapper {
       padding-bottom: 0;
-
-
-      @media screen and (min-width: $break-to-big-desktop) {
-        // padding: 40px 10% 0 10%;
-      }
     }
   }
 }

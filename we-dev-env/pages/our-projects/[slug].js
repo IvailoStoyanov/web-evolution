@@ -3,29 +3,13 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 
-import styles from "../../styles/projects/HeaderProjects.module.scss";
 
 const Post = ({ contents }) => {
   const data = JSON.parse(contents);
 
   return (
     <>
-      <Head>
-        <title>{data.longTitle}</title>
-        <meta name="description" content={data.titleDescription} />
-      </Head>
-
-      <header className={styles.Header}>
-        <h1>{data.longTitle}</h1>
-        <p>
-          A small introduction to the project itself. Aenean vel scelerisque ex.
-        </p>
-      </header>
-
-      <main>
-
-        {/* <ProjectImagesGrid {...data}></ProjectImagesGrid> */}
-      </main>
+     {contents}
     </>
   );
 };

@@ -72,4 +72,11 @@
       }
     }
   }
+
+  &___thin {
+    @media screen and (min-width: $break-to-desktop) {
+      padding: 20px 20%;
+      margin: 0 auto;
+    }
+  }
 }

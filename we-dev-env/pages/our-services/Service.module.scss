@@ -1,0 +1,71 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+
+.serviceHeader {
+  background: $white;
+  padding: 6vh 20px 0 20px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    direction: rtl;
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 20px calc((100% - 1230px) / 2);
+  }
+
+  &_textWrapper {
+    padding: 20px 0 50px 0;
+
+    
+    @media screen and (min-width: $break-to-desktop) {
+      padding-right: 60px;
+      margin: auto 0;
+      direction: ltr;
+    }
+
+    .goBackCta {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: $black;
+    }
+    .surveyCta {
+      display: inline-block;
+      text-decoration: underline;
+      color: $dark-gray;
+      margin-top: 30px;
+    }
+  }
+}
+
+.main {
+  background: $white;
+  padding-bottom: 20px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding-bottom: 0;
+  }
+}
+
+.contentWrapper {
+  padding: 20px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 100px 20% 20px 20%;
+  }
+
+  &_headline {
+    padding-bottom: 50px;
+  }
+
+  
+}

@@ -56,4 +56,12 @@
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
   }
+
+  &___thin {
+    height: 20vh;
+
+    @media screen and (min-width: $break-to-desktop) {
+      height: 90vh;
+    }
+  }
 }

@@ -79,7 +79,7 @@
     font-family: $main;
     font-size: 16px;
     font-weight: 600;
-    background: $black;
+    background: $blue;
     color: $white;
     border: none;
     border-radius: 3px;
@@ -87,8 +87,7 @@
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background: $yellow;
-      color: $black;
+      background: $dark-blue;
     }
   }
 

@@ -43,6 +43,10 @@
       text-decoration: underline;
       color: $dark-gray;
       margin-top: 30px;
+
+      &:hover {
+        color: $dark-blue;
+      }
     }
   }
 }

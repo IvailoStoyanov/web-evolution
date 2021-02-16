@@ -30,9 +30,9 @@ class ServiceItem extends React.Component<ServiceItemProps> {
   };
 
   setStyle = () => {
-    return this.state.expanded
-      ? { marginBottom: `${this.moreInfoText.current.clientHeight - 50}px` }
-      : { marginBottom: "70px" };
+    // return this.state.expanded
+    //   ? { marginBottom: `${this.moreInfoText.current.clientHeight - 50}px` }
+    //   : { marginBottom: "70px" };
   };
 
   togglePop = () => {
@@ -48,11 +48,10 @@ class ServiceItem extends React.Component<ServiceItemProps> {
 
     return (
       <div
-        className={`${styles.serviceItem} ${
-          this.state.expanded ? styles.serviceItem___expanded : ""
-        }`}
+        className={`${styles.serviceItem}`}
         onClick={this.toggleExtraContent}
-        style={this.setStyle()}
+        onMouseEnter={this.toggleExtraContent}
+        onMouseLeave={this.toggleExtraContent}
       >
         <div className={styles.imageWrapper}>
           <img
@@ -62,16 +61,11 @@ class ServiceItem extends React.Component<ServiceItemProps> {
         </div>
         <div className={styles.textWrapper}>
           <h3>{post.headline}</h3>
-          <div
-            className={styles.textWrapper_moreInfoText}
-            ref={this.moreInfoText}
-          >
-            <p>{post.paragraph}</p>
-            <a className="button button___blue" onClick={this.togglePop}>
-              <span className="button_text">Get started</span>
-              <span className="button_circle"></span>
-            </a>
-          </div>
+          <p>{post.paragraph}</p>
+          <a className="button button___blue" onClick={this.togglePop}>
+            <span className="button_text">Get started</span>
+            <span className="button_circle"></span>
+          </a>
         </div>
       </div>
     );

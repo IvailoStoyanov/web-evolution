@@ -3,10 +3,10 @@
 
 .serviceItem {
   box-shadow: 4px 4px 14px 0 rgb(0 0 0 / 18%);
-
-  position: relative;
+  margin-bottom: 70px;
+  overflow: hidden;
   display: block;
-  transition: margin 0.8s cubic-bezier(0.322, 0.009, 0, 1.003);
+  transition: box-shadow 0.7s cubic-bezier(0.322, 0.009, 0, 1.003);
 
   .imageWrapper {
     overflow: hidden;
@@ -18,87 +18,65 @@
       width: 100%;
       vertical-align: middle;
       transition: all 0.6s cubic-bezier(0.322, 0.009, 0, 1.003);
-      z-index: -1;
     }
   }
 
   .textWrapper {
+    position: relative;
+    padding: 20px 16px;
     background: $white;
-    transition: all 0.4s cubic-bezier(0.322, 0.009, 0, 1.003);
+    transition: all 0.6s cubic-bezier(0.322, 0.009, 0, 1.003);
 
     h3 {
-      padding: 20px 16px 45px 16px;
       background: $white;
       position: relative;
+    }
 
-      &::after {
-        content: "Learn more";
+    a {
+      margin-top: 30px;
+      position: static;
+
+      @media screen and (min-width: $break-to-desktop) {
         position: absolute;
-        left: 16px;
-        bottom: 15px;
-        opacity: 0.8;
-        color: $dark-gray;
-        font-weight: 400;
-        font-size: 15px;
-        transition: color 0.15s cubic-bezier(0.322, 0.009, 0, 1.003);
       }
-    }
-
-    &_moreInfoText {
-      position: absolute;
-      padding: 0 16px 70px 16px;
-      opacity: 0;
-      visibility: hidden;
-      background: $white;
-      transition: all 0.15s cubic-bezier(0.322, 0.009, 0, 1.003);
-      z-index: -1;
-    }
-
-    p {
-      padding-bottom: 20px;
     }
   }
 
   &:hover {
-    cursor: pointer;
+    @media screen and (min-width: $break-to-desktop) {
+      .textWrapper {
+        transform: translateY(-90px);
 
-    .textWrapper h3::after {
-       color: $blue;
-       opacity: 1;
-    }
-  }
+        h3 {
+          padding-bottom: 20px;
+        }
 
-  &___expanded {
-    .textWrapper {
-      transform: translateY(-90px);
-      
-      h3 {
-        padding-bottom: 20px 
+        h3::after {
+          color: transparent;
+        }
+
+        &_moreInfoText {
+          opacity: 1;
+          visibility: visible;
+          top: 100%;
+          transition: all 0.8s cubic-bezier(0.322, 0.009, 0, 1.003);
+        }
       }
 
-      h3::after {
-        color: transparent;
+      .imageWrapper {
+        img {
+          transform: translateY(-50px);
+        }
       }
 
-      &_moreInfoText {
-        opacity: 1;
-        visibility: visible;
-        top: 100%;
-        transition: all 0.8s cubic-bezier(0.322, 0.009, 0, 1.003);
-      }
-    }
+      &:hover {
+        box-shadow: 4px 4px 14px 0 rgb(0 0 0 / 30%);
 
-    .imageWrapper {
-      img {
-        transform: translateY(-50px);
+        .textWrapper h3::after {
+          color: transparent;
+          opacity: 0;
+        }
       }
-    }
-
-    &:hover {
-      .textWrapper h3::after {
-        color: transparent;
-        opacity: 0;
-     }
     }
   }
 }

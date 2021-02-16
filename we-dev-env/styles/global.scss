@@ -53,6 +53,7 @@ a {
 
 .button {
   position: absolute;
+  display: inline-block;
   padding: 14px 40px 14px 18px;
   border-radius: 3px;
   overflow: hidden;
@@ -62,6 +63,7 @@ a {
 
   @media screen and (min-width: $break-to-desktop) {
     &:hover {
+      cursor: pointer;
       .button_text {
         color: $black;
       }
@@ -110,6 +112,25 @@ a {
 
     .button_circle {
       background: $black;
+    }
+  }
+
+  &___blue {
+    background: $blue;
+    border: none;
+    padding: 14px 22px 14px 18px;
+
+    .button_circle {
+      display: none;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      &:hover {
+        background: $dark-blue;
+        .button_text {
+          color: $white;
+        }
+      }
     }
   }
 }

@@ -6,6 +6,7 @@ interface SurveyTeaserProps {
   headline?: string;
   paragraph?: string;
   ctaButtonText?: string;
+  grayBackground?: boolean;
 }
 
 class SurveyTeaser extends React.Component<SurveyTeaserProps> {
@@ -23,7 +24,7 @@ class SurveyTeaser extends React.Component<SurveyTeaserProps> {
     const { headline, paragraph, ctaButtonText } = this.props;
 
     return (
-      <div className={styles.wrapper}>
+      <div className={`${styles.wrapper} ${this.props.grayBackground ? styles.wrapper___gray : null}`}>
         <div className={styles.wrapper_container}>
           <h2>{headline}</h2>
           <p>{paragraph}</p>

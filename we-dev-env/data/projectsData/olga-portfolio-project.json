@@ -1,11 +1,28 @@
 {
   "shortTitle": "Olga Golant - Portfolio",
-  "longTitle": "Olga Golant Architect Portfolio",
   "url": "/our-projects/olga-portfolio-project",
   "services": "Design, Development, Optimisation",
   "img": "mac-markup.jpg",
   "width": "480",
   "height": "330",
   "alt": "iamge of the outside facade of the building",
-  "date": "30/11/2020"
+  "projectPageInfo": {
+    "date": "30/11/2020",
+    "longTitle": "Olga Golant Architect Portfolio",
+    "solvingQuestion": "How can an architect stand out in a sea of portfolios ?",
+    "client": "Olga Golant",
+    "clientImage": "olga.jpg",
+    "clientTestimonial": "Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Amet, consectetur adipiscing elit. ",
+    "projectUrl": "https://olga-golant.vercel.app",
+    "projectBrief": [
+      "Just graduating from university as an architect Olga Golant wanted to stand out. She didnt want to be just another CV in her potential employer’s mailbox but much rather show dedication, talent and willingness to experiment straight out the door.",
+      "Olga asked us to create designs for how to display the information to her employers in a clean and exiting way. We needed to make sure there were leading projects she was most proud but at the same time maintain the level of importance on others."
+    ],
+    "projectApproach": [
+      "We started off with a couple of sessions to get a clearer idea of the ideal employer and potential target of the website. From there we needed to settle down on the best possible content for each project. What to show on the website and what to keep for the interview. ",
+      "Wireframing the existing data gave us an easy way to test how the user will react to the layout before initiating design and development. ",
+      "From there with the newly collected data we had to find the right technology to tackle the build process. Because of the layout similarity required for her work and the scale of the project we decided that a statically generated website will be a perfect fit to display the content  and by using React components it would be easier to maintain down the road."
+    ],
+    "projectIamgesUrls": ["project-screens.jpg", "project-on-tablet.jpg"]
+  }
 }

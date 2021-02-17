@@ -4,23 +4,19 @@
 @import "../../styles/fonts.scss";
 
 .wrapper {
-  background: $white;
   position: fixed;
   top: 0;
   left: 1vw;
+  width: calc(98vw - 20px);
   height: auto;
   max-height: 100vh;
-  width: calc(98vw - 20px);
   padding: 10px;
   border-radius: 5px;
-  z-index: 10;
   overflow: auto;
   visibility: hidden;
-
-  &___visible {
-    visibility: visible;
-    animation: appear-bottom 0.7s forwards;
-  }
+  color: $black;
+  background: $white;
+  z-index: 10;
 
   @media screen and (min-width: $break-to-tablet) {
     left: 10vw;
@@ -84,7 +80,7 @@
     font-family: $main;
     font-size: 16px;
     font-weight: 600;
-    background: $black;
+    background: $blue;
     color: $white;
     border: none;
     border-radius: 3px;
@@ -92,8 +88,7 @@
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background: $yellow;
-      color: $black;
+      background: $dark-blue;
     }
   }
 
@@ -106,6 +101,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    cursor: pointer;
   }
 
   .privacyPolicy {
@@ -117,6 +113,15 @@
     span {
       margin: auto 0 auto 7px;
     }
+
+    a {
+      color: $blue;
+    }
+  }
+
+  &___visible {
+    visibility: visible;
+    animation: appear-bottom 0.7s forwards;
   }
 }
 
@@ -130,7 +135,6 @@
   opacity: 0.7;
   z-index: 3;
   display: none;
-
 
   &___visible {
     display: block;

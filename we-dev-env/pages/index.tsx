@@ -1,18 +1,20 @@
 import Head from "next/head";
 import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
-import SurveyTeaser from "../components/survey-teaser/SurveyTeaser";
+import CtaTeaser from "../components/cta-teaser/CtaTeaser";
+import WorkTeasers from "../components/work-teasers/WorkTeasers";
+import fs from "fs";
 
-export default function Home() {
+export default function Home(props: any) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>WRITE A GOOD TITLE</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <IntroHeader
         headline="We help others evolve in the digital world"
-        imageUrl="../../public/images/olga-project/home-hand-wide.jpg"
+        imageUrl="olga-project/home-hand-wide.jpg"
         imageAlt="A hand holding up a mobile phone displaying one of the pages of our client's work on a faded green background."
         paragraph="While guiding you through the digital customer world we build amazng customer experiences and maintain a high quality standard."
         ctaButtonText="View our services"
@@ -26,13 +28,27 @@ export default function Home() {
           ]}
           ctaButtonText="View our services"
           ctaButtonLocation="/our-services"
-        ></TextSectionWithCta>
-        <SurveyTeaser
+        />
+        <CtaTeaser
           headline="Let’s check your digital effectiveness"
-          paragraph="No matter the size of the business there is allways room to improve. Looking at your business data and highlighting potential opportunities to grow."
+          paragraph="No matter the size of the business there is allways room to improve. Looking at your business data we can highlighting potential opportunities to grow."
           ctaButtonText="Request a survey"
         />
+        <WorkTeasers data={props.projectsData} headline="Our work" />
       </main>
     </div>
   );
 }
+
+export const getStaticProps = () => {
+  const fileNames = fs.readdirSync("data/projectsData");
+  const projectsData = fileNames.map((fileName) => {
+    return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
+  });
+
+  return {
+    props: {
+      projectsData,
+    },
+  };
+};

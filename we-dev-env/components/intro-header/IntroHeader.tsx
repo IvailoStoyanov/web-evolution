@@ -6,13 +6,14 @@ import ImageWithOverlay from "../image-with-overlay/ImageWithOverlay";
 
 function IntroHeader(props: any) {
   return (
-    <header className={styles.Intro}>
+    <header className={`${styles.intro} ${props.page === "about" ? styles.intro___about : null}`}>
       <ImageWithOverlay
         page={props.page}
         src={props.imageUrl}
         alt="hand holding phone showcasing Olga Golant's website"
         height={35}
         width={35}
+        reverse
       />
       <div className={styles.textWrapper}>
         {!!props.logoUrl ? (

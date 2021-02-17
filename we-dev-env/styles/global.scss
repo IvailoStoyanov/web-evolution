@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: $main;
   font-size: 18.5px;
-  background: #f1f1f1;
+  background: $light-gray;
 }
 
 h1,
@@ -53,6 +53,7 @@ a {
 
 .button {
   position: absolute;
+  display: inline-block;
   padding: 14px 40px 14px 18px;
   border-radius: 3px;
   overflow: hidden;
@@ -62,6 +63,7 @@ a {
 
   @media screen and (min-width: $break-to-desktop) {
     &:hover {
+      cursor: pointer;
       .button_text {
         color: $black;
       }
@@ -112,13 +114,181 @@ a {
       background: $black;
     }
   }
+
+  &___blue {
+    background: $blue;
+    border: none;
+    padding: 14px 22px 14px 18px;
+
+    .button_circle {
+      display: none;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      &:hover {
+        background: $dark-blue;
+        .button_text {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &___transparent {
+    background: transparent;
+    border: 2px solid $white;
+
+    &:hover {
+      border: 2px solid $yellow;
+    }
+  }
+
+  &___small {
+    padding: 10px 30px 10px 14px;
+    font-size: 14px;
+
+    .button_circle {
+      width: 10px;
+      height: 10px;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      font-size: 18.5px;
+      padding: 14px 40px 14px 18px;
+    }
+  }
 }
 
-* {
-  // box-sizing: border-box;
+.centeredContent {
+  padding: 20px 20px 50px 20px;
+  background: $white;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 20px 17% 100px 17%;
+  }
+
+  &___about {
+    p {
+      padding-bottom: 30px;
+    }
+
+    .paragraphImageWrapper {
+      display: flex;
+      flex-flow: column;
+
+      @media screen and (min-width: $break-to-desktop) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        direction: rtl;
+        padding-bottom: 30px;
+
+        p {
+          text-align: left;
+        }
+      }
+
+      &_OReillyLogo {
+        max-width: calc(100% - 40px);
+        align-self: center;
+        margin-bottom: 50px;
+      }
+    }
+
+    .quotationParagraph {
+      color: $dark-gray;
+      opacity: 0.8;
+    }
+  }
 }
 
-footer {
+.susscessMessageWrapper {
+  background: $white;
+  padding: 70px 20px 100px 20px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 10% 20px 15% 20px;
+  }
+
+  h1,
+  h2,
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 18px;
+    color: $green;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
+  }
+}
+
+.contactPageHeader {
+  padding: 9vh 20px 0 20px;
+  background: $white;
+
+  p {
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    h1 {
+      max-width: 65%;
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 10vh calc((100% - 1100px) / 2) 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 11vh calc((100% - 1190px) / 2) 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 11vh calc((100% - 1230px) / 2) 20px calc((100% - 1230px) / 2);
+  }
+}
+
+.contactPage {
+  padding: 20px 20px 70px 20px;
+  background: $white;
+
+  .phoneWrapper {
+    padding: 50px 0 10px 0;
+
+    h2 {
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 25px;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      padding: 70px 0;
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 20px calc((100% - 1230px) / 2);
+  }
+}
+
+.footer {
   background: $dark-gray;
   color: $white;
   padding: 50px 0 40px 0;
@@ -135,77 +305,75 @@ footer {
     color: $white;
   }
 
-  .footer {
-    &_container {
-      padding: 0 20px;
-    }
+  &_container {
+    padding: 0 20px;
+  }
 
-    &_location,
-    &_contact,
-    &_info {
-      margin-top: 50px;
+  &_location,
+  &_contact,
+  &_info {
+    margin-top: 50px;
+  }
+
+  &_contact {
+    p {
+      margin: 10px auto 20px auto;
+    }
+  }
+
+  &_info {
+    padding-top: 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid $gray;
+
+    p {
+      padding-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    &_container {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     &_contact {
-      p {
-        margin: 10px auto 20px auto;
-      }
+      margin-top: 0;
     }
 
     &_info {
-      padding-top: 20px;
-      font-size: 0.8rem;
-      border-top: 1px solid $gray;
+      grid-row-start: 2;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      text-align: right;
+      margin-top: 60px;
+      font-size: 0.7rem;
 
       p {
-        padding-bottom: 10px;
+        float: left;
       }
     }
+  }
 
-    @media screen and (min-width: $break-to-desktop) {
-      &_container {
-        display: grid;
-        grid-auto-flow: row;
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      &_contact {
-        margin-top: 0;
-      }
-
-      &_info {
-        grid-row-start: 2;
-        grid-column-start: 1;
-        grid-column-end: 4;
-        text-align: right;
-        margin-top: 60px;
-        font-size: 0.7rem;
-
-        p {
-          float: left;
-        }
-      }
+  @media screen and (min-width: $break-to-big-desktop) {
+    &_container {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    @media screen and (min-width: $break-to-big-desktop) {
-      &_container {
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      &_info {
-        margin-top: 90px;
-      }
+    &_info {
+      margin-top: 90px;
     }
-    @media screen and (min-width: $break-to-bigger-desktop) {
-      &_container {
-        max-width: 1190px;
-      }
+  }
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    &_container {
+      max-width: 1190px;
     }
-    @media screen and (min-width: $break-to-biggest-desktop) {
-      &_container {
-        max-width: 1230px;
-      }
+  }
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    &_container {
+      max-width: 1230px;
     }
   }
 }

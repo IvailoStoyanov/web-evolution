@@ -1,0 +1,33 @@
+{
+  "title": "Check if your website is holding up to your standard",
+  "teaser": {
+    "span": "Measure and Optimise",
+    "paragraph": "Let’s have a look if your product performs the way it should. There might be ways to improve your customer experiences by trying new layouts, hierarchy and call to actions that match your customer’s needs.",
+    "cta": "Lets optimise",
+    "ctaUrl": "/our-services/measure-and-optimise"
+  },
+  "introText": "There are problems and there are solutions. A website is a solution to a problem. But do you really have a problem worth the investment of a website? If you do, check bellow what we can offer.",
+  "introSurveyText": "Not sure what we mean, request a digital survey.",
+  "img": "other/analytics.jpg",
+  "width": "480",
+  "height": "330",
+  "alt": "iamge of the outside facade of the building",
+  "headlineTwo": "How can we help you?",
+  "processes": [
+    {
+      "headline": "Building a Static Site",
+      "paragraph": "The Static Site is usually a small scale website with basic page interactions. It is called static because the contents are ready and are just waiting to be loaded from the browser, thus this type of website has the benefits of loading faster. It also gives developers less moving parts to maintain and improves security over traditional Content Management Systems.",
+      "image": "ssg.svg"
+    },
+    {
+      "headline": "Building a Single Page Application",
+      "paragraph": "The Single Page Application is just what it sounds like. The user stays on a single page and interacts with it, as if it’s an application, just like Facebook or Gmail. This type of website is usually fast because most resources (HTML, CSS, JavaScript) are loaded once and then cached in the local storage of your browser, alowing it to be reused when needed. It also allows the newly requested data to be called from the server without a full page rerender.",
+      "image": "spa.jpg"
+    },
+    {
+      "headline": "Building a Server Side Rendered Site",
+      "paragraph": "The Server Side Rendered Site typically has a faster initial loading time when compared to the Single Page Application. It provides better ground for SEO (Search Engine Optimisation), so that the users find it easier on search engines like Google. However, if heavy interaction is required it might be better off to stick with a Single Page Application because new data requiest will reload the page.",
+      "image": "ssr.svg"
+    }
+  ]
+}

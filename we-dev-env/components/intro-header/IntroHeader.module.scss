@@ -1,7 +1,7 @@
 @import "../../styles/colors.scss";
 @import "../../styles/breakpoints.scss";
 
-.Intro {
+.intro {
   background: $white;
   padding-bottom: 60px;
 
@@ -49,6 +49,17 @@
       @media screen and (min-width: $break-to-desktop) {
         grid-column-start: 2;
       }
+    }
+  }
+
+  &___about {
+    padding-bottom: 0;
+
+    @media screen and (min-width: $break-to-desktop) {
+      padding-bottom: 80px;
+    }
+    .textWrapper {
+      padding-bottom: 0;
     }
   }
 }

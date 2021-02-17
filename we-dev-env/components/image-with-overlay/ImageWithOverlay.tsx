@@ -2,49 +2,29 @@ import styles from "./ImageWithOverlay.module.scss";
 
 const ImageWithOverlay = ({ ...props }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${props.thin ? styles.wrapper___thin: null}`}>
       <img
         src={require("../../public/icons/overlay-test.svg")}
-        className={`${styles.overlay} ${styles.overlay___reverse}`}
+        className={`${styles.overlay} ${props.reverse ? styles.overlay___reverse : null}`}
       />
 
-      {props.page === "about" ? (
         <picture>
           <source
-            srcSet={require("../../public/images/other/ivo-mugshot.jpg?webp")}
+            srcSet={require(`../../public/images/${props.src}?webp`)}
             type="image/webp"
           />
           <source
-            srcSet={require("../../public/images/other/ivo-mugshot.jpg")}
+            srcSet={require(`../../public/images/${props.src}`)}
             type="image/jpg"
           />
           <img
-            src={require("../../public/images/other/ivo-mugshot.jpg")}
-            className={`${styles.image} ${styles.image___about}`}
+            src={require(`../../public/images/${props.src}`)}
+            className={`${styles.image} ${props.page === "about" ? styles.image___about : null}`}
             alt={props.alt}
             width={props.width}
             height={props.height}
           />
         </picture>
-      ) : (
-        <picture>
-          <source
-            srcSet={require("../../public/images/olga-project/home-hand-wide.jpg?webp")}
-            type="image/webp"
-          />
-          <source
-            srcSet={require("../../public/images/olga-project/home-hand-wide.jpg")}
-            type="image/jpg"
-          />
-          <img
-            src={require("../../public/images/olga-project/home-hand-wide.jpg")}
-            className={styles.image}
-            alt={props.alt}
-            width={props.width}
-            height={props.height}
-          />
-        </picture>
-      )}
     </div>
   );
 };

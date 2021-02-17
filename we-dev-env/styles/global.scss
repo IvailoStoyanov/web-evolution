@@ -169,7 +169,7 @@ a {
 
   &___about {
     p {
-      font-weight: 300;
+      padding-bottom: 30px;
     }
 
     .paragraphImageWrapper {
@@ -224,6 +224,67 @@ a {
 
   h2 {
     font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
+  }
+}
+
+.contactPageHeader {
+  padding: 9vh 20px 0 20px;
+  background: $white;
+
+  p {
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    h1 {
+      max-width: 65%;
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 10vh calc((100% - 1100px) / 2) 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 11vh calc((100% - 1190px) / 2) 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 11vh calc((100% - 1230px) / 2) 20px calc((100% - 1230px) / 2);
+  }
+}
+
+.contactPage {
+  padding: 20px 20px 70px 20px;
+  background: $white;
+
+  .phoneWrapper {
+    padding: 50px 0 10px 0;
+
+    h2 {
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 25px;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      padding: 70px 0;
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 20px calc((100% - 1230px) / 2);
   }
 }
 

@@ -16,7 +16,7 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
       <>
         <div
           className={`${styles.wrapper} ${
-            this.props.visible ? styles.wrapper___visible : null
+            this.props.visible ? styles.wrapper___visible : ''
           }`}
         >
           <div className={styles.intro}>Get in touch</div>
@@ -76,7 +76,7 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
         </div>
         <div
           className={`${styles.overlay} ${
-            this.props.visible ? styles.overlay___visible : null
+            this.props.visible ? styles.overlay___visible : ''
           }`}
           onClick={this.handleClick}
         ></div>

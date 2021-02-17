@@ -2,7 +2,7 @@ import React from "react";
 import fs from "fs";
 import path from "path";
 import Head from "next/head";
-import SurveyTeaser from "../../components/survey-teaser/SurveyTeaser";
+import CtaTeaser from "../../components/cta-teaser/CtaTeaser";
 import styles from "./Project.module.scss";
 
 const Post = ({ contents }) => {
@@ -114,10 +114,11 @@ const Post = ({ contents }) => {
             })}
           </div>
         </div>
-          <SurveyTeaser
-          headline="Let’s check your digital effectiveness"
-          paragraph="No matter the size of the business there is allways room to improve. Looking at your business data we can highlighting potential opportunities to grow."
-          ctaButtonText="Request a survey"
+          <CtaTeaser
+          headline="Focus on creating the right product for the right user."
+          paragraph="It is not just about developing the website. It is about finding the right solution to the problem and solving it with the most optimal amount of resourcess and effort. "
+          ctaButtonText="View our services"
+          ctaUrl="/our-services"
           grayBackground
         />
       </main>

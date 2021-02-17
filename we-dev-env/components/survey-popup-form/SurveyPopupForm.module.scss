@@ -4,18 +4,19 @@
 @import "../../styles/fonts.scss";
 
 .wrapper {
-  background: $white;
   position: fixed;
   top: 0;
   left: 1vw;
+  width: calc(98vw - 20px);
   height: auto;
   max-height: 100vh;
-  width: calc(98vw - 20px);
   padding: 10px;
   border-radius: 5px;
-  z-index: 10;
   overflow: auto;
   visibility: hidden;
+  color: $black;
+  background: $white;
+  z-index: 10;
 
   @media screen and (min-width: $break-to-tablet) {
     left: 10vw;

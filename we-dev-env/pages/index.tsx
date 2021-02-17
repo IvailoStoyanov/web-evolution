@@ -1,7 +1,7 @@
 import Head from "next/head";
 import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
-import SurveyTeaser from "../components/survey-teaser/SurveyTeaser";
+import CtaTeaser from "../components/cta-teaser/CtaTeaser";
 import WorkTeasers from "../components/work-teasers/WorkTeasers";
 import fs from "fs";
 
@@ -29,7 +29,7 @@ export default function Home(props: any) {
           ctaButtonText="View our services"
           ctaButtonLocation="/our-services"
         />
-        <SurveyTeaser
+        <CtaTeaser
           headline="Let’s check your digital effectiveness"
           paragraph="No matter the size of the business there is allways room to improve. Looking at your business data we can highlighting potential opportunities to grow."
           ctaButtonText="Request a survey"

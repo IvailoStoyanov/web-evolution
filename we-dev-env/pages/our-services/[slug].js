@@ -7,6 +7,7 @@ import ImageWithOverlay from "../../components/image-with-overlay/ImageWithOverl
 import TextSectionWithCta from "../../components/text-section-with-cta/TextSectionWithCta";
 import ServiceItem from "../../components/services-item-component/ServiceItem";
 import SurveyPopupForm from "../../components/survey-popup-form/SurveyPopupForm";
+import ContactForm from "../../components/contact-form/ContactForm";
 import styles from "./Service.module.scss";
 class Post extends React.Component {
   state = {
@@ -61,11 +62,16 @@ class Post extends React.Component {
 
         <main className={styles.main}>
           <div className={styles.contentWrapper}>
-            <h2 className={styles.contentWrapper_headline}>
-              We can help you
-            </h2>
+            <h2 className={styles.contentWrapper_headline}>We can help you</h2>
             {data.processes.map((post, index) => {
-              return <ServiceItem post={post} key={index} index={index} toggleFormPop={this.togglePop}/>;
+              return (
+                <ServiceItem
+                  post={post}
+                  key={index}
+                  index={index}
+                  toggleFormPop={this.togglePop}
+                />
+              );
             })}
           </div>
 
@@ -79,6 +85,9 @@ class Post extends React.Component {
             ctaButtonLocation="/contact"
             thin
           />
+          <div className={styles.contactFormWrapper}>
+            <ContactForm />
+          </div>
         </main>
         <SurveyPopupForm toggle={this.togglePop} visible={this.state.visible} />
       </>

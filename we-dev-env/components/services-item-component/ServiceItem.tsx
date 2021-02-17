@@ -7,40 +7,13 @@ interface ServiceItemProps {
   paragraph?: string;
   ctaButtonText?: string;
   post?: any;
+  toggleFormPop?: Function;
 }
 
 class ServiceItem extends React.Component<ServiceItemProps> {
-  private moreInfoText = createRef<HTMLImageElement>();
-
-  constructor(props: {}) {
-    super(props);
-    this.moreInfoText = React.createRef();
-  }
-
-  state = {
-    expanded: false,
-  };
-
-  toggleExtraContent = () => {
-    console.log(!this.toggleExtraContent);
-
-    this.setState({
-      expanded: !this.state.expanded,
-    });
-  };
-
-  setStyle = () => {
-    // return this.state.expanded
-    //   ? { marginBottom: `${this.moreInfoText.current.clientHeight - 50}px` }
-    //   : { marginBottom: "70px" };
-  };
 
   togglePop = () => {
-    console.log("toggle popup");
-  };
-
-  test = () => {
-    console.log("wow");
+    this.props.toggleFormPop()
   };
 
   render() {
@@ -49,9 +22,6 @@ class ServiceItem extends React.Component<ServiceItemProps> {
     return (
       <div
         className={`${styles.serviceItem}`}
-        onClick={this.toggleExtraContent}
-        onMouseEnter={this.toggleExtraContent}
-        onMouseLeave={this.toggleExtraContent}
       >
         <div className={styles.imageWrapper}>
           <img

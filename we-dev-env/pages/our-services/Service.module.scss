@@ -58,6 +58,25 @@
   @media screen and (min-width: $break-to-desktop) {
     padding-bottom: 0;
   }
+
+  .contactFormWrapper {
+    padding: 20px;
+
+    @media screen and (min-width: $break-to-big-desktop) {
+      width: calc(100% - (100% - 1100px));
+      padding: 50px calc((100% - 1100px) / 2);
+    }
+  
+    @media screen and (min-width: $break-to-bigger-desktop) {
+      width: calc(100% - (100% - 1190px));
+      padding: 50px calc((100% - 1190px) / 2);
+    }
+  
+    @media screen and (min-width: $break-to-biggest-desktop) {
+      width: calc(100% - (100% - 1230px));
+      padding: 50px calc((100% - 1230px) / 2);
+    }
+  }
 }
 
 .contentWrapper {

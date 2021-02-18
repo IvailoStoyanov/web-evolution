@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Head>
         <title>About us</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
 
       <IntroHeader

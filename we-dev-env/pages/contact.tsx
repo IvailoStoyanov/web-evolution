@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Contact us page</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
       <header className="contactPageHeader">
         <p>We are here to help you.</p>

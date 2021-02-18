@@ -7,20 +7,20 @@
 
   @media screen and (min-width: $break-to-desktop) {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     direction: rtl;
   }
 
   @media screen and (min-width: $break-to-big-desktop) {
-    padding: 20px calc((100% - 1100px) / 2);
+    padding: 20px 0px 20px calc((100% - 1100px) / 2);
   }
 
   @media screen and (min-width: $break-to-bigger-desktop) {
-    padding: 20px calc((100% - 1190px) / 2);
+    padding: 20px 0px 20px calc((100% - 1190px) / 2);
   }
 
   @media screen and (min-width: $break-to-biggest-desktop) {
-    padding: 20px calc((100% - 1230px) / 2);
+    padding: 20px 0px 20px calc((100% - 1230px) / 2);
   }
 
   &_textWrapper {

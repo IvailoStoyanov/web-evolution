@@ -8,7 +8,7 @@ import TextSectionWithCta from "../../components/text-section-with-cta/TextSecti
 import ServiceItem from "../../components/services-item-component/ServiceItem";
 import SurveyPopupForm from "../../components/survey-popup-form/SurveyPopupForm";
 import ContactForm from "../../components/contact-form/ContactForm";
-import styles from "./Service.module.scss";
+import styles from "./ServiceSlug.module.scss";
 class Post extends React.Component {
   state = {
     visible: false,

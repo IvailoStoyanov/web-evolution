@@ -10,7 +10,7 @@ export default function Home(props: any) {
     <div>
       <Head>
         <title>WRITE A GOOD TITLE</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
       <IntroHeader
         headline="We help others evolve in the digital world"

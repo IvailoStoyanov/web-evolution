@@ -1,5 +1,6 @@
 {
   "title": "Check if your website is holding up to your standard",
+  "headDescription": "While developing a product the client aims to solve their business problem through a digital solution targeting their users. The key in making all of this work successfully is to measure the steps before they are taken, and optimise each user's experience.",
   "teaser": {
     "span": "Measure and Optimise",
     "paragraph": "Let’s have a look if your product performs the way it should. There might be ways to improve your customer experiences by trying new layouts, hierarchy and call to actions that match your customer’s needs.",
@@ -11,18 +12,20 @@
   "img": "other/analytics.jpg",
   "width": "480",
   "height": "330",
-  "alt": "iamge of the outside facade of the building",
+  "alt": "a smartphone apearing at a 45 degree angle displaying data analytics charts",
   "headlineTwo": "How can we help you?",
   "processes": [
     {
       "headline": "Optimize",
       "paragraph": "A website has a lot of parts that benefit from optimisation. When talking about loading times the main culprits are usually images. But there are other approaches like lazy loading and code minification which all together can massively improve (by speeding up interactions) the usability and overall experience of your website. When talking about SEO (Search Engine Optimisation) you need to focus on a lot more than just the headlines and title of the website. Search engines even go as far as semantics when it comes to bringing your website on top.",
-      "image": "optimise.jpg"
+      "image": "optimise.jpg",
+      "alt": "image of cookie data analytics"
     },
     {
       "headline": "Improve User Interface",
       "paragraph": "This is usually something that will not appear as a major issue at first sight but can drastically improve the user experience. You might have heard of the job title UX (user experience) designer. Well there is a reason as to why the job exists, there are a lot of layouts out there that confuse, discourage and leave people in the blind and we can help you to avoid being one of them through wireframing, user testing and a mobile first approach.",
-      "image": "wireframe.svg"
+      "image": "wireframe.svg",
+      "alt": "exemplary wireframe"
     }
   ]
 }

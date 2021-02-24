@@ -61,7 +61,13 @@
     height: 20vh;
 
     @media screen and (min-width: $break-to-desktop) {
-      height: 90vh;
+      height: 60vh;
+    }
+  }
+  
+  &___serviceThin {
+    @media screen and (min-width: $break-to-desktop) {
+      height: 70vh;
     }
   }
 }

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import fs from "fs";
 import ServiceTeasers from "../../components/service-teasers/ServiceTeasers";
 import WorkTeasers from "../../components/work-teasers/WorkTeasers";
@@ -12,8 +11,22 @@ export default function Projects(props: any) {
   return (
     <>
       <Head>
-        <title>WRITE A GOOD TITLE</title>
-        <meta name="description" content="WRITE A GOOD DESCRIPTION" />
+        <title>Services: See how we can evolve your business in the digital world</title>
+        <meta
+          content="Services: See how we can evolve your business in the digital world"
+          property="og:title"
+        />
+        <meta
+          name="description"
+          content="Through a thorough evaluation and future-poroof solutions approach we help businesses solve problems they are aware of and find and fix the rest."
+        />
+        <meta
+          property="og:description"
+          content="Through a thorough evaluation and future-poroof solutions approach we help businesses solve problems they are aware of and find and fix the rest."
+        />
+        <meta content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg" property="og:image" />
+        <meta property="og:type" content="website" />
+        <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
 
       <header className={styles.header}>

@@ -26,7 +26,7 @@ class ServiceItem extends React.Component<ServiceItemProps> {
         <div className={styles.imageWrapper}>
           <img
             src={require(`../../public/images/our-services/${post.image}`)}
-            alt="item headline displayed in a colorful abreviation"
+            alt={post.alt}
           />
         </div>
         <div className={styles.textWrapper}>

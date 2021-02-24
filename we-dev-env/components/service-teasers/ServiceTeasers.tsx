@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ImageWithOverlay from "../image-with-overlay/ImageWithOverlay"
+import ImageWithOverlay from "../image-with-overlay/ImageWithOverlay";
 import styles from "./ServiceTeasers.module.scss";
 
 const ServiceTeasers = ({ ...props }) => {
@@ -10,33 +10,40 @@ const ServiceTeasers = ({ ...props }) => {
         const service = JSON.parse(post);
 
         return (
-          <div className={`${styles.serviceWrapper} ${index % 2 == 0 ? null : styles.serviceWrapper___reverse}`} key={index}>
-            <ImageWithOverlay
-              page={props.page}
-              src={service.img}
-              alt="hand holding phone showcasing Olga Golant's website"
-              height={35}
-              width={35}
-              reverse = {index % 2 == 0 ? null : true}
-            />
-            <div className={styles.serviceWrapper_textWrapper}>
-            <span className={styles.serviceWrapper_clarification}>{service.teaser.span}</span>
-            <h2>{service.title}</h2>
-            <p>{service.teaser.paragraph}</p>
-            <Link href={service.teaser.ctaUrl}>
-              <a>
-                <span>{service.teaser.cta}</span>
-                <img
-                  src={require("../../public/icons/arrow.svg")}
-                  alt="arrow right"
-                  width="24px"
-                  height="14px"
-                />
-              </a>
-            </Link>
+          <Link href={service.teaser.ctaUrl} key={index}>
+            <div
+              className={`${styles.serviceWrapper} ${
+                index % 2 == 0 ? null : styles.serviceWrapper___reverse
+              }`}
+            >
+              <ImageWithOverlay
+                page={props.page}
+                src={service.img}
+                alt={service.alt}
+                height={35}
+                width={35}
+                reverse={index % 2 == 0 ? null : true}
+                serviceThin
+              />
 
+              <div className={styles.serviceWrapper_textWrapper}>
+                <span className={styles.serviceWrapper_clarification}>
+                  {service.teaser.span}
+                </span>
+                <h2>{service.title}</h2>
+                <p>{service.teaser.paragraph}</p>
+                <a>
+                  <span>{service.teaser.cta}</span>
+                  <img
+                    src={require("../../public/icons/arrow.svg")}
+                    alt="arrow right"
+                    width="24px"
+                    height="14px"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>

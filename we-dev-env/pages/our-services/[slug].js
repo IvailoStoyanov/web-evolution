@@ -26,14 +26,25 @@ class Post extends React.Component {
     return (
       <>
         <Head>
-          <title>{data.longTitle}</title>
-          <meta name="description" content={data.titleDescription} />
+          <title>{data.title} | Web Evolution</title>
+          <meta
+            content={`${data.title} | Web Evolution`}
+            property="og:title"
+          />
+          <meta name="description" content={data.headDescription} />
+          <meta property="og:description" content={data.headDescription} />
+          <meta
+            content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+            property="og:image"
+          />
+          <meta property="og:type" content="website" />
+          <link rel="icon" href="/logo/we-logo.svg" />
         </Head>
 
         <header className={styles.serviceHeader}>
           <ImageWithOverlay
             src={data.img}
-            alt="hand holding phone showcasing Olga Golant's website"
+            alt={data.alt}
             height={35}
             width={35}
             thin

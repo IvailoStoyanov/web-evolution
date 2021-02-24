@@ -1,16 +1,14 @@
-import { FunctionComponent } from "react";
 import styles from "./IntroHeader.module.scss";
-import Image from "next/image";
 import Link from "next/link";
 import ImageWithOverlay from "../image-with-overlay/ImageWithOverlay";
 
 function IntroHeader(props: any) {
   return (
-    <header className={`${styles.intro} ${props.page === "about" ? styles.intro___about : null}`}>
+    <header className={`${styles.intro} ${props.page === "about" ? styles.intro___about : ''}`}>
       <ImageWithOverlay
         page={props.page}
         src={props.imageUrl}
-        alt="hand holding phone showcasing Olga Golant's website"
+        alt={props.imageAlt}
         height={35}
         width={35}
         reverse

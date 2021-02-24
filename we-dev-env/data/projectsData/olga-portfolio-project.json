@@ -1,15 +1,16 @@
 {
   "shortTitle": "Olga Golant - Portfolio",
+  "headDescription": "Freshly graduated architect Olga Golant hires us to design and develop a portfolio that helps her stand out among her peers.",
   "url": "/our-projects/olga-portfolio-project",
   "services": "Design, Development, Optimisation",
   "img": "mac-markup.jpg",
   "width": "480",
   "height": "330",
-  "alt": "iamge of the outside facade of the building",
+  "alt": "Olga Golant's website displayed on a macbook placed on a wooden table",
   "projectPageInfo": {
     "date": "30/11/2020",
     "longTitle": "Olga Golant Architect Portfolio",
-    "solvingQuestion": "How can an architect stand out in a sea of portfolios ?",
+    "solvingQuestion": "How can an architect stand out in a sea of portfolios?",
     "client": "Olga Golant",
     "clientImage": "olga.jpg",
     "clientTestimonial": "Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Amet, consectetur adipiscing elit. ",

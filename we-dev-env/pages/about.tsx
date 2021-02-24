@@ -5,7 +5,21 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>About us</title>
+        <title>About us | Web Evolution</title>
+        <meta content="About us | Web Evolution" property="og:title" />
+        <meta
+          name="description"
+          content="Read bout the establishment of Web Evolution and the developer specialist behind it."
+        />
+        <meta
+          property="og:description"
+          content="Read bout the establishment of Web Evolution and the developer specialist behind it."
+        />
+        <meta
+          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          property="og:image"
+        />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
 
@@ -13,9 +27,9 @@ export default function Home() {
         page="about"
         headlineSmall="Digital Agency"
         imageUrl="other/ivo-mugshot.jpg"
-        imageAlt="A mugshot of the founder of Web Evolution"
+        imageAlt="A mugshot of the founder of Web Evolution - Ivaylo Stoyanov Stoyanov"
         logoUrl="/logo/we-logo.svg"
-        paragraph="Web Evolution was esatblished 2021 by Ivaylo Stoyanov - Link to LinkedIn. With a Bchelor of Science - BS, Web Development and a couple of years of experience in the industry behind his back, Ivaylo decides to branch out and create a digital agency that cares."
+        paragraph="Web Evolution was esatblished 2021 by Ivaylo Stoyanov. With a Bchelor of Science - BS, Web Development at Manchester Metropolitan University and a couple of years of experience in the German industry behind his back, Ivaylo decides to branch out and create a digital agency that cares."
       />
       <main>
         <div className="centeredContent centeredContent___about">
@@ -28,10 +42,10 @@ export default function Home() {
               During his university years Ivaylo was also the winner of O’REILLY
               Web Design Competition 2018 where students were critiqued by
               number of web professionals on their coursework. The external
-              judges were asked to rate according to the highest web standards
-              and we at Web Evolution strictly obide by the current standards
-              whilst keeping things new and robust through a build process with
-              the latest frameworks.
+              judges were asked to rate according to the current, highest web
+              standards and we at Web Evolution strictly obide by them whilst
+              keeping things new and robust through a build process with the
+              latest frameworks.
             </p>
           </div>
           <p>

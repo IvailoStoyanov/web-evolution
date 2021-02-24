@@ -11,8 +11,16 @@ const Post = ({ contents }) => {
   return (
     <>
       <Head>
-        <title>{data.projectPageInfo.longTitle}</title>
-        <meta name="description" content={data.titleDescription} />
+        <title>{data.projectPageInfo.longTitle} | Web Evolution</title>
+        <meta content={`${data.title} | Web Evolution`} property="og:title" />
+        <meta name="description" content={data.headDescription} />
+        <meta property="og:description" content={data.headDescription} />
+        <meta
+          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          property="og:image"
+        />
+        <meta property="og:type" content="website" />
+        <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
 
       <header className={styles.header}>
@@ -114,7 +122,7 @@ const Post = ({ contents }) => {
             })}
           </div>
         </div>
-          <CtaTeaser
+        <CtaTeaser
           headline="Focus on creating the right product for the right user."
           paragraph="It is not just about developing the website. It is about finding the right solution to the problem and solving it with the most optimal amount of resourcess and effort. "
           ctaButtonText="View our services"

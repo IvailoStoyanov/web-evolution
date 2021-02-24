@@ -11,8 +11,24 @@ export default function Projects(props: any) {
   return (
     <>
       <Head>
-        <title>WRITE A GOOD TITLE</title>
-        <meta name="description" content="WRITE A GOOD DESCRIPTION" />
+        <title>Clients & Projects: see future-proof solutions for our past clients</title>
+        <meta
+          content="Clients & Projects: see future-proof solutions for our past clients"
+          property="og:title"
+        />
+        <meta
+          name="description"
+          content="We work with clients from diverse markets - check out the solutions for their problems"
+        />
+        <meta
+          property="og:description"
+          content="We work with clients from diverse markets - check out the solutions for their problems"
+        />
+        <meta
+          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          property="og:image"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <header className={styles.header}>

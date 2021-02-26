@@ -1,9 +1,12 @@
 @import "../../styles/breakpoints.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/animations.scss";
 
 .header {
   background: $white;
   padding: 9vh 20px 0 20px;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 0.6s forwards;
 
   @media screen and (min-width: $break-to-desktop) {
     h1,
@@ -32,6 +35,8 @@
 .content {
   background: $white;
   padding-bottom: 30px;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 1.3s forwards;
 
   @media screen and (min-width: $break-to-desktop) {
     padding: 0;

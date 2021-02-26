@@ -1,9 +1,12 @@
 @import "../../styles/colors.scss";
 @import "../../styles/breakpoints.scss";
+@import "../../styles/animations.scss";
 
 .intro {
   background: $white;
   padding-bottom: 60px;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 0.6s forwards;
 
   @media screen and (min-width: $break-to-desktop) {
     display: grid;
@@ -42,12 +45,6 @@
         padding-bottom: 40px;
         grid-column-start: 2;
         max-width: 70%;
-      }
-    }
-
-    a {
-      @media screen and (min-width: $break-to-desktop) {
-        grid-column-start: 2;
       }
     }
   }

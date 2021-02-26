@@ -4,12 +4,12 @@ import Link from "next/link";
 function Layout(props: { children: {} }) {
   return (
     <div>
-      {/* <a href="#navigation" className="skipLink">
+      <a href="#navigation" className="skipLink">
         skip to nav
       </a>
       <a href="#content" className="skipLink">
         skip to content
-      </a> */}
+      </a>
 
       <Navigation />
 
@@ -17,7 +17,7 @@ function Layout(props: { children: {} }) {
 
       <footer className="footer">
         <div className="footer_container">
-          <div className="footer_col">
+          <div className="footer_logoAndWordMark">
             <Link href="/">
               <a className="footer_logo">
                 <img
@@ -28,24 +28,22 @@ function Layout(props: { children: {} }) {
                 />
               </a>
             </Link>
-            <div className="footer_location">
-              <h3>Web Evolution</h3>
-              <p>
-                Str. Liditse 7 <br />
-                Bulgaria - Sofia, 1113
-              </p>
-            </div>
+            <p>web evolution</p>
           </div>
-          <div className="footer_col">
-            <div className="footer_contact">
-              <h3>Contact</h3>
-              <p>
-                <a href="tel:+359 (0)886020965">+359 (0)886020965</a>
-              </p>
+          <div className="footer_contact">
+            <h3>Contact</h3>
+            <p className="footer_address">
+              Str. Liditse 7 <br />
+              Bulgaria - Sofia, 1113
+            </p>
+            <div className="footer_phoneAndMail">
               <p>
                 <a href="mailto:i.stoyanov.work@gmail.com">
                   i.stoyanov.work@gmail.com
                 </a>
+              </p>
+              <p>
+                <a href="tel:+359 (0)886020965">+359 (0)886020965</a>
               </p>
             </div>
           </div>

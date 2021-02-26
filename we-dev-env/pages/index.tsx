@@ -9,7 +9,7 @@ export default function Home(props: any) {
   // console.log(public/images/other/share.jpg);
   
   return (
-    <div>
+    <div id="content">
       <Head>
         <title>Web Evolution: A digital agency that cares</title>
         <meta

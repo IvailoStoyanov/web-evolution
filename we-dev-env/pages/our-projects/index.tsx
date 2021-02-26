@@ -5,7 +5,6 @@ import WorkTeasers from "../../components/work-teasers/WorkTeasers";
 import slugsInterface from "../../Interfaces/Interfaces";
 import styles from "./ProjectPage.module.scss";
 
-
 export default function Projects(props: slugsInterface) {
   const { projectsData } = props;
 

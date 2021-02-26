@@ -1,4 +1,4 @@
 export default interface slugsInterface {
-    projectsData?: [];
-    servicesData?: [];
-  }
+  projectsData?: [];
+  servicesData?: [];
+}

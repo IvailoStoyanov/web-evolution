@@ -15,7 +15,11 @@ interface HeaderInterface {
 
 function IntroHeader(props: HeaderInterface) {
   return (
-    <header className={`${styles.intro} ${props.page === "about" ? styles.intro___about : ''}`}>
+    <header
+      className={`${styles.intro} ${
+        props.page === "about" ? styles.intro___about : ""
+      }`}
+    >
       <ImageWithOverlay
         page={props.page}
         src={props.imageUrl}

@@ -13,16 +13,14 @@ interface ServiceItemProps {
 
 class ServiceItem extends React.Component<ServiceItemProps> {
   togglePop = () => {
-    this.props.toggleFormPop()
+    this.props.toggleFormPop();
   };
-  
+
   render() {
     const { post } = this.props;
 
     return (
-      <div
-        className={`${styles.serviceItem}`}
-      >
+      <div className={`${styles.serviceItem}`}>
         <div className={styles.imageWrapper}>
           <img
             src={require(`../../public/images/our-services/${post.image}`)}

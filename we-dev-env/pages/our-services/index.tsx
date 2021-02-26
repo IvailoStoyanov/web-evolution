@@ -2,13 +2,14 @@ import Head from "next/head";
 import fs from "fs";
 import ServiceTeasers from "../../components/service-teasers/ServiceTeasers";
 import WorkTeasers from "../../components/work-teasers/WorkTeasers";
-// import WorkPageProps from "../../interfaces/interfaces";
+import slugsInterface from "../../Interfaces/Interfaces";
 import styles from "./ServicesPage.module.scss";
 
-export default function Projects(props: any) {
-  const { projectsData } = props;
+export default function Projects(props: slugsInterface) {
+  const { projectsData, servicesData } = props;
 
   return (
+    
     <>
       <Head>
         <title>Services: See how we can evolve your business in the digital world</title>
@@ -38,7 +39,7 @@ export default function Projects(props: any) {
 
       <main className={styles.content}>
         <ServiceTeasers
-          data={props.servicesData}
+          data={servicesData}
         />
         <WorkTeasers data={projectsData} headline="Our work" />
       </main>

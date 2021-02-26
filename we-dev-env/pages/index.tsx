@@ -3,12 +3,14 @@ import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
 import CtaTeaser from "../components/cta-teaser/CtaTeaser";
 import WorkTeasers from "../components/work-teasers/WorkTeasers";
+import slugsInterface from "../Interfaces/Interfaces"
 import fs from "fs";
 
-export default function Home(props: any) {
-  // console.log(public/images/other/share.jpg);
+
+export default function Home(props: slugsInterface) {
   
   return (
+    
     <div id="content">
       <Head>
         <title>Web Evolution: A digital agency that cares</title>

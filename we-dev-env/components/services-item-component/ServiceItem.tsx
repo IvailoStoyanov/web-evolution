@@ -1,21 +1,21 @@
-import React, { createRef } from "react";
+import React from "react";
 import styles from "./ServiceItem.module.scss";
-import Link from "next/link";
 
 interface ServiceItemProps {
-  headline?: string;
-  paragraph?: string;
-  ctaButtonText?: string;
-  post?: any;
+  post: {
+    image: string;
+    alt: string;
+    headline: string;
+    paragraph: string;
+  };
   toggleFormPop?: Function;
 }
 
 class ServiceItem extends React.Component<ServiceItemProps> {
-
   togglePop = () => {
     this.props.toggleFormPop()
   };
-
+  
   render() {
     const { post } = this.props;
 

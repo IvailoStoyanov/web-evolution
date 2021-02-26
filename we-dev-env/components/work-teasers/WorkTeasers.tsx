@@ -1,7 +1,13 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./WorkTeasers.module.scss";
-class WorkTeasers extends React.Component<any> {
+
+interface WorkTeaserInterface {
+  headline?: string;
+  data: [];
+  showAll?: boolean;
+}
+class WorkTeasers extends React.Component<WorkTeaserInterface> {
   render() {
     const { headline, data, showAll } = this.props;
 

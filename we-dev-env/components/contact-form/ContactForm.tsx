@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./ContactForm.module.scss";
 
-interface ContactFormProps {}
-
-class ContactForm extends React.Component<ContactFormProps> {
+class ContactForm extends React.Component {
   render() {
     return (
       <>

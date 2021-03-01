@@ -1,6 +1,7 @@
 @import "./fonts.scss";
 @import "./colors.scss";
 @import "./breakpoints.scss";
+@import "./animations.scss";
 
 html,
 body {
@@ -8,7 +9,7 @@ body {
   margin: 0;
   font-family: $main;
   font-size: 18.5px;
-  background: $light-gray;
+  background: $white;
 }
 
 h1,
@@ -199,15 +200,31 @@ a {
       opacity: 0.8;
     }
   }
+
+  &___privacy {
+    h1 {
+      padding-top: 70px;
+    }
+
+    h2 {
+      font-size: calc(34px + 8 * ((100vw - 576px) / 1024));
+      padding-top: 40px;
+    }
+
+    h3 {
+      padding-top: 40px;
+      padding-bottom: 15px;
+    }
+
+    a {
+      color: $blue;
+    }
+  }
 }
 
 .susscessMessageWrapper {
   background: $white;
   padding: 70px 20px 100px 20px;
-
-  @media screen and (min-width: $break-to-desktop) {
-    padding: 10% 20px 15% 20px;
-  }
 
   h1,
   h2,
@@ -225,11 +242,17 @@ a {
   h2 {
     font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
   }
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 10% 20px 15% 20px;
+  }
 }
 
 .contactPageHeader {
   padding: 9vh 20px 0 20px;
   background: $white;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 0.6s forwards;
 
   p {
     padding-bottom: 10px;
@@ -257,6 +280,8 @@ a {
 .contactPage {
   padding: 20px 20px 70px 20px;
   background: $white;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 1.3s forwards;
 
   .phoneWrapper {
     padding: 50px 0 10px 0;
@@ -289,35 +314,53 @@ a {
 }
 
 .footer {
-  background: $dark-gray;
+  background: $black;
   color: $white;
   padding: 50px 0 40px 0;
+  font-weight: 300;
 
   @media screen and (min-width: $break-to-desktop) {
-    padding: 60px 0 20px 0;
+    padding: 60px 0;
   }
 
   @media screen and (min-width: $break-to-big-desktop) {
-    padding: 90px 0 20px 0;
+    padding: 90px 0;
   }
 
   a {
     color: $white;
   }
 
+  p {
+    font-weight: 300;
+  }
+
+  &_logoAndWordMark {
+    p {
+      padding-top: 10px;
+      font-size: 16px;
+      text-align: center;
+      width: 100px;
+      font-weight: 400;
+    }
+  }
+
   &_container {
     padding: 0 20px;
   }
 
-  &_location,
-  &_contact,
   &_info {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   &_contact {
+    margin-top: 50px;
+    h3 {
+      padding-bottom: 20px;
+      font-size: 30px;
+    }
     p {
-      margin: 10px auto 20px auto;
+      margin-bottom: 15px;
     }
   }
 
@@ -332,22 +375,36 @@ a {
   }
 
   @media screen and (min-width: $break-to-desktop) {
-    &_container {
+    &_contact {
+      margin-top: 70px;
       display: grid;
-      grid-auto-flow: row;
       grid-template-columns: 1fr 1fr 1fr;
     }
 
+    h3 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    &_address {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin: 0;
+    }
+
+    &_phoneAndMail {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
     &_contact {
-      margin-top: 0;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     &_info {
-      grid-row-start: 2;
-      grid-column-start: 1;
-      grid-column-end: 4;
       text-align: right;
-      margin-top: 60px;
       font-size: 0.7rem;
 
       p {
@@ -357,23 +414,47 @@ a {
   }
 
   @media screen and (min-width: $break-to-big-desktop) {
+    &_contact {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
     &_container {
       max-width: 1100px;
       margin: 0 auto;
     }
-
-    &_info {
-      margin-top: 90px;
-    }
   }
+
   @media screen and (min-width: $break-to-bigger-desktop) {
     &_container {
       max-width: 1190px;
     }
   }
+
   @media screen and (min-width: $break-to-biggest-desktop) {
     &_container {
       max-width: 1230px;
     }
   }
+}
+
+.skipLink {
+  position: fixed;
+  top: -30em;
+  background: none;
+  border: none;
+  color: $blue;
+  font-size: 16px;
+  padding: 15px 20px;
+  z-index: 9;
+
+  &:focus {
+    top: 0px;
+    background: $white;
+    border: 2px solid $blue;
+  }
+}
+
+::selection {
+  background: $yellow;
+  color: $black;
 }

@@ -68,7 +68,7 @@ class MainNavigation extends React.Component<
 
     if (window.innerWidth >= this.breakToDesktop) {
       this.setState(() => ({
-        mobileViewport: false
+        mobileViewport: false,
       }));
     }
   }

@@ -19,11 +19,11 @@
       grid-column-gap: 60px;
     }
   }
-  
+
   .intro {
     padding-bottom: 30px;
     max-width: 420px;
-    
+
     h2 {
       padding-bottom: 15px;
     }
@@ -64,9 +64,22 @@
       min-width: 125px;
       font-family: $main;
     }
-
     @media screen and (min-width: $break-to-desktop) {
       padding-bottom: 20px;
+    }
+  }
+
+  .privacyPolicy {
+    input {
+      margin: 3px 5px 3px 0px;
+    }
+
+    a {
+      color: $blue;
+
+      &:hover {
+        color: $dark-blue;
+      }
     }
   }
 

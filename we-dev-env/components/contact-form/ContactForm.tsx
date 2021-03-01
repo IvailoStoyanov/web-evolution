@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./ContactForm.module.scss";
 
-interface ContactFormProps {}
-
-class ContactForm extends React.Component<ContactFormProps> {
+class ContactForm extends React.Component {
   render() {
     return (
       <>
@@ -53,9 +51,9 @@ class ContactForm extends React.Component<ContactFormProps> {
                 <textarea name="story" required></textarea>
               </div>
               <label className={styles.privacyPolicy}>
-                <input type="checkbox" />
+                <input type="checkbox" required/>
                 <span>
-                  Yes I agree to Web Evolution's <a>Privacy Policy</a>
+                  Yes I agree to Web Evolution's <a href="/privacy-policy">Privacy Policy</a>
                 </span>
               </label>
               <input

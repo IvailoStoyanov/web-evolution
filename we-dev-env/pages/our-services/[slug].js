@@ -27,10 +27,7 @@ class Post extends React.Component {
       <>
         <Head>
           <title>{data.title} | Web Evolution</title>
-          <meta
-            content={`${data.title} | Web Evolution`}
-            property="og:title"
-          />
+          <meta content={`${data.title} | Web Evolution`} property="og:title" />
           <meta name="description" content={data.headDescription} />
           <meta property="og:description" content={data.headDescription} />
           <meta

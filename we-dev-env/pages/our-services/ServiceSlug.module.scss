@@ -1,9 +1,12 @@
 @import "../../styles/breakpoints.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/animations.scss";
 
 .serviceHeader {
   background: $white;
   padding: 6vh 20px 0 20px;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 0.6s forwards;
 
   @media screen and (min-width: $break-to-desktop) {
     display: grid;

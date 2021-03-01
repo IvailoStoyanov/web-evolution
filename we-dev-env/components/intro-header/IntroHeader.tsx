@@ -2,9 +2,24 @@ import styles from "./IntroHeader.module.scss";
 import Link from "next/link";
 import ImageWithOverlay from "../image-with-overlay/ImageWithOverlay";
 
-function IntroHeader(props: any) {
+interface HeaderInterface {
+  page?: string;
+  headline?: string;
+  headlineSmall?: string;
+  imageUrl: string;
+  imageAlt: string;
+  logoUrl?: string;
+  paragraph: string;
+  ctaButtonText?: string;
+}
+
+function IntroHeader(props: HeaderInterface) {
   return (
-    <header className={`${styles.intro} ${props.page === "about" ? styles.intro___about : ''}`}>
+    <header
+      className={`${styles.intro} ${
+        props.page === "about" ? styles.intro___about : ""
+      }`}
+    >
       <ImageWithOverlay
         page={props.page}
         src={props.imageUrl}

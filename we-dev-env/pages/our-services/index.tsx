@@ -2,16 +2,18 @@ import Head from "next/head";
 import fs from "fs";
 import ServiceTeasers from "../../components/service-teasers/ServiceTeasers";
 import WorkTeasers from "../../components/work-teasers/WorkTeasers";
-// import WorkPageProps from "../../interfaces/interfaces";
+import slugsInterface from "../../Interfaces/Interfaces";
 import styles from "./ServicesPage.module.scss";
 
-export default function Projects(props: any) {
-  const { projectsData } = props;
+export default function Projects(props: slugsInterface) {
+  const { projectsData, servicesData } = props;
 
   return (
     <>
       <Head>
-        <title>Services: See how we can evolve your business in the digital world</title>
+        <title>
+          Services: See how we can evolve your business in the digital world
+        </title>
         <meta
           content="Services: See how we can evolve your business in the digital world"
           property="og:title"
@@ -24,7 +26,10 @@ export default function Projects(props: any) {
           property="og:description"
           content="Through a thorough evaluation and future-poroof solutions approach we help businesses solve problems they are aware of and find and fix the rest."
         />
-        <meta content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg" property="og:image" />
+        <meta
+          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          property="og:image"
+        />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
@@ -37,9 +42,7 @@ export default function Projects(props: any) {
       </header>
 
       <main className={styles.content}>
-        <ServiceTeasers
-          data={props.servicesData}
-        />
+        <ServiceTeasers data={servicesData} />
         <WorkTeasers data={projectsData} headline="Our work" />
       </main>
     </>
@@ -60,7 +63,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       projectsData,
-      servicesData
+      servicesData,
     },
   };
 };

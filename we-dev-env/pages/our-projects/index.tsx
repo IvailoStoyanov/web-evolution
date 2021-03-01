@@ -2,16 +2,18 @@ import Head from "next/head";
 import fs from "fs";
 import TextSectionWithCta from "../../components/text-section-with-cta/TextSectionWithCta";
 import WorkTeasers from "../../components/work-teasers/WorkTeasers";
-// import WorkPageProps from "../../interfaces/interfaces";
+import slugsInterface from "../../Interfaces/Interfaces";
 import styles from "./ProjectPage.module.scss";
 
-export default function Projects(props: any) {
+export default function Projects(props: slugsInterface) {
   const { projectsData } = props;
 
   return (
     <>
       <Head>
-        <title>Clients & Projects: see future-proof solutions for our past clients</title>
+        <title>
+          Clients & Projects: see future-proof solutions for our past clients
+        </title>
         <meta
           content="Clients & Projects: see future-proof solutions for our past clients"
           property="og:title"

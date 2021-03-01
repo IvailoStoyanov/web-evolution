@@ -3,13 +3,12 @@ import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
 import CtaTeaser from "../components/cta-teaser/CtaTeaser";
 import WorkTeasers from "../components/work-teasers/WorkTeasers";
+import slugsInterface from "../Interfaces/Interfaces";
 import fs from "fs";
 
-export default function Home(props: any) {
-  // console.log(public/images/other/share.jpg);
-  
+export default function Home(props: slugsInterface) {
   return (
-    <div>
+    <div id="content">
       <Head>
         <title>Web Evolution: A digital agency that cares</title>
         <meta
@@ -24,13 +23,11 @@ export default function Home(props: any) {
           property="og:description"
           content="Web Evolution is a digital agency that creates web solutions to solve user and client problems."
         />
-        <meta content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg" property="og:image" />
+        <meta
+          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          property="og:image"
+        />
         <meta property="og:type" content="website" />
-        {/* <meta
-          name="google-site-verification"
-          content="B2D8GVkpmVGhpcm5ebmk7kwWaDSZj8CNEhp7ZgU0kt0"
-        /> 
-        <link rel="canonical" href="https://web-evolution.co"></link> */}
         <link rel="icon" href="/logo/we-logo.svg" />
       </Head>
       <IntroHeader

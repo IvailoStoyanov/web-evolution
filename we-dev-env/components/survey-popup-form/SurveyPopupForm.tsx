@@ -16,7 +16,7 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
       <>
         <div
           className={`${styles.wrapper} ${
-            this.props.visible ? styles.wrapper___visible : ''
+            this.props.visible ? styles.wrapper___visible : ""
           }`}
         >
           <div className={styles.intro}>Get in touch</div>
@@ -51,9 +51,9 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
               <input type="number" name="phone" id="phone" required />
             </p>
             <label className={styles.privacyPolicy}>
-              <input type="checkbox" />
+              <input type="checkbox" required/>
               <span>
-                Yes I agree to Web Evolution's <a>Privacy Policy</a>
+                Yes I agree to Web Evolution's <a href="/privacy-policy">Privacy Policy</a>
               </span>
             </label>
             <input
@@ -76,7 +76,7 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
         </div>
         <div
           className={`${styles.overlay} ${
-            this.props.visible ? styles.overlay___visible : ''
+            this.props.visible ? styles.overlay___visible : ""
           }`}
           onClick={this.handleClick}
         ></div>

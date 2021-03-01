@@ -49,7 +49,7 @@ function Layout(props: { children: {} }) {
           </div>
           <div className="footer_info">
             <p>© 2021–Today Web Evolution Ltd.</p>
-            <a href="">Privacu Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
           </div>
         </div>
       </footer>

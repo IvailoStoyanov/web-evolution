@@ -24,7 +24,7 @@ export default function Home(props: slugsInterface) {
           content="Web Evolution is a digital agency that creates web solutions to solve user and client problems."
         />
         <meta
-          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          content="https://web-evolution.co/images/other/share.jpg"
           property="og:image"
         />
         <meta property="og:type" content="website" />

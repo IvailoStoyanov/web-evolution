@@ -27,7 +27,7 @@ export default function Projects(props: slugsInterface) {
           content="Through a thorough evaluation and future-poroof solutions approach we help businesses solve problems they are aware of and find and fix the rest."
         />
         <meta
-          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          content="https://web-evolution.co/images/other/share.jpg"
           property="og:image"
         />
         <meta property="og:type" content="website" />

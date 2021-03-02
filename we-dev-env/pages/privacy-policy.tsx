@@ -105,11 +105,11 @@ export default function FormSuccess() {
           <p>
             <strong>Website</strong> refers to Web Evolution, accessible from{" "}
             <a
-              href="https://tender-kepler-b39340.netlify.app"
+              href="https://web-evolution.co"
               rel="external nofollow noopener"
               target="_blank"
             >
-              https://tender-kepler-b39340.netlify.app
+              https://web-evolution.co
             </a>
           </p>
         </li>

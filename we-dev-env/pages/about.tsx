@@ -16,7 +16,7 @@ export default function Home() {
           content="Read bout the establishment of Web Evolution and the developer specialist behind it."
         />
         <meta
-          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          content="https://web-evolution.co/images/other/share.jpg"
           property="og:image"
         />
         <meta property="og:type" content="website" />

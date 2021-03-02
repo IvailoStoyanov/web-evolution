@@ -27,7 +27,7 @@ export default function Projects(props: slugsInterface) {
           content="We work with clients from diverse markets - check out the solutions for their problems"
         />
         <meta
-          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          content="https://web-evolution.co/images/other/share.jpg"
           property="og:image"
         />
         <meta property="og:type" content="website" />

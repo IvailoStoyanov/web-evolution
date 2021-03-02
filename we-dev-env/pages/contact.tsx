@@ -16,7 +16,7 @@ export default function Home() {
           content="Need to tell us about your chalanges? We would love to hear from you. Find all relevant contact information here or fill out a form."
         />
         <meta
-          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          content="https://web-evolution.co/images/other/share.jpg"
           property="og:image"
         />
         <meta property="og:type" content="website" />

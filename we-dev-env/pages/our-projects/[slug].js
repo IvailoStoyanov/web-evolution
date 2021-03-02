@@ -16,7 +16,7 @@ const Post = ({ contents }) => {
         <meta name="description" content={data.headDescription} />
         <meta property="og:description" content={data.headDescription} />
         <meta
-          content="https://tender-kepler-b39340.netlify.app/images/other/share.jpg"
+          content="https://web-evolution.co/images/other/share.jpg"
           property="og:image"
         />
         <meta property="og:type" content="website" />

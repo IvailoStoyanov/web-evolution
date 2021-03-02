@@ -13,6 +13,7 @@
   padding: 10px;
   border-radius: 5px;
   overflow: auto;
+  opacity: 0;
   visibility: hidden;
   color: $black;
   background: $white;
@@ -120,6 +121,7 @@
   }
 
   &___visible {
+    opacity: 1;
     visibility: visible;
     animation: appear-bottom 0.7s forwards;
   }

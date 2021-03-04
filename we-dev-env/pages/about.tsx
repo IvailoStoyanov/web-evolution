@@ -37,6 +37,7 @@ export default function Home() {
             <img
               src={require("../public/icons/OReilly-red.svg")}
               className="paragraphImageWrapper_OReillyLogo"
+              alt="O'Reilly logo"
             />
             <p>
               During his university years Ivaylo was also the winner of O’REILLY

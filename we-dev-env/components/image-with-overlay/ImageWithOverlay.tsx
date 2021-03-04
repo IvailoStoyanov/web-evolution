@@ -12,6 +12,7 @@ const ImageWithOverlay = ({ ...props }) => {
         className={`${styles.overlay} ${
           props.reverse ? styles.overlay___reverse : null
         }`}
+        alt="white overlay stares covering bottom part of image"
       />
 
       <picture>

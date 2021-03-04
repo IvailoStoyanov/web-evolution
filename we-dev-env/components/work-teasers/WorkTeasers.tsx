@@ -46,6 +46,8 @@ class WorkTeasers extends React.Component<WorkTeaserInterface> {
                 <img
                   src={require(`../../public/images/our-work-images/${project.img}`)}
                   alt={project.alt}
+                  width="700"
+                  height="330"
                 />
               </picture>
             </div>

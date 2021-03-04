@@ -44,7 +44,7 @@ export default function Projects(props: slugsInterface) {
         <WorkTeasers data={projectsData} showAll />
         <TextSectionWithCta
           grayBackground
-          headline="Do you have a projecy in mind?"
+          headline="Do you have a project in mind?"
           paragraphs={[
             "You can guide us through your problems and desired goals while we focus on the solution and create the best client experience.",
           ]}

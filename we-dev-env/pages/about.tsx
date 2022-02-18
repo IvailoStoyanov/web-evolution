@@ -29,7 +29,7 @@ export default function Home() {
         imageUrl="other/ivo-mugshot.jpg"
         imageAlt="A mugshot of the founder of Web Evolution - Ivaylo Stoyanov Stoyanov"
         logoUrl="/logo/we-logo.svg"
-        paragraph="Web Evolution was esatblished 2021 by Ivaylo Stoyanov. With a Bchelor of Science - BS, Web Development at Manchester Metropolitan University and a couple of years of experience in the German industry behind his back, Ivaylo decides to branch out and create a digital agency that cares."
+        paragraph="Web Evolution was esatblished 2021 by Ivaylo Stoyanov. With a Bachelor of Science - BS, Web Development at Manchester Metropolitan University and a couple of years of experience in the German industry behind his back, Ivaylo decides to branch out and create a digital agency that cares."
       />
       <main>
         <div className="centeredContent centeredContent___about">

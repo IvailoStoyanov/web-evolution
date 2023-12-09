@@ -1,0 +1,78 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+
+.serviceItem {
+  box-shadow: 4px 4px 14px 0 rgb(0 0 0 / 18%);
+  margin-bottom: 70px;
+  overflow: hidden;
+  display: block;
+  transition: box-shadow 0.7s cubic-bezier(0.322, 0.009, 0, 1.003);
+
+  .imageWrapper {
+    overflow: hidden;
+    position: relative;
+    background: $white;
+    align-items: center;
+
+    img {
+      width: 100%;
+      vertical-align: middle;
+      transition: all 0.6s cubic-bezier(0.322, 0.009, 0, 1.003);
+    }
+  }
+
+  .textWrapper {
+    position: relative;
+    padding: 20px 16px;
+    background: $white;
+    transition: all 0.6s cubic-bezier(0.322, 0.009, 0, 1.003);
+
+    h3 {
+      background: $white;
+      position: relative;
+    }
+
+    a {
+      margin-top: 30px;
+      position: static;
+
+      @media screen and (min-width: $break-to-desktop) {
+        position: absolute;
+      }
+    }
+  }
+
+  &:hover {
+    @media screen and (min-width: $break-to-desktop) {
+      .textWrapper {
+        transform: translateY(-90px);
+
+        h3::after {
+          color: transparent;
+        }
+
+        &_moreInfoText {
+          opacity: 1;
+          visibility: visible;
+          top: 100%;
+          transition: all 0.8s cubic-bezier(0.322, 0.009, 0, 1.003);
+        }
+      }
+
+      .imageWrapper {
+        img {
+          transform: translateY(-50px);
+        }
+      }
+
+      &:hover {
+        box-shadow: 4px 4px 14px 0 rgb(0 0 0 / 30%);
+
+        .textWrapper h3::after {
+          color: transparent;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

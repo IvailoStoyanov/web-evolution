@@ -1,0 +1,163 @@
+@import "../../styles/colors.scss";
+@import "../../styles/animations.scss";
+@import "../../styles/breakpoints.scss";
+
+.navigation {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  height: 100px;
+  padding: 0 20px;
+  background: $white;
+  z-index: 3;
+
+  @media screen and (min-width: $break-to-desktop) {
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    width: calc(100% - (100% - 1100px));
+    padding: 0 calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    width: calc(100% - (100% - 1190px));
+    padding: 0 calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    width: calc(100% - (100% - 1230px));
+    padding: 0 calc((100% - 1230px) / 2);
+  }
+
+  ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 90px 0 0 20px;
+    height: 100vh;
+    width: calc(85% - 50px);
+    background: #000000;
+    transform: translateX(-100);
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    z-index: 1;
+
+    @media screen and (min-width: $break-to-desktop) {
+      transform: translateX(0) !important;
+      position: relative;
+      display: flex;
+      flex-flow: row;
+      width: auto;
+      height: auto;
+      padding: 0;
+      background: $white;
+      transition: none;
+      opacity: 1 !important;
+    }
+
+    li {
+      list-style: none;
+      padding: 5px 0;
+
+      @media screen and (min-width: $break-to-desktop) {
+        padding: 0;
+        margin: auto 20px;
+      }
+
+      a {
+        color: $white;
+        font-weight: 700;
+        font-size: 36px;
+
+        @media screen and (min-width: $break-to-desktop) {
+          color: $black;
+          font-size: 18.5px;
+          padding: 38px 0;
+          transition: padding ease 0.2s;
+
+          &:hover {
+            padding-bottom: 27px;
+            border-bottom: 12px solid $yellow;
+          }
+        }
+      }
+
+      a.active {
+        color: $yellow;
+        border-bottom: 4px solid $yellow;
+      }
+
+      @media screen and (min-width: $break-to-desktop) {
+        a.active {
+          color: $black;
+          padding-bottom: 27px;
+
+          border-bottom: 12px solid $yellow;
+        }
+
+        a.active:hover {
+          padding-bottom: 32px;
+        }
+      }
+    }
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  &_mobileCloseWrapper {
+    position: absolute;
+    top: 90px;
+    right: calc(-50px - 4%);
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+
+  &_mobileCloseEffect {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    transform: scale(0);
+    opacity: 0.7;
+    background: $yellow;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    border-radius: 50%;
+  }
+
+  &_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: $black;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    visibility: hidden;
+  }
+
+  .logo {
+    margin: auto 0;
+  }
+
+  &___scrolled {
+    position: fixed;
+    animation: appear-top 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+}
+
+.navigationCap {
+  height: 100px;
+}
+
+.hamburger {
+  margin: auto 0;
+  background: none;
+  border: none;
+
+  @media screen and (min-width: $break-to-desktop) {
+    display: none;
+  }
+}

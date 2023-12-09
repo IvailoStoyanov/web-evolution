@@ -1,0 +1,108 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+
+.parentWrapper {
+  background: $white;
+  padding: 20px 20px 70px 20px;
+
+  @media screen and (min-width: $break-to-desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 40px;
+  }
+  
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 20px calc((100% - 1100px) / 2) 100px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 20px calc((100% - 1190px) / 2) 100px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 20px calc((100% - 1230px) / 2) 100px calc((100% - 1230px) / 2);
+  }
+
+  h2 {
+    padding-bottom: 20px;
+
+    @media screen and (min-width: $break-to-desktop) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  .teaserWrapper {
+    padding: 20px 0 45px 0;
+    display: block;
+    color: $black;
+
+    h3 {
+      padding: 25px 0 5px 0;
+      font-size: 23px;
+    }
+
+    &_imageWrapper {
+      overflow: hidden;
+    }
+    
+    .spanWrapper {
+      position: relative;
+
+      span {
+        font-size: 17px;
+        position: absolute;
+        transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+      }
+
+      .spanOnHover {
+        opacity: 0;
+        transform: translateY(25px);
+        font-weight: 900;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 40px;
+          height: 2px;
+          margin-left: 15px;
+          background: $blue;
+          transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      transition: all 0.4s ease;
+    }
+
+    &:hover {
+      img {
+        opacity: 0.8;
+        transform: scale(1.03);
+      }
+
+
+    .spanWrapper {
+
+      .spanBeforeHover {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      .spanOnHover {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    }
+  }
+}

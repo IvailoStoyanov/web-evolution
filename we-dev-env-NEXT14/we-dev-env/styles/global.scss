@@ -1,0 +1,464 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./breakpoints.scss";
+@import "./animations.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $main;
+  font-size: 18.5px;
+  background: $white;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $main;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
+}
+
+h2 {
+  font-size: calc(34px + 8 * ((100vw - 576px) / 1024));
+
+  @media screen and (min-width: $break-to-desktop) {
+    font-size: calc(40px + 8 * ((100vw - 576px) / 1024));
+  }
+}
+
+h3 {
+  font-size: 21px;
+}
+
+p {
+  font-family: $main;
+  font-weight: 400;
+  line-height: 1.4;
+  font-size: 16px;
+  word-spacing: 1px;
+  margin: 0;
+
+  @media screen and (min-width: $break-to-desktop) {
+    font-size: 17px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  position: absolute;
+  display: inline-block;
+  padding: 14px 40px 14px 18px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: $black;
+  color: $white;
+  font-weight: 700;
+
+  @media screen and (min-width: $break-to-desktop) {
+    &:hover {
+      cursor: pointer;
+      .button_text {
+        color: $black;
+      }
+      .button_circle {
+        transform: scale(40);
+      }
+    }
+  }
+
+  &_text {
+    position: relative;
+    transition: all ease-in-out 0.2s;
+
+    @media screen and (min-width: $break-to-desktop) {
+      z-index: 1;
+    }
+  }
+
+  &_circle {
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 12px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: $yellow;
+    border-radius: 50%;
+    transition: all ease-in-out 0.32s;
+  }
+
+  &___white {
+    background: $yellow;
+    border: 2px solid $yellow;
+
+    @media screen and (min-width: $break-to-desktop) {
+      &:hover {
+        border: 2px solid $yellow;
+        .button_text {
+          color: $white;
+        }
+      }
+    }
+    .button_text {
+      color: $black;
+    }
+
+    .button_circle {
+      background: $black;
+    }
+  }
+
+  &___blue {
+    background: $blue;
+    border: none;
+    padding: 14px 22px 14px 18px;
+
+    .button_circle {
+      display: none;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      &:hover {
+        background: $dark-blue;
+        .button_text {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &___transparent {
+    background: transparent;
+    border: 2px solid $white;
+
+    &:hover {
+      border: 2px solid $yellow;
+    }
+  }
+
+  &___small {
+    padding: 10px 30px 10px 14px;
+    font-size: 14px;
+
+    .button_circle {
+      width: 10px;
+      height: 10px;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      font-size: 18.5px;
+      padding: 14px 40px 14px 18px;
+    }
+  }
+}
+
+.centeredContent {
+  padding: 20px 20px 50px 20px;
+  background: $white;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 20px 17% 100px 17%;
+  }
+
+  &___about {
+    p {
+      padding-bottom: 30px;
+    }
+
+    .paragraphImageWrapper {
+      display: flex;
+      flex-flow: column;
+
+      @media screen and (min-width: $break-to-desktop) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        direction: rtl;
+        padding-bottom: 30px;
+
+        p {
+          text-align: left;
+        }
+      }
+
+      &_OReillyLogo {
+        max-width: calc(100% - 40px);
+        align-self: center;
+        margin-bottom: 50px;
+      }
+    }
+
+    .quotationParagraph {
+      color: $dark-gray;
+      opacity: 0.8;
+    }
+  }
+
+  &___privacy {
+    word-break: break-all;
+
+    h1 {
+      padding-top: 70px;
+    }
+
+    h2 {
+      font-size: calc(34px + 8 * ((100vw - 576px) / 1024));
+      padding-top: 40px;
+    }
+
+    h3 {
+      padding-top: 40px;
+      padding-bottom: 15px;
+    }
+
+    a {
+      color: $blue;
+    }
+  }
+}
+
+.susscessMessageWrapper {
+  background: $white;
+  padding: 70px 20px 100px 20px;
+
+  h1,
+  h2,
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 18px;
+    color: $green;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 10% 20px 15% 20px;
+  }
+}
+
+.contactPageHeader {
+  padding: 9vh 20px 0 20px;
+  background: $white;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 0.6s forwards;
+
+  p {
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    h1 {
+      max-width: 65%;
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 10vh calc((100% - 1100px) / 2) 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 11vh calc((100% - 1190px) / 2) 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 11vh calc((100% - 1230px) / 2) 20px calc((100% - 1230px) / 2);
+  }
+}
+
+.contactPage {
+  padding: 20px 20px 70px 20px;
+  background: $white;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 1.3s forwards;
+
+  .phoneWrapper {
+    padding: 50px 0 10px 0;
+
+    h2 {
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 25px;
+    }
+
+    @media screen and (min-width: $break-to-desktop) {
+      padding: 70px 0;
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 20px calc((100% - 1230px) / 2);
+  }
+}
+
+.footer {
+  background: $black;
+  color: $white;
+  padding: 50px 0 40px 0;
+  font-weight: 300;
+
+  @media screen and (min-width: $break-to-desktop) {
+    padding: 60px 0;
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 90px 0;
+  }
+
+  a {
+    color: $white;
+  }
+
+  p {
+    font-weight: 300;
+  }
+
+  &_logoAndWordMark {
+    p {
+      padding-top: 10px;
+      font-size: 16px;
+      text-align: center;
+      width: 100px;
+      font-weight: 400;
+    }
+  }
+
+  &_container {
+    padding: 0 20px;
+  }
+
+  &_info {
+    margin-top: 20px;
+  }
+
+  &_contact {
+    margin-top: 50px;
+    h3 {
+      padding-bottom: 20px;
+      font-size: 30px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  &_info {
+    padding-top: 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid $gray;
+
+    p {
+      padding-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    &_contact {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    h3 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    &_address {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin: 0;
+    }
+
+    &_phoneAndMail {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+
+  @media screen and (min-width: $break-to-desktop) {
+    &_contact {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &_info {
+      text-align: right;
+      font-size: 0.7rem;
+
+      p {
+        float: left;
+      }
+    }
+  }
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    &_contact {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    &_container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    &_container {
+      max-width: 1190px;
+    }
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    &_container {
+      max-width: 1230px;
+    }
+  }
+}
+
+.skipLink {
+  position: fixed;
+  top: -30em;
+  background: none;
+  border: none;
+  color: $blue;
+  font-size: 16px;
+  padding: 15px 20px;
+  z-index: 9;
+
+  &:focus {
+    top: 0px;
+    background: $white;
+    border: 2px solid $blue;
+  }
+}
+
+::selection {
+  background: $yellow;
+  color: $black;
+}

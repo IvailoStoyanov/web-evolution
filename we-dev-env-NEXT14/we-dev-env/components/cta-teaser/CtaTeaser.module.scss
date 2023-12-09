@@ -1,0 +1,61 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+
+.wrapper {
+  padding: 50px 20px 60px 20px;
+  background: $white;
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 50px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 50px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 50px calc((100% - 1230px) / 2);
+  }
+
+  
+  &_container {
+    position: relative;
+    padding: 20px 14px 75px 14px;
+    background: $black;
+    color: $white;
+    
+    @media screen and (min-width: $break-to-tablet){
+      padding: 40px 30px 85px 30px;
+      background-image: url("/icons/survey-overlay.svg");
+      background-size: cover;
+      background-position: bottom;
+
+      h2, p {
+        max-width: 77%;
+        z-index: 2;
+      }
+    }
+    
+    @media screen and (min-width: $break-to-big-desktop) {
+      padding: 50px 40px 105px 40px;
+
+      h2, p {
+        max-width: 60%;
+      }
+    }
+
+  }
+
+  p {
+    padding-bottom: 30px;
+  }
+
+  a {
+    color: $yellow;
+    cursor: pointer;
+  }
+
+  &___gray {
+    background: $light-gray;
+  }
+}

@@ -1,0 +1,115 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+
+.wrapper {
+  padding: 20px;
+  background: $white;
+
+  @media screen and (min-width: $break-to-big-desktop) {
+    padding: 20px calc((100% - 1100px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-bigger-desktop) {
+    padding: 20px calc((100% - 1190px) / 2);
+  }
+
+  @media screen and (min-width: $break-to-biggest-desktop) {
+    padding: 20px calc((100% - 1230px) / 2);
+  }
+
+  .serviceWrapper {
+    margin-bottom: 60px;
+    cursor: pointer;
+
+    @media screen and (min-width: $break-to-desktop) {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+
+      &_textWrapper {
+        padding-left: 60px;
+        margin: auto 0;
+      }
+
+      &___reverse {
+        direction: rtl;
+
+        .serviceWrapper_textWrapper {
+          direction: ltr;
+          padding: 0 60px 0 0;
+        }
+      }
+    }
+
+    @media screen and (min-width: $break-to-big-desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &_clarification {
+      display: block;
+      padding: 20px 0 10px 0;
+      font-size: 17px;
+    }
+
+    p,
+    h2 {
+      padding-bottom: 30px;
+    }
+
+    a {
+      color: $black;
+      font-weight: 700;
+      display: inline-block;
+      transition: all 0.15s ease-in-out;
+
+      span {
+        padding-right: 7px;
+        transition: padding 0.15s ease;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+    }
+
+    picture {
+      img {
+        transition: all 1s ease;
+      }
+    }
+
+    &:hover {
+      // .serviceWrapper_clarification {
+      //   color: $blue;
+      // }
+      picture {
+        img {
+          opacity: 0.8;
+          transform: scale(1.03);
+        }
+      }
+      a {
+        span {
+          color: $blue;
+          padding-right: 12px;
+        }
+      }
+    }
+  }
+
+  &.grayBackground {
+    background: $gray;
+    margin: 0 20px 20px 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @media screen and (min-width: $break-to-desktop) {
+      margin: 0;
+      padding-top: 70px;
+      padding-bottom: 70px;
+
+      p {
+        width: 60%;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../styles/colors.scss";
+@import "../../styles/breakpoints.scss";
+@import "../../styles/animations.scss";
+
+.intro {
+  background: $white;
+  padding-bottom: 60px;
+  opacity: 0;
+  animation: appear-bottom 0.7s ease 0.6s forwards;
+
+  @media screen and (min-width: $break-to-desktop) {
+    display: grid;
+    grid-template-columns: 45% 55%;
+  }
+
+  .textWrapper {
+    padding: 40px 20px;
+    margin: auto 0;
+
+    @media screen and (min-width: $break-to-desktop) {
+      padding: 40px 60px;
+    }
+
+    @media screen and (min-width: $break-to-big-desktop) {
+      padding: 40px 10%;
+    }
+
+    h1 {
+      @media screen and (min-width: $break-to-desktop) {
+        grid-column-start: 2;
+      }
+    }
+
+    .headlineSmall {
+      padding-top: 7px;
+      font-size: 18px;
+      color: $dark-gray;
+      opacity: 0.85;
+    }
+
+    p {
+      padding-bottom: 30px;
+
+      @media screen and (min-width: $break-to-desktop) {
+        padding-bottom: 40px;
+        grid-column-start: 2;
+        max-width: 70%;
+      }
+    }
+  }
+
+  &___about {
+    padding-bottom: 0;
+
+    @media screen and (min-width: $break-to-desktop) {
+      padding-bottom: 80px;
+    }
+    .textWrapper {
+      padding-bottom: 0;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./SurveyPopupForm.module.scss";
+import Image from "next/image";
 
 interface SurveyPopupFormProps {
   toggle?: Function;
@@ -65,11 +66,11 @@ class SurveyPopupForm extends React.Component<SurveyPopupFormProps> {
           </form>
 
           <div className={styles.closeSurveyIcon}>
-            <img
-              src={require("../../public/icons/close-survey.svg")}
+            <Image
+              src="/icons/close-survey.svg"
               alt="close form popup"
-              height="20px"
-              width="20px"
+              height={20}
+              width={20}
               onClick={this.handleClick}
             />
           </div>

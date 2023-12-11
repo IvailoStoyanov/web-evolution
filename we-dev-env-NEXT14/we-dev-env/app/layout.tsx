@@ -54,7 +54,7 @@ export default function RootLayout({
             <div className="footer_logoAndWordMark">
               <Link href="/" className="footer_logo">
                 <Image
-                  src="../public/logo/we-logo-white.svg"
+                  src="/logo/we-logo-white.svg"
                   alt="Web Evolution Logo"
                   width={100}
                   height={50}

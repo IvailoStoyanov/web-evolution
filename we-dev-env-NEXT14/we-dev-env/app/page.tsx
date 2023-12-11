@@ -2,12 +2,29 @@ import IntroHeader from "../components/intro-header/IntroHeader";
 import TextSectionWithCta from "../components/text-section-with-cta/TextSectionWithCta";
 import CtaTeaser from "../components/cta-teaser/CtaTeaser";
 import WorkTeasers from "../components/work-teasers/WorkTeasers";
-import slugsInterface from "../Interfaces/Interfaces";
 import fs from "fs";
 import '../styles/global.scss'
 import Link from "next/link";
 
-export default function Home() {
+
+// Migrate to Helper functions?
+const generateStaticParams = () => {
+  const fileNames = fs.readdirSync("data/projectsData");
+  const projectsData = fileNames.map((fileName) => {
+    return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
+  });
+
+  return {
+    props: {
+      projectsData,
+    },
+  };
+};
+
+// export default function Home() {
+export const Home = () => {
+  const projectsData = generateStaticParams();
+
   return (
     <>
       <IntroHeader
@@ -32,24 +49,10 @@ export default function Home() {
           paragraph="No matter the size of the business there is allways room to improve. Looking at your business data we can highlighting potential opportunities to grow."
           ctaButtonText="Request a survey"
         />
-        {/* <WorkTeasers data={props.projectsData} headline="Our work" /> */}
-
+        <WorkTeasers data={projectsData} headline="Our work" />
       </main>
     </>
   )
 }
 
-// export const generateStaticParams = () => {
-//   const fileNames = fs.readdirSync("data/projectsData");
-//   const projectsData = fileNames.map((fileName) => {
-//     return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
-//   });
-
-//   return {
-//     props: {
-//       projectsData,
-//     },
-//   };
-// };
-
-// console.log(generateStaticParams());
+export default Home;

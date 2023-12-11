@@ -21,6 +21,10 @@ h3 {
   padding-bottom: 30px;
 }
 
+span {
+  font-family: $main;
+}
+
 h1 {
   font-size: calc(46px + 14 * ((100vw - 576px) / 1024));
 }
@@ -62,6 +66,8 @@ a {
   overflow: hidden;
   background: $black;
   color: $white;
+  font-family: $main;
+  font-size: 18.5px;
   font-weight: 700;
 
   @media screen and (min-width: $break-to-desktop) {

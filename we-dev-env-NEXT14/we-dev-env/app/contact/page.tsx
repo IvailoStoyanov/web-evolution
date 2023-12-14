@@ -1,5 +1,5 @@
 import Head from "next/head";
-import ContactForm from "../components/contact-form/ContactForm";
+import ContactForm from "../../components/contact-form/ContactForm";
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
         <ContactForm />
         <div className="phoneWrapper">
           <h2>Give us a call</h2>
-          <p>+359 (0)886020965 </p>
+          <p>+359 (0)886020965</p>
         </div>
       </main>
     </div>

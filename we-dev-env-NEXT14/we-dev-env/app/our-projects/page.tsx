@@ -5,12 +5,21 @@ import WorkTeasers from "../../components/work-teasers/WorkTeasers";
 import slugsInterface from "../../Interfaces/Interfaces";
 import styles from "./ProjectPage.module.scss";
 
-export default function Projects(props: slugsInterface) {
-  const { projectsData } = props;
+const generateStaticParams = () => {
+  const fileNames = fs.readdirSync("data/projectsData");
+  const projectsData = fileNames.map((fileName) => {
+    return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
+  });
+
+  return projectsData;
+};
+
+export default function Projects() {
+  const projectsData = generateStaticParams();
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>
           Clients & Projects: see future-proof solutions for our past clients
         </title>
@@ -31,7 +40,7 @@ export default function Projects(props: slugsInterface) {
           property="og:image"
         />
         <meta property="og:type" content="website" />
-      </Head>
+      </Head> */}
 
       <header className={styles.header}>
         <div className={styles.header_textContainer}>
@@ -41,7 +50,7 @@ export default function Projects(props: slugsInterface) {
       </header>
 
       <main className={styles.content}>
-        <WorkTeasers data={projectsData} showAll />
+        <WorkTeasers data={projectsData} />
         <TextSectionWithCta
           grayBackground
           headline="Do you have a project in mind?"
@@ -55,16 +64,3 @@ export default function Projects(props: slugsInterface) {
     </>
   );
 }
-
-// export const getStaticProps = async () => {
-//   const fileNames = fs.readdirSync("data/projectsData");
-//   const projectsData = fileNames.map((fileName) => {
-//     return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
-//   });
-
-//   return {
-//     props: {
-//       projectsData,
-//     },
-//   };
-// };

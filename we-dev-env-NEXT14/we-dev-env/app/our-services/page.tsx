@@ -5,12 +5,32 @@ import WorkTeasers from "../../components/work-teasers/WorkTeasers";
 import slugsInterface from "../../Interfaces/Interfaces";
 import styles from "./ServicesPage.module.scss";
 
-export default function Projects(props: slugsInterface) {
-  const { projectsData, servicesData } = props;
+
+//Migrate to helpr function
+const readData = (directory: string) => {
+  const fileNames = fs.readdirSync(directory);
+
+  return fileNames.map((fileName: string) =>  fs.readFileSync(`${directory}/` + fileName, "utf-8"))
+};
+
+// ToDo: Migrate to helper function
+const generateStaticParams = () => {
+  const projectsData = readData("data/projectsData");
+  const servicesData = readData("data/servicesData");
+
+  return {
+      projectsData,
+      servicesData,
+  };
+};
+
+const Projects = () => {
+
+  const {projectsData, servicesData} = generateStaticParams();
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>
           Services: See how we can evolve your business in the digital world
         </title>
@@ -32,7 +52,7 @@ export default function Projects(props: slugsInterface) {
         />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/logo/we-logo.svg" />
-      </Head>
+      </Head> */}
 
       <header className={styles.header}>
         <div className={styles.header_textContainer}>
@@ -43,27 +63,12 @@ export default function Projects(props: slugsInterface) {
 
       <main className={styles.content}>
         <ServiceTeasers data={servicesData} />
-        <WorkTeasers data={projectsData} headline="Our work" />
+        <WorkTeasers data={projectsData} headline="Our work"/>
       </main>
     </>
   );
 }
 
-// export const getStaticProps = async () => {
-//   const fileNames = fs.readdirSync("data/projectsData");
-//   const projectsData = fileNames.map((fileName) => {
-//     return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
-//   });
+export default Projects;
 
-//   const servicesFileNames = fs.readdirSync("data/servicesData");
-//   const servicesData = servicesFileNames.map((fileName) => {
-//     return fs.readFileSync("data/servicesData/" + fileName, "utf-8");
-//   });
 
-//   return {
-//     props: {
-//       projectsData,
-//       servicesData,
-//     },
-//   };
-// };

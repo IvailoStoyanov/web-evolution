@@ -3,9 +3,6 @@ import TextSectionWithCta from "../components/text-section-with-cta/TextSectionW
 import CtaTeaser from "../components/cta-teaser/CtaTeaser";
 import WorkTeasers from "../components/work-teasers/WorkTeasers";
 import fs from "fs";
-import '../styles/global.scss'
-import Link from "next/link";
-
 
 // Migrate to Helper functions?
 const generateStaticParams = () => {
@@ -14,14 +11,9 @@ const generateStaticParams = () => {
     return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
   });
 
-  return {
-    props: {
-      projectsData,
-    },
-  };
+  return projectsData;
 };
 
-// export default function Home() {
 export const Home = () => {
   const projectsData = generateStaticParams();
 

@@ -1,0 +1,31 @@
+{
+  "shortTitle": "Tasites - Digital Cupboard",
+  "headDescription": "Tasties - your digital coupboard that helps you track item quantity and your available food recipes.",
+  "url": "/our-projects/tasties-project",
+  "services": "Design, Development, Authentication",
+  "img": "tasties-mockup.svg",
+  "width": "480",
+  "height": "330",
+  "alt": "Tasties app displayed on a floating iphone between different shopping items",
+  "projectPageInfo": {
+    "date": "23/11/2022",
+    "longTitle": "Tasties - Your Digital Coupboard",
+    "solvingQuestion": "How can I remember all my recipes and track all the products for them?",
+    "client": "Ivaylo Stoyanov",
+    "clientImage": "olga.jpg",
+    "projectUrl": "https://tasties.netlify.com/",
+    "projectBrief": [
+      "Develop a comprehensive digital platform to simplify kitchen management, streamline recipe organization, and automate the creation of shopping lists."
+    ],
+    "projectApproach": [
+      "To achieve the objective of creating a comprehensive digital coupboard for Tasties, our approach revolved around a user-centric design. We prioritized an intuitive interface for the digital coupboard, ensuring effortless management of kitchen inventory.",
+      "The recipe management page focused on providing users with a creative space for brief recipe description, an image and the time needed to cook the dish. The smart shopping list feature employed advanced algorithms to analyze stored recipes, automating the process and enhancing the user's grocery shopping experience.", 
+      "Throughout development, we emphasized on the mobile platform, as the target user would ideally be carying his mobile device in the supermarket. We also focused on robust identification, and continuous user feedback to refine and optimize the platform so that each user can maintain their own set of recipes.",
+      "Because of the authentication requirements and the need of a database we decided that a dynamically  generated website will be a perfect fit and by using React Server Components it would be easier to maintain down the road."
+    ],
+    "projectIamgesUrls": [
+      "project-screens.svg",
+      "project-on-phone.svg"
+    ]
+  }
+}

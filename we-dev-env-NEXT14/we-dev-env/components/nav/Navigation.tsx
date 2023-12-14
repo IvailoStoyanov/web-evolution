@@ -10,8 +10,6 @@ const Navigation = () => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
 
   const handleHamburgerClick = () => {
-    console.log(isScrolled);
-    
     setIsMobileNavVisible(true);
   }
 

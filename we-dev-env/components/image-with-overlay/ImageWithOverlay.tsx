@@ -1,37 +1,50 @@
+import Image from "next/image";
 import styles from "./ImageWithOverlay.module.scss";
+import { ImageWithOverlayInterface } from "@/Interfaces/Interfaces";
 
-const ImageWithOverlay = ({ ...props }) => {
+const ImageWithOverlay = ({
+  thin,
+  serviceThin,
+  reverse,
+  src,
+  page,
+  alt,
+  width,
+  height,
+}: ImageWithOverlayInterface) => {
   return (
     <div
-      className={`${styles.wrapper} ${
-        props.thin ? styles.wrapper___thin : ""
-      } ${props.serviceThin ? styles.wrapper___serviceThin : ""}`}
+      className={`${styles.wrapper} ${thin && styles.wrapper___thin} ${serviceThin && styles.wrapper___serviceThin}`}
     >
-      <img
-        src={require("../../public/icons/overlay.svg")}
-        className={`${styles.overlay} ${
-          props.reverse ? styles.overlay___reverse : null
-        }`}
+      <Image
+        src={"/icons/overlay.svg"}
+        className={`${styles.overlay} ${reverse ? styles.overlay___reverse : null
+          }`}
         alt="white overlay stares covering bottom part of image"
+        width={width}
+        height={height}
       />
 
       <picture>
+        {/*
+        TODO:
         <source
-          srcSet={require(`../../public/images/${props.src}?webp`)}
+          srcSet={require(`../../public/images/${src}?webp`)}
           type="image/webp"
         />
         <source
-          srcSet={require(`../../public/images/${props.src}`)}
+          srcSet={require(`../../public/images/${src}`)}
           type="image/jpg"
-        />
-        <img
-          src={require(`../../public/images/${props.src}`)}
-          className={`${styles.image} ${
-            props.page === "about" ? styles.image___about : null
-          }`}
-          alt={props.alt}
-          width={props.width}
-          height={props.height}
+        /> */}
+        <Image
+          src={`/images/${src}`}
+          className={`${styles.image} ${page === "about" ? styles.image___about : null
+            }`}
+          alt={alt}
+          width={width}
+          height={height}
+          loading="lazy"
+          quality={100}
         />
       </picture>
     </div>

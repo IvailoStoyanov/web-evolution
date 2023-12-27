@@ -10,7 +10,7 @@ const ServiceTeasers = ({ data, page }: ServiceTeaseInterface) => {
   return (
     <div className={styles.wrapper}>
       {data.map((post, index: number) => {
-        const service: ServiceInterface = JSON.parse(post);
+        const service: ServiceInterface = post;
 
         return (
           <Link
@@ -21,8 +21,6 @@ const ServiceTeasers = ({ data, page }: ServiceTeaseInterface) => {
               page={page}
               src={service.img}
               alt={service.alt}
-              height={35}
-              width={35}
               reverse={!(index % 2 == 0)}
               serviceThin
             />

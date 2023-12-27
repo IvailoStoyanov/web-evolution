@@ -51,9 +51,31 @@ export interface SurveyPopupFormProps {
   toggle: Function;
   visible: boolean;
 }
+
+export interface WorkInterface {
+  title: string,
+  shortTitle?: string,
+  headDescription: string,
+  url: string,
+  services: string,
+  img: String,
+  width: number,
+  height: number,
+  alt: string,
+  projectPageInfo: {
+    date: string,
+    longTitle: string,
+    solvingQuestion: string,
+    client: string,
+    clientImage: string,
+    projectUrl: string,
+    projectBrief: string[],
+    projectApproach: string[],
+    projectIamgesUrls: string[]
+  }
+}
 export interface WorkTeaserInterface {
-  headline?: string;
-  data: string[];
+  data: WorkInterface[];
 }
 
 export interface TextSectionWithCtaInterface {
@@ -72,8 +94,9 @@ export interface ImageWithOverlayInterface {
   src: string,
   page?: string,
   alt: string,
-  width: number,
-  height: number,
+  width?: number,
+  height?: number,
+  fill?: boolean,
 }
 
 
@@ -101,10 +124,9 @@ export interface ServiceInterface {
     cta: string,
     ctaUrl: string,
   },
-
 }
 
 export interface ServiceTeaseInterface {
-  data: string[],
+  data: ServiceInterface[],
   page?: string,
 }

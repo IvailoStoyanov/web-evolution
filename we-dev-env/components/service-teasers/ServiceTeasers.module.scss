@@ -69,18 +69,14 @@
       padding-bottom: 30px;
     }
 
-    picture {
-      img {
-        transition: all 1s ease;
-      }
+    img {
+      transition: all 1s ease;
     }
 
     &:hover {
-      picture {
-        img {
-          opacity: 0.8;
-          transform: scale(1.03);
-        }
+      img:first-of-type {
+        opacity: 0.8;
+        transform: scale(1.03);
       }
 
       .serviceWrapper_cta {

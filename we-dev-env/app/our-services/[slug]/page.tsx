@@ -1,5 +1,4 @@
 import React from "react";
-import fs from "fs";
 import Link from "next/link";
 import ImageWithOverlay from "@/components/image-with-overlay/ImageWithOverlay";
 import { Metadata } from "next";
@@ -9,23 +8,15 @@ import styles from "./ServiceSlug.module.scss";
 import Image from "next/image";
 import ServicesFormWrapper from "@/components/ServicesFormWrapper";
 import { SlugPageProps } from "@/Interfaces/Interfaces";
-
-// MIGRATE
-const readData = (directory: string, slug: string) => {
-  const fileNames = fs.readdirSync(directory);
-
-  return slug ? fs.readFileSync(`${directory}/` + `${slug}.json`, "utf-8")
-    : fileNames.map((fileName) => fs.readFileSync(`${directory}/` + fileName, "utf-8"));
-};
+import { readData } from "@/utils/utils";
 
 const generateStaticParams = (slug: string) => {
-  //keep in mind this is single becauase it wants ony the slug
   const serviceData = readData("data/servicesData", slug);
 
-  return JSON.parse(serviceData as string);
+  return serviceData;
 };
 
-// Migrate to helper because of duplications
+//TODO: Migrate to helper because of duplications
 export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
   try {
     const { slug } = params;
@@ -59,8 +50,6 @@ const Post = async ({ params: { slug } }: SlugPageProps) => {
         <ImageWithOverlay
           src={serviceData.img}
           alt={serviceData.alt}
-          height={35}
-          width={35}
           thin
           reverse
         />
@@ -82,7 +71,6 @@ const Post = async ({ params: { slug } }: SlugPageProps) => {
             title="cotact page">
             {serviceData.introSurveyText}
           </Link>
-
         </div>
       </header>
 

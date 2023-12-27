@@ -52,8 +52,7 @@ const Navigation = () => {
 
       <nav
         id="navigation"
-        className={`${styles.navigation} ${isScrolled ? styles.navigation___scrolled : ""
-          }`}
+        className={`${styles.navigation} ${isScrolled && styles.navigation___scrolled}`}
       >
         <Link href="/" className={styles.logo}>
           <Image

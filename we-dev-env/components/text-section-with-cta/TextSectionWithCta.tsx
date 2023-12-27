@@ -15,8 +15,8 @@ const TextSectionWithCta = ({
   return (
     <div
       className={`${styles.wrapper} 
-      ${!!grayBackground ? `${styles.grayBackground}` : null} 
-      ${!!thin ? `${styles.wrapper___thin}` : null}
+      ${!!grayBackground && `${styles.grayBackground}`} 
+      ${!!thin && `${styles.wrapper___thin}`}
       `}
     >
       <h2>{headline}</h2>

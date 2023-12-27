@@ -2,26 +2,25 @@ import IntroHeader from "@/components/intro-header/IntroHeader";
 import TextSectionWithCta from "@/components/text-section-with-cta/TextSectionWithCta";
 import CtaTeaser from "@/components/cta-teaser/CtaTeaser";
 import WorkTeasers from "@/components/work-teasers/WorkTeasers";
-import fs from "fs";
+import { readData } from "@/utils/utils";
 
-// Migrate to Helper functions?
 const generateStaticParams = () => {
-  const fileNames = fs.readdirSync("data/projectsData");
-  const projectsData = fileNames.map((fileName) => {
-    return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
-  });
+  const projectsData = readData("data/projectsData");
 
-  return projectsData;
+  return {
+    projectsData,
+  };
+
 };
 
 export const Home = () => {
-  const projectsData = generateStaticParams();
+  const { projectsData } = generateStaticParams();
 
   return (
     <>
       <IntroHeader
         headline="We help others evolve in the digital world"
-        imageUrl="olga-project/home-hand-wide.jpg"
+        imageUrl="olga-portfolio-project/home-hand-wide.jpg"
         imageAlt="A hand holding up a mobile phone displaying one of the pages of our client's work on a faded green background."
         paragraph="While guiding you through the digital customer world we build amazing customer experiences and maintain a high quality standard."
         ctaButtonText="View our services"
@@ -44,7 +43,7 @@ export const Home = () => {
         <WorkTeasers data={projectsData} headline="Our work" />
       </main>
     </>
-  )
-}
+  );
+};
 
 export default Home;

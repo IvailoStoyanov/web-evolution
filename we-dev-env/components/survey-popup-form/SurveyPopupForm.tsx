@@ -11,7 +11,7 @@ const SurveyPopupForm = ({ toggle, visible }: SurveyPopupFormProps) => {
   return (
     <>
       <div
-        className={`${styles.wrapper} ${visible ? styles.wrapper___visible : ""}`}
+        className={`${styles.wrapper} ${visible && styles.wrapper___visible}`}
       >
         <div className={styles.intro}>Get in touch</div>
         <h2>Just fill in the form and we will be in touch.</h2>
@@ -69,7 +69,7 @@ const SurveyPopupForm = ({ toggle, visible }: SurveyPopupFormProps) => {
         </div>
       </div>
       <div
-        className={`${styles.overlay} ${visible ? styles.overlay___visible : ""}`}
+        className={`${styles.overlay} ${visible && styles.overlay___visible}`}
         onClick={handleClick}
       ></div>
     </>

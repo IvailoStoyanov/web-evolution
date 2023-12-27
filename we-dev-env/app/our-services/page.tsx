@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import fs from "fs";
 import ServiceTeasers from "@/components/service-teasers/ServiceTeasers";
 import WorkTeasers from "@/components/work-teasers/WorkTeasers";
 import styles from "./ServicesPage.module.scss";
+import { readData } from "@/utils/utils";
 
 export const metadata: Metadata = {
   title: 'Services: See how we can evolve your business in the digital world',
@@ -13,14 +13,6 @@ export const metadata: Metadata = {
   },
 };
 
-//Migrate to helpr function
-const readData = (directory: string) => {
-  const fileNames = fs.readdirSync(directory);
-
-  return fileNames.map((fileName: string) =>  fs.readFileSync(`${directory}/` + fileName, "utf-8"))
-};
-
-// ToDo: Migrate to helper functiond
 const generateStaticParams = () => {
   const projectsData = readData("data/projectsData");
   const servicesData = readData("data/servicesData");

@@ -38,7 +38,7 @@
     padding-bottom: 50px;
   }
 
-  &_imageWrapper {
+  &_ctaImageWrapper {
     position: relative;
     overflow: hidden;
     height: 40vh;
@@ -51,7 +51,7 @@
       object-fit: cover;
     }
 
-    &::before {
+    .imageWrapper::after {
       content: "";
       position: absolute;
       left: 0;
@@ -61,6 +61,7 @@
       background: $black;
       opacity: 0.8;
     }
+
 
     .heroTextWrapper {
       position: absolute;
@@ -174,6 +175,7 @@
   .projectScreens {
     img {
       width: 100%;
+      height: auto;
       padding-top: 50px;
     }
   }

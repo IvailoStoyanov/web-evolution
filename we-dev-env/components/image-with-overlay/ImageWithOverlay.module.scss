@@ -1,73 +1,171 @@
 @import "@/styles/breakpoints.scss";
 @import "@/styles/colors.scss";
 
+// .wrapperOld {
+//   position: relative;
+//   overflow: hidden;
+//   height: 40vh;
+
+//   @media screen and (min-width: $break-to-desktop) {
+//     height: 90vh;
+//     grid-row-start: 1;
+//     grid-row-end: 2;
+//   }
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+
+//     @media screen and (min-width: $break-to-desktop) {
+//       height: 100%;
+//     }
+//   }
+
+//   .image {
+//     object-fit: cover;
+//     top: 0;
+//     left: 0;
+
+//     &___about {
+//       object-position: 0px 30%;
+
+//       @media screen and (min-width: $break-to-desktop) {
+//         object-position: center;
+//       }
+//     }
+//   }
+
+// .overlay {
+//   height: auto;
+//   width: 70%;
+//   bottom: -2px;
+//   right: -1px;
+//   z-index: 1;
+//   object-fit: contain;
+
+//   @media screen and (min-width: $break-to-tablet) {
+//     width: 60%;
+//   }
+//   @media screen and (min-width: $break-to-desktop) {
+//     width: 70%;
+//   }
+
+//   &___reverse {
+//     right: auto;
+//     left: -1px;
+//     transform: matrix(-1, 0, 0, 1, 0, 0);
+//   }
+// }
+
+// &___thin {
+//   height: 20vh;
+
+//   @media screen and (min-width: $break-to-desktop) {
+//     height: 60vh;
+//   }
+// }
+
+// &___serviceThin {
+//   @media screen and (min-width: $break-to-desktop) {
+//     height: 70vh;
+//   }
+// }
+// }
+
 .wrapper {
+  // display: grid;
+  // grid-template-areas: "overflow";
   position: relative;
-  overflow: hidden;
   height: 40vh;
+  // overflow: hidden;
+  // height: 400px;
 
-  @media screen and (min-width: $break-to-desktop) {
-    height: 90vh;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
+  // span {
+  //   grid-area: overlay;
+  // }
 
-  img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  // .overlay {
+  //   grid-area: overlay;
+  // }
 
-    @media screen and (min-width: $break-to-desktop) {
-      height: 100%;
-    }
-  }
+  // @media screen and (min-width: $break-to-desktop) { 
+  //   height: 70vh;
+  // }
 
-  .image {
+  // &___thin {
+  //   height: 20vh;
+
+  //   @media screen and (min-width: $break-to-desktop) {
+  //     height: 60vh;
+  //   }
+  // }
+
+  // &___serviceThin {
+  //   @media screen and (min-width: $break-to-desktop) {
+  //     height: 70vh;
+  //   }
+  // }
+
+  .trueImage {
     object-fit: cover;
-    top: 0;
-    left: 0;
+  }
 
-    &___about {
-      object-position: 0px 30%;
-
-      @media screen and (min-width: $break-to-desktop) {
-        object-position: center;
-      }
-    }
+  .overlayWrapper {
+    // position: absolute;
+    // height: 71px;
+    // right: 0;
+    // bottom: -2px;
+    // width: 70%;
   }
 
   .overlay {
-    height: auto;
-    width: 70%;
-    bottom: -2px;
-    right: -1px;
+    position: absolute;
     z-index: 1;
+    max-width: 70%;
+    height: auto;
+    bottom: -2px;
+    // left: -1px;
+    transform: matrix(-1,0,0,1,0,0)
+    // object-fit: contain;
+    // top: auto !important;
+    // bottom: -2px !important;
+    // height: auto !important;
+    //   right: -1px !important;
+    //   left: auto !important;
+    //   width: 70% !important;
+    //   object-fit: contain;
+    //   z-index: 1;
 
-    @media screen and (min-width: $break-to-tablet) {
-      width: 60%;
-    }
-    @media screen and (min-width: $break-to-desktop) {
-      width: 70%;
-    }
+    //   &___reverse {
+    //     right: auto;
+    //     left: -1px !important;
+    //     bottom: -1px !important;
+    //     right: auto !important;
+    //     transform: matrix(-1, 0, 0, 1, 0, 0);
+    //   }
 
-    &___reverse {
-      right: auto;
-      left: -1px;
-      transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
+
+    // height: auto;
+    // width: 70%;
+    // bottom: -2px;
+    // right: -1px;
+    // z-index: 1;
+    // object-fit: contain;
+
+    // @media screen and (min-width: $break-to-tablet) {
+    //   width: 60% !important;
+    // }
+    // @media screen and (min-width: $break-to-desktop) {
+    //   width: 70% !important;
+    // }
+
+    // &___reverse {
+    //   right: auto;
+    //   left: -1px;
+    //   transform: matrix(-1, 0, 0, 1, 0, 0);
+    // }
   }
 
-  &___thin {
-    height: 20vh;
 
-    @media screen and (min-width: $break-to-desktop) {
-      height: 60vh;
-    }
-  }
-  
-  &___serviceThin {
-    @media screen and (min-width: $break-to-desktop) {
-      height: 70vh;
-    }
-  }
 }

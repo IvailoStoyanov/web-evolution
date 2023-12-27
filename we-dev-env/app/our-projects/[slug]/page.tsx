@@ -1,26 +1,16 @@
 import { Metadata } from "next";
 import React from "react";
-import fs from "fs";
 import CtaTeaser from "@/components/cta-teaser/CtaTeaser";
 import styles from "./Project.module.scss";
 import Image from "next/image";
 import { SlugPageProps } from "@/Interfaces/Interfaces";
+import { readData } from "@/utils/utils";
+import { ResponsiveFixedImageWrapper } from "@/components/ResponsiveFixedImagesWrapper";
 
-// MIGRATE
-const readData = (directory: string, slug: string) => {
-  const fileNames = fs.readdirSync(directory);
-
-  return slug ? fs.readFileSync(`${directory}/` + `${slug}.json`, "utf-8")
-    : fileNames.map((fileName) => fs.readFileSync(`${directory}/` + fileName, "utf-8"));
-};
-
-// ToDo: Migrate to helper function
-// readStaticParams instead of generateStaticParams ?
 const generateStaticParams = (slug: string) => {
-  //keep in mind this is single becauase it wants ony the slug
   const projectData = readData("data/projectsData", slug);
 
-  return JSON.parse(projectData as string);
+  return projectData;
 };
 
 // Migrate to helper get Metadata
@@ -49,7 +39,7 @@ export async function generateMetadata({ params }: SlugPageProps): Promise<Metad
 }
 
 const Project = async ({ params: { slug } }: SlugPageProps) => {
-  const projectData = generateStaticParams(slug as string);
+  const projectData = generateStaticParams(slug);
 
   return (
     <>
@@ -61,24 +51,14 @@ const Project = async ({ params: { slug } }: SlugPageProps) => {
         <p className={styles.header_question}>
           {projectData.projectPageInfo.solvingQuestion}
         </p>
-
-        <div className={styles.header_imageWrapper}>
-          <picture>
-            {/* <source
-              srcSet={require(`../../public/images/our-work-images/${projectData.img}?webp`)}
-              type="image/webp"
-            />
-            <source
-              srcSet={require(`../../public/images/our-work-images/${projectData.img}`)}
-              type="image/jpg"
-            /> */}
+        <div className={styles.header_ctaImageWrapper}>
+          <div className={styles.imageWrapper}>
             <Image
               src={`/images/our-work-images/${projectData.img}`}
               alt={projectData.alt}
-              width={30}
-              height={30}
+              fill
             />
-          </picture>
+          </div>
           <div className={styles.heroTextWrapper}>
             <div>
               <h3>Client</h3>
@@ -105,22 +85,12 @@ const Project = async ({ params: { slug } }: SlugPageProps) => {
               <div className={styles.testimonialWrapper_heading}>
                 <h2>Testimonial</h2>
                 <div className={styles.testimonialWrapper_imageWrapper}>
-                  <picture>
-                    {/* <source
-                  srcSet={require(`../../public/images/olga-project/${data.projectPageInfo.clientImage}?webp`)}
-                  type="image/webp"
-                />
-                <source
-                  srcSet={require(`../../public/images/olga-project/${data.projectPageInfo.clientImage}`)}
-                  type="image/jpg"
-                /> */}
-                    <Image
-                      src={`/images/olga-project/${projectData.projectPageInfo.clientImage}`}
-                      alt={projectData.alt}
-                      width={40}
-                      height={50}
-                    />
-                  </picture>
+                  <Image
+                    src={`/images/olga-project/${projectData.projectPageInfo.clientImage}`}
+                    alt={projectData.alt}
+                    width={40}
+                    height={50}
+                  />
                 </div>
               </div>
               <p>{projectData.projectPageInfo.clientTestimonial}</p>
@@ -137,26 +107,7 @@ const Project = async ({ params: { slug } }: SlugPageProps) => {
             return <p key={index}>{post}</p>;
           })}
           <div className={styles.projectScreens}>
-            {projectData.projectPageInfo.projectIamgesUrls.map((image: string, index: number) => {
-              return (
-                <picture key={index}>
-                  {/* <source
-                    srcSet={require(`../../public/images/olga-project/${image}?webp`)}
-                    type="image/webp"
-                  />
-                  <source
-                    srcSet={require(`../../public/images/olga-project/${image}`)}
-                    type="image/jpg"
-                  /> */}
-                  <Image
-                    src={`/images/${slug}/${image}`}
-                    alt={projectData.alt}
-                    width={700}
-                    height={800}
-                  />
-                </picture>
-              );
-            })}
+            <ResponsiveFixedImageWrapper slug={slug} />
           </div>
         </div>
         <CtaTeaser

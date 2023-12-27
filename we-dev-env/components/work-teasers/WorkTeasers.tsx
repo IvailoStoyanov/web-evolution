@@ -2,35 +2,31 @@ import Link from "next/link";
 import React from "react";
 import styles from "./WorkTeasers.module.scss";
 import Image from "next/image";
-import { WorkTeaserInterface } from "@/Interfaces/Interfaces"
+import { WorkInterface } from "@/Interfaces/Interfaces"
 
-export const WorkTeasers = ({ headline, data }: WorkTeaserInterface) => {
+export const WorkTeasers = ({ headline, data }: { headline?: string, data: WorkInterface[] }) => {
 
   return (
     <div className={styles.parentWrapper}>
       {headline && <h2>{headline}</h2>}
-      {data.map((post: string, index: number) => {
-        const project = JSON.parse(post);
+      {data.map((project, index: number) => {
 
         return (
           <Link href={project.url} key={index} className={styles.teaserWrapper}>
-            <div className={styles.teaserWrapper_imageWrapper}>
-              {/* <picture> */}
-              {/* <source
-                  srcSet={require(`/images/our-work-images/${project.img}?webp`)}
-                  type="image/webp"
-                />
-                <source
-                  srcSet={require(`/images/our-work-images/${project.img}`)}
-                  type="image/jpg"
-                /> */}
+            {/* <div className={styles.teaserWrapper_imageWrapper}>
               <Image
                 src={`/images/our-work-images/${project.img}`}
                 alt={project.alt}
                 width={700}
                 height={330}
               />
-              {/* </picture> */}
+            </div> */}
+            <div className={styles.teaserWrapper_imageWrapper}>
+              <Image
+                src={`/images/our-work-images/${project.img}`}
+                alt={project.alt}
+                fill
+              />
             </div>
             <h3>{project.shortTitle}</h3>
             <div className={styles.spanWrapper}>

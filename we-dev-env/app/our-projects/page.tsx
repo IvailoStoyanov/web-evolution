@@ -1,8 +1,8 @@
 import { Metadata } from "next";;
-import fs from "fs";
 import TextSectionWithCta from "@/components/text-section-with-cta/TextSectionWithCta";
 import WorkTeasers from "@/components/work-teasers/WorkTeasers";
 import styles from "./ProjectPage.module.scss";
+import { readData } from "@/utils/utils";
 
 export const metadata: Metadata = {
   title: 'Clients & Projects: see future-proof solutions for our past clients',
@@ -14,16 +14,15 @@ export const metadata: Metadata = {
 };
 
 const generateStaticParams = () => {
-  const fileNames = fs.readdirSync("data/projectsData");
-  const projectsData = fileNames.map((fileName) => {
-    return fs.readFileSync("data/projectsData/" + fileName, "utf-8");
-  });
+  const projectsData = readData("data/projectsData");
 
-  return projectsData;
+  return {
+    projectsData,
+  };
 };
 
 export default function Projects() {
-  const projectsData = generateStaticParams();
+  const { projectsData } = generateStaticParams();
 
   return (
     <>

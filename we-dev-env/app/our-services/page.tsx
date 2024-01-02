@@ -24,7 +24,6 @@ const generateStaticParams = () => {
 };
 
 const Projects = () => {
-
   const {projectsData, servicesData} = generateStaticParams();
 
   return (

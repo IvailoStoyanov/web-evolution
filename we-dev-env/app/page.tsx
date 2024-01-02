@@ -13,7 +13,7 @@ const generateStaticParams = () => {
 
 };
 
-export const Home = () => {
+export default function Home() {
   const { projectsData } = generateStaticParams();
 
   return (
@@ -45,5 +45,3 @@ export const Home = () => {
     </>
   );
 };
-
-export default Home;

@@ -13,7 +13,6 @@ const generateStaticParams = (slug: string) => {
   return projectData;
 };
 
-// Migrate to helper get Metadata
 export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
   try {
     const { slug } = params;

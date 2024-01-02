@@ -16,7 +16,6 @@ const generateStaticParams = (slug: string) => {
   return serviceData;
 };
 
-//TODO: Migrate to helper because of duplications
 export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
   try {
     const { slug } = params;

@@ -8,14 +8,10 @@ const ImageWithOverlay = ({
   serviceThin,
   reverse,
   src,
-  page,
   alt,
-  width,
-  height,
-  fill,
 }: ImageWithOverlayInterface) => {
   return (
-    <div className={`${styles.wrapper} ${thin ? styles.wrapper___thin : ''} ${serviceThin ? styles.wrapper___serviceThin : '""'}`}>
+    <div className={`${styles.wrapper} ${thin ? styles.thin : ''} ${serviceThin ? styles.serviceThin : ''}`}>
       <Image
         src={`/images/${src}`}
         alt={alt}
@@ -25,33 +21,10 @@ const ImageWithOverlay = ({
       <Image
         src={overlay}
         alt="Mountains static image"
-        className={styles.overlay}
+        className={`${styles.overlay} ${reverse && styles.reverse}`}
       />
     </div>
   );
-  // }
-  // return (
-  //   <div
-  //     className={`${styles.wrapper} ${thin && styles.wrapper___thin} ${serviceThin && styles.wrapper___serviceThin}`}
-  //   >
-  //     <Image
-  //       src={"/icons/overlay.svg"}
-  //       className={`${styles.overlay} ${reverse && styles.overlay___reverse}`}
-  //       alt="white overlay stares covering bottom part of image"
-  //       width={width}
-  //       height={height}
-  //     />
-  //     <Image
-  //       src={`/images/${src}`}
-  //       className={`${styles.image} ${page === "about" && styles.image___about}`}
-  //       alt={alt}
-  //       width={width}
-  //       height={height}
-  //       loading="lazy"
-  //       quality={100}
-  //     />
-  //   </div>
-  // );
 };
 
 export default ImageWithOverlay;

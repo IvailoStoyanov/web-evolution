@@ -11,9 +11,6 @@ function IntroHeader({ page, imageUrl, imageAlt, logoUrl, headline, headlineSmal
         page={page}
         src={imageUrl}
         alt={imageAlt}
-        // height={1134}
-        // height={40} given as view height
-        // width={479}
         reverse
       />
       <div className={styles.textWrapper}>
@@ -30,8 +27,7 @@ function IntroHeader({ page, imageUrl, imageAlt, logoUrl, headline, headlineSmal
         {headline && <h1>{headline}</h1>}
         {headlineSmall && <h1 className={styles.headlineSmall}>{headlineSmall}</h1>}
         <p>{paragraph}</p>
-        {
-          ctaButtonText &&
+        {ctaButtonText &&
           <Link href="/our-services" className="button button___black">
             <span className="button_text">{ctaButtonText}</span>{" "}
             <span className="button_circle"></span>

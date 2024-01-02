@@ -9,14 +9,15 @@
   transition: box-shadow 0.7s cubic-bezier(0.322, 0.009, 0, 1.003);
 
   .imageWrapper {
-    overflow: hidden;
     position: relative;
-    background: $white;
-    align-items: center;
+    height: 30vh;
+    
+    @media screen and (min-width: $break-to-desktop) {
+      height: 45vh;
+    }
 
     img {
-      width: 100%;
-      vertical-align: middle;
+      object-fit: cover;
       transition: all 0.6s cubic-bezier(0.322, 0.009, 0, 1.003);
     }
   }

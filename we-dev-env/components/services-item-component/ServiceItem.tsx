@@ -15,8 +15,7 @@ const ServiceItem = ({ post, toggleFormPop }: ServiceItemProps) => {
         <Image
           src={`/images/our-services/${post.image}`}
           alt={post.alt}
-          width={52}
-          height={236}
+          fill
         />
       </div>
       <div className={styles.textWrapper}>

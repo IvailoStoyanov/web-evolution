@@ -1,5 +1,5 @@
-@import "../../styles/breakpoints.scss";
-@import "../../styles/colors.scss";
+@import "@/styles/breakpoints.scss";
+@import "@/styles/colors.scss";
 
 .wrapper {
   padding: 20px;
@@ -18,8 +18,28 @@
   }
 
   .serviceWrapper {
+    display: inline-block;
     margin-bottom: 60px;
+    color: $black;
+    font-weight: 700;
+    transition: all 0.15s ease-in-out;
     cursor: pointer;
+
+    &_cta {
+      padding-right: 7px;
+      transition: padding 0.15s ease;
+    }
+
+    &_clarification {
+      display: block;
+      padding: 20px 0 10px 0;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    img {
+      vertical-align: middle;
+    }
 
     @media screen and (min-width: $break-to-desktop) {
       display: grid;
@@ -44,54 +64,24 @@
       grid-template-columns: 1fr 1fr;
     }
 
-    &_clarification {
-      display: block;
-      padding: 20px 0 10px 0;
-      font-size: 17px;
-    }
-
     p,
     h2 {
       padding-bottom: 30px;
     }
 
-    a {
-      color: $black;
-      font-weight: 700;
-      display: inline-block;
-      transition: all 0.15s ease-in-out;
-
-      span {
-        padding-right: 7px;
-        transition: padding 0.15s ease;
-      }
-
-      img {
-        vertical-align: middle;
-      }
-    }
-
-    picture {
-      img {
-        transition: all 1s ease;
-      }
+    img {
+      transition: all 1s ease;
     }
 
     &:hover {
-      // .serviceWrapper_clarification {
-      //   color: $blue;
-      // }
-      picture {
-        img {
-          opacity: 0.8;
-          transform: scale(1.03);
-        }
+      img:first-of-type {
+        opacity: 0.8;
+        transform: scale(1.03);
       }
-      a {
-        span {
-          color: $blue;
-          padding-right: 12px;
-        }
+
+      .serviceWrapper_cta {
+        color: $blue;
+        padding-right: 12px;
       }
     }
   }

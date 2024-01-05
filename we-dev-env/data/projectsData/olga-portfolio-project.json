@@ -1,9 +1,9 @@
 {
-  "shortTitle": "Olga Golant - Portfolio",
+  "title": "Olga Golant - Portfolio",
   "headDescription": "Freshly graduated architect Olga Golant hires us to design and develop a portfolio that helps her stand out among her peers.",
   "url": "/our-projects/olga-portfolio-project",
   "services": "Design, Development, Optimisation",
-  "img": "mac-markup.jpg",
+  "img": "olga-mockup.jpg",
   "width": "480",
   "height": "330",
   "alt": "Olga Golant's website displayed on a macbook placed on a wooden table",
@@ -24,6 +24,9 @@
       "Wireframing the existing data gave us an easy way to test how the user will react to the layout before initiating design and development. ",
       "From there with the newly collected data we had to find the right technology to tackle the build process. Because of the layout similarity required for her work and the scale of the project we decided that a statically generated website will be a perfect fit to display the content  and by using React components it would be easier to maintain down the road."
     ],
-    "projectIamgesUrls": ["project-screens.jpg", "project-on-tablet.jpg"]
+    "projectIamgesUrls": [
+      "project-screens.jpg",
+      "project-on-tablet.jpg"
+    ]
   }
 }

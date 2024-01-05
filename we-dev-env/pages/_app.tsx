@@ -1,17 +1,13 @@
-import React from "react";
-import App from "next/app";
-import Layout from "../components/Layout";
 import "../styles/global.scss";
+import { AppProps } from "next/app";
+import Navigation from "@/components/nav/Navigation";
+import Footer from "@/components/footer/Footer";
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <Layout>
+// ToDo: replace all Any
+export default function App({ Component, pageProps }: AppProps) {
+    return <>
+        <Navigation />
         <Component {...pageProps} />
-      </Layout>
-    );
-  }
+        <Footer />
+    </>;
 }
-
-export default MyApp;

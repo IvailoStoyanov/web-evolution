@@ -1,66 +1,43 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./WorkTeasers.module.scss";
+import Image from "next/image";
+import { WorkInterface } from "@/Interfaces/Interfaces"
 
-interface WorkTeaserInterface {
-  headline?: string;
-  data: [];
-  showAll?: boolean;
-}
-class WorkTeasers extends React.Component<WorkTeaserInterface> {
-  render() {
-    const { headline, data, showAll } = this.props;
+export const WorkTeasers = ({ headline, data }: { headline?: string, data: WorkInterface[] }) => {
 
-    return (
-      <div className={styles.parentWrapper}>
-        {headline ? <h2>{headline}</h2> : null}
-        {data.map((post: string, index: number) => {
-          const project = JSON.parse(post);
+  return (
+    <div className={styles.parentWrapper}>
+      {headline && <h2>{headline}</h2>}
+      {data.map((project, index: number) => {
 
-          if (index <= 1 && !showAll) {
-            return this.renderElement(project, index);
-          }
-          if (showAll) {
-            return this.renderElement(project, index);
-          }
-        })}
-      </div>
-    );
-  }
-
-  renderElement = (project, index) => {
-    return (
-      <Link href={project.url} key={index}>
-        <a className={styles.teaserWrapper}>
-          <div>
+        return (
+          <Link href={project.url} key={index} className={styles.teaserWrapper}>
+            {/* <div className={styles.teaserWrapper_imageWrapper}>
+              <Image
+                src={`/images/our-work-images/${project.img}`}
+                alt={project.alt}
+                width={700}
+                height={330}
+              />
+            </div> */}
             <div className={styles.teaserWrapper_imageWrapper}>
-              <picture>
-                <source
-                  srcSet={require(`../../public/images/our-work-images/${project.img}?webp`)}
-                  type="image/webp"
-                />
-                <source
-                  srcSet={require(`../../public/images/our-work-images/${project.img}`)}
-                  type="image/jpg"
-                />
-                <img
-                  src={require(`../../public/images/our-work-images/${project.img}`)}
-                  alt={project.alt}
-                  width="700"
-                  height="330"
-                />
-              </picture>
+              <Image
+                src={`/images/our-work-images/${project.img}`}
+                alt={project.alt}
+                fill
+              />
             </div>
             <h3>{project.shortTitle}</h3>
             <div className={styles.spanWrapper}>
               <span className={styles.spanBeforeHover}>{project.services}</span>
               <span className={styles.spanOnHover}>Show work</span>
             </div>
-          </div>
-        </a>
-      </Link>
-    );
-  };
+          </Link>
+        )
+      })}
+    </div>
+  );
 }
 
 export default WorkTeasers;

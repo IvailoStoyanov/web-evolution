@@ -1,39 +1,28 @@
+import Image from "next/image";
 import styles from "./ImageWithOverlay.module.scss";
+import { ImageWithOverlayInterface } from "@/Interfaces/Interfaces";
+import overlay from "@/public/icons/overlay.svg"
 
-const ImageWithOverlay = ({ ...props }) => {
+const ImageWithOverlay = ({
+  thin,
+  serviceThin,
+  reverse,
+  src,
+  alt,
+}: ImageWithOverlayInterface) => {
   return (
-    <div
-      className={`${styles.wrapper} ${
-        props.thin ? styles.wrapper___thin : ""
-      } ${props.serviceThin ? styles.wrapper___serviceThin : ""}`}
-    >
-      <img
-        src={require("../../public/icons/overlay.svg")}
-        className={`${styles.overlay} ${
-          props.reverse ? styles.overlay___reverse : null
-        }`}
-        alt="white overlay stares covering bottom part of image"
+    <div className={`${styles.wrapper} ${thin ? styles.thin : ''} ${serviceThin ? styles.serviceThin : ''}`}>
+      <Image
+        src={`/images/${src}`}
+        alt={alt}
+        className={styles.trueImage}
+        fill
       />
-
-      <picture>
-        <source
-          srcSet={require(`../../public/images/${props.src}?webp`)}
-          type="image/webp"
-        />
-        <source
-          srcSet={require(`../../public/images/${props.src}`)}
-          type="image/jpg"
-        />
-        <img
-          src={require(`../../public/images/${props.src}`)}
-          className={`${styles.image} ${
-            props.page === "about" ? styles.image___about : null
-          }`}
-          alt={props.alt}
-          width={props.width}
-          height={props.height}
-        />
-      </picture>
+      <Image
+        src={overlay}
+        alt="Mountains static image"
+        className={`${styles.overlay} ${reverse && styles.reverse}`}
+      />
     </div>
   );
 };

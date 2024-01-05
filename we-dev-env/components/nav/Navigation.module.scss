@@ -1,6 +1,6 @@
-@import "../../styles/colors.scss";
-@import "../../styles/animations.scss";
-@import "../../styles/breakpoints.scss";
+@import "@/styles/colors.scss";
+@import "@/styles/animations.scss";
+@import "@/styles/breakpoints.scss";
 
 .navigation {
   position: absolute;
@@ -40,6 +40,8 @@
     height: 100vh;
     width: calc(85% - 50px);
     background: #000000;
+    transform: translateX(-100);
+    opacity: 0;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
     z-index: 1;
 
@@ -82,6 +84,24 @@
           }
         }
       }
+
+      a.active {
+        color: $yellow;
+        border-bottom: 4px solid $yellow;
+      }
+
+      @media screen and (min-width: $break-to-desktop) {
+        a.active {
+          color: $black;
+          padding-bottom: 27px;
+
+          border-bottom: 12px solid $yellow;
+        }
+
+        a.active:hover {
+          padding-bottom: 32px;
+        }
+      }
     }
   }
 
@@ -114,8 +134,8 @@
     height: 100vh;
     width: 100vw;
     background: $black;
-    opacity: 0.7;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    visibility: hidden;
   }
 
   .logo {
@@ -130,4 +150,15 @@
 
 .navigationCap {
   height: 100px;
+}
+
+.hamburger {
+  margin: auto 0;
+  padding: 0;
+  background: none;
+  border: none;
+
+  @media screen and (min-width: $break-to-desktop) {
+    display: none;
+  }
 }

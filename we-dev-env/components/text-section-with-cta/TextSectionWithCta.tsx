@@ -1,41 +1,48 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./TextSectionWithCta.module.scss";
+import Image from "next/image";
+import { TextSectionWithCtaInterface } from "@/Interfaces/Interfaces";
 
-const TextSectionWithCta = ({ ...props }) => {
+const TextSectionWithCta = ({
+  grayBackground,
+  thin,
+  headline,
+  paragraphs,
+  ctaButtonLocation,
+  ctaButtonText
+}: TextSectionWithCtaInterface) => {
   return (
     <div
       className={`${styles.wrapper} 
-      ${!!props.grayBackground ? `${styles.grayBackground}` : null} 
-      ${!!props.thin ? `${styles.wrapper___thin}` : null}
+      ${!!grayBackground && `${styles.grayBackground}`} 
+      ${!!thin && `${styles.wrapper___thin}`}
       `}
     >
-      <h2>{props.headline}</h2>
+      <h2>{headline}</h2>
 
-      {props.paragraphs.length >= 2 ? (
+      {paragraphs.length >= 2 ? (
         <div className={styles.textWrapper}>
-          {props.paragraphs.map((post: string, index: number) => {
+          {paragraphs.map((post: string, index: number) => {
             return <p key={index}>{post}</p>;
           })}
         </div>
       ) : (
         <>
-          {props.paragraphs.map((post: string, index: number) => {
+          {paragraphs.map((post: string, index: number) => {
             return <p key={index}>{post}</p>;
           })}
         </>
       )}
 
-      <Link href={props.ctaButtonLocation}>
-        <a>
-          <span>{props.ctaButtonText}</span>
-          <img
-            src={require("../../public/icons/arrow.svg")}
-            alt="arrow right"
-            width="24px"
-            height="14px"
-          />
-        </a>
+      <Link href={ctaButtonLocation}>
+        <span>{ctaButtonText}</span>
+        <Image
+          src="/icons/arrow.svg"
+          alt="arrow right"
+          width={24}
+          height={14}
+        />
       </Link>
     </div>
   );

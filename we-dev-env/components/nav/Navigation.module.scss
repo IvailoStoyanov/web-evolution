@@ -114,6 +114,10 @@
     top: 90px;
     right: calc(-50px - 4%);
     transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    
+    @media screen and (min-width: $break-to-desktop) {
+      display: none;
+    }
   }
 
   &_mobileCloseEffect {

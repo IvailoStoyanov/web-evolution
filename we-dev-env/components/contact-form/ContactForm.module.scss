@@ -1,7 +1,6 @@
 @import "@/styles/breakpoints.scss";
 @import "@/styles/animations.scss";
 @import "@/styles/colors.scss";
-@import "@/styles/fonts.scss";
 
 .wrapper {
   background: $yellow;
@@ -62,7 +61,6 @@
       margin-bottom: 20px;
       min-height: 100px;
       min-width: 125px;
-      font-family: $main;
     }
     @media screen and (min-width: $break-to-desktop) {
       padding-bottom: 20px;
@@ -89,7 +87,6 @@
     border-radius: 3px;
     padding: 14px 24px;
     display: block;
-    font-family: $main;
     font-size: 16px;
     font-weight: 600;
     color: $white;

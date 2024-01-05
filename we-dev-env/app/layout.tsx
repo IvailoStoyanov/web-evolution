@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Navigation from "@/components/nav/Navigation";
-import Link from "next/link";
-import Image from 'next/image';
 import '@/styles/global.scss'
 import Footer from '@/components/footer/Footer';
-
-const inter = Inter({ subsets: ['latin'] });
+import { lato } from '@/utils/fonts';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://web-evolution.co'),
@@ -42,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         <a href="#navigation" className="skipLink">
           skip to nav
         </a>

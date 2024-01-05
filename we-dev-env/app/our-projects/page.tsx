@@ -29,7 +29,7 @@ export default function Projects() {
       <header className={styles.header}>
         <div className={styles.header_textContainer}>
           <p>Our work</p>
-          <h1>Helping businesseses fulfill their full potential</h1>
+          <h1>Helping businesses fulfill their full potential</h1>
         </div>
       </header>
 

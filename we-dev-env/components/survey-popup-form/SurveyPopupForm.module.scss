@@ -1,7 +1,6 @@
 @import "@/styles/breakpoints.scss";
 @import "@/styles/animations.scss";
 @import "@/styles/colors.scss";
-@import "@/styles/fonts.scss";
 
 .wrapper {
   position: fixed;
@@ -78,7 +77,6 @@
 
   .submitButton {
     padding: 14px 24px;
-    font-family: $main;
     font-size: 16px;
     font-weight: 600;
     background: $blue;

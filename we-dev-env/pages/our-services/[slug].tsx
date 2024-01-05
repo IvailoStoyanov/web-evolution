@@ -1,50 +1,33 @@
 import React from "react";
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import ImageWithOverlay from "@/components/image-with-overlay/ImageWithOverlay";
-import { Metadata } from "next";
 import TextSectionWithCta from "@/components/text-section-with-cta/TextSectionWithCta";
 import ContactForm from "@/components/contact-form/ContactForm";
 import styles from "./ServiceSlug.module.scss";
 import Image from "next/image";
 import ServicesFormWrapper from "@/components/ServicesFormWrapper";
-import { SlugPageProps } from "@/Interfaces/Interfaces";
-import { readData } from "@/utils/utils";
+import { ServiceInterface, SlugPageProps } from "@/Interfaces/Interfaces";
+import Head from "next/head";
 
-const generateStaticParams = (slug: string) => {
-  const serviceData = readData("data/servicesData", slug);
-
-  return serviceData;
-};
-
-export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
-  try {
-    const { slug } = params;
-    const service = generateStaticParams(slug);
-    const serviceMetaTitle = service.title;
-    const serviceMetaDescription = service.headDescription;
-
-    !service && {
-      title: "Not Found",
-      description: "The page you are looking for does not exist.",
-    }
-    return {
-      title: serviceMetaTitle,
-      description: serviceMetaDescription,
-    }
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist."
-    }
-  }
-}
-
-const Post = async ({ params: { slug } }: SlugPageProps) => {
-  const serviceData = generateStaticParams(slug);
+const Post = ({ contents }: { contents: ServiceInterface }) => {
+  const serviceData = JSON.parse(contents.toString());
 
   return (
     <>
+      <Head>
+        <title>{serviceData.title} | Web Evolution</title>
+        <meta content={`${serviceData.title} | Web Evolution`} property="og:title" />
+        <meta name="description" content={serviceData.headDescription} />
+        <meta property="og:description" content={serviceData.headDescription} />
+        <meta
+          content="https://web-evolution.co/images/other/share.jpg"
+          property="og:image"
+        />
+        <meta property="og:type" content="website" />
+        <link rel="icon" href="/logo/we-logo.svg" />
+      </Head>
       <header className={styles.serviceHeader}>
         <ImageWithOverlay
           src={serviceData.img}
@@ -72,7 +55,6 @@ const Post = async ({ params: { slug } }: SlugPageProps) => {
           </Link>
         </div>
       </header>
-
       <main className={styles.main}>
         <div className={styles.contentWrapper}>
           <h2 className={styles.contentWrapper_headline}>We can help you</h2>
@@ -95,5 +77,29 @@ const Post = async ({ params: { slug } }: SlugPageProps) => {
     </>
   );
 }
+
+export const getStaticPaths = async () => {
+  const files = fs.readdirSync("data/servicesData");
+
+  return {
+    paths: files.map((filename) => ({
+      params: {
+        slug: filename.replace(".json", ""),
+      },
+    })),
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({ params: { slug } }: SlugPageProps) => {
+  const contents = fs.readFileSync(path.join("data/servicesData", slug + ".json")).toString();
+
+  return {
+    props: {
+      contents,
+    },
+  };
+};
+
 
 export default Post;

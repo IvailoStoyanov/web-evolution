@@ -1,47 +1,35 @@
-import { Metadata } from "next";
+
 import React from "react";
-import CtaTeaser from "@/components/cta-teaser/CtaTeaser";
-import styles from "./Project.module.scss";
+import fs from "fs";
+import path from "path";
+import { useRouter } from "next/router";
+import Head from "next/head";
 import Image from "next/image";
-import { SlugPageProps } from "@/Interfaces/Interfaces";
-import { readData } from "@/utils/utils";
-import { ResponsiveFixedImageWrapper } from "@/components/ResponsiveFixedImagesWrapper";
+import { SlugPageProps, WorkInterface } from "@/Interfaces/Interfaces";
+import ResponsiveFixedImageWrapper from "@/components/ResponsiveFixedImagesWrapper";
+import CtaTeaser from "@/components/cta-teaser/CtaTeaser";
+import Navigation from "@/components/nav/Navigation";
+import Footer from "@/components/footer/Footer";
+import styles from "./Project.module.scss";
 
-const generateStaticParams = (slug: string) => {
-  const projectData = readData("data/projectsData", slug);
-
-  return projectData;
-};
-
-export async function generateMetadata({ params }: SlugPageProps): Promise<Metadata> {
-  try {
-    const { slug } = params;
-    const project = generateStaticParams(slug);
-    const projectMetaTitle = project.title;
-    const projectMetaDescription = project.headDescription;
-
-    !project && {
-      title: "Not Found",
-      description: "The page you are looking for does not exist.",
-    }
-    return {
-      title: projectMetaTitle,
-      description: projectMetaDescription,
-    }
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Not Found",
-      description: "The page you are looking for does not exist."
-    }
-  }
-}
-
-const Project = async ({ params: { slug } }: SlugPageProps) => {
-  const projectData = generateStaticParams(slug);
+const Project = ({ contents }: { contents: WorkInterface }) => {
+  const projectData = JSON.parse(contents.toString());
+  const router = useRouter();
 
   return (
     <>
+      <Head>
+        <title>{`${projectData.projectPageInfo.longTitle} | Web Evolution`}</title>
+        <meta content={`${projectData.title} | Web Evolution`} property="og:title" />
+        <meta name="description" content={projectData.headDescription} />
+        <meta property="og:description" content={projectData.headDescription} />
+        <meta
+          content="https://web-evolution.co/images/other/share.jpg"
+          property="og:image"
+        />
+        <meta property="og:type" content="website" />
+        <link rel="icon" href="/logo/we-logo.svg" />
+      </Head>
       <header className={styles.header}>
         <p>
           {projectData.services} - {projectData.projectPageInfo.date}
@@ -85,7 +73,7 @@ const Project = async ({ params: { slug } }: SlugPageProps) => {
                 <h2>Testimonial</h2>
                 <div className={styles.testimonialWrapper_imageWrapper}>
                   <Image
-                    src={`/images/olga-project/${projectData.projectPageInfo.clientImage}`}
+                    src={`/images/olga-portfolio-project/${projectData.projectPageInfo.clientImage}`}
                     alt={projectData.alt}
                     width={40}
                     height={50}
@@ -106,7 +94,7 @@ const Project = async ({ params: { slug } }: SlugPageProps) => {
             return <p key={index}>{post}</p>;
           })}
           <div className={styles.projectScreens}>
-            <ResponsiveFixedImageWrapper slug={slug} />
+            <ResponsiveFixedImageWrapper slug={router.query.slug} />
           </div>
         </div>
         <CtaTeaser
@@ -119,6 +107,29 @@ const Project = async ({ params: { slug } }: SlugPageProps) => {
       </main>
     </>
   );
+};
+
+export const getStaticPaths = async () => {
+  const files = fs.readdirSync("data/projectsData");
+
+  return {
+    paths: files.map((filename) => ({
+      params: {
+        slug: filename.replace(".json", ""),
+      },
+    })),
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({ params: { slug } }: SlugPageProps) => {
+  const contents = fs.readFileSync(path.join("data/projectsData", slug + ".json")).toString();
+
+  return {
+    props: {
+      contents,
+    },
+  };
 };
 
 export default Project;

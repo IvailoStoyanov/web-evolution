@@ -74,9 +74,6 @@ export interface WorkInterface {
     projectIamgesUrls: string[]
   }
 }
-export interface WorkTeaserInterface {
-  data: WorkInterface[];
-}
 
 export interface TextSectionWithCtaInterface {
   grayBackground?: boolean,

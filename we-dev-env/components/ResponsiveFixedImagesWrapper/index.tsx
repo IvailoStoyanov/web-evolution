@@ -5,7 +5,7 @@ import tastiesScreens from "@/public/images/tasties-project/project-screens.svg"
 import tastiesPhone from "@/public/images/tasties-project/project-on-phone.svg";
 import Image from "next/image";
 
-export function ResponsiveFixedImageWrapper({ slug }: any) {
+export default function ResponsiveFixedImageWrapper({ slug }: { slug: string | string[] | undefined }) {
     const olgaProject = [olgaScreens, olgaTablet];
     const tastiesProject = [tastiesScreens, tastiesPhone];
 

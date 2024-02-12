@@ -3,7 +3,6 @@
  */
 
 const nextConfig = {
-    distDir: 'out',
     images: { unoptimized: true },
 }
 

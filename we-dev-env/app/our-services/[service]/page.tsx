@@ -11,8 +11,23 @@ import ServicesFormWrapper from "@/components/ServicesFormWrapper";
 import { ServiceInterface, SlugPageProps } from "@/Interfaces/Interfaces";
 import Head from "next/head";
 
-const Post = ({ contents }: { contents: ServiceInterface }) => {
-  const serviceData = JSON.parse(contents.toString());
+
+export async function generateStaticParams() {
+  const projects = await fs.readdirSync("data/servicesData");
+
+  return projects.map((projectName: string) => ({
+    slug: projectName,
+  }))
+}
+
+const Post = async ({ params }: { params: { service: string } }) => {
+  const { service } = params;
+
+  const serviceData: ServiceInterface = JSON.parse(
+    fs.readFileSync(
+      path.join("data/servicesData", service + ".json")
+    ).toString()
+  );
 
   return (
     <>
@@ -77,29 +92,5 @@ const Post = ({ contents }: { contents: ServiceInterface }) => {
     </>
   );
 }
-
-export const getStaticPaths = async () => {
-  const files = fs.readdirSync("data/servicesData");
-
-  return {
-    paths: files.map((filename) => ({
-      params: {
-        slug: filename.replace(".json", ""),
-      },
-    })),
-    fallback: false,
-  };
-};
-
-export const getStaticProps = async ({ params: { slug } }: SlugPageProps) => {
-  const contents = fs.readFileSync(path.join("data/servicesData", slug + ".json")).toString();
-
-  return {
-    props: {
-      contents,
-    },
-  };
-};
-
 
 export default Post;

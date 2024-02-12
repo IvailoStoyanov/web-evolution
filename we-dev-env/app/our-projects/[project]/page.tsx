@@ -17,7 +17,7 @@ export async function generateStaticParams() {
   }))
 }
 
-const Project = async ({ params }: { params: { project: string } }) => {
+const Project = ({ params }: { params: { project: string } }) => {
   const { project } = params;
 
   const projectData: WorkInterface = JSON.parse(

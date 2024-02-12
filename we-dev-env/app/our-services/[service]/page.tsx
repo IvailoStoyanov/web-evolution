@@ -8,7 +8,7 @@ import ContactForm from "@/components/contact-form/ContactForm";
 import styles from "./ServiceSlug.module.scss";
 import Image from "next/image";
 import ServicesFormWrapper from "@/components/ServicesFormWrapper";
-import { ServiceInterface, SlugPageProps } from "@/Interfaces/Interfaces";
+import { ServiceInterface } from "@/Interfaces/Interfaces";
 import Head from "next/head";
 
 
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
   }))
 }
 
-const Post = async ({ params }: { params: { service: string } }) => {
+const Post = ({ params }: { params: { service: string } }) => {
   const { service } = params;
 
   const serviceData: ServiceInterface = JSON.parse(

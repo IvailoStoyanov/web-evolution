@@ -68,10 +68,11 @@ export interface WorkInterface {
     solvingQuestion: string,
     client: string,
     clientImage: string,
+    clientTestimonial: string,
     projectUrl: string,
     projectBrief: string[],
     projectApproach: string[],
-    projectIamgesUrls: string[]
+    projectIamgesUrls: string[],
   }
 }
 
@@ -114,7 +115,7 @@ export interface ServiceInterface {
   height: number,
   alt: string,
   headlineTwo: string,
-  process: ProcessInterface[],
+  processes: ProcessInterface[],
   teaser: {
     span: string,
     paragraph: string,

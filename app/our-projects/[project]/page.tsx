@@ -2,19 +2,29 @@
 import React from "react";
 import fs from "fs";
 import path from "path";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
-import { SlugPageProps, WorkInterface } from "@/Interfaces/Interfaces";
+import { WorkInterface } from "@/Interfaces/Interfaces";
 import ResponsiveFixedImageWrapper from "@/components/ResponsiveFixedImagesWrapper";
 import CtaTeaser from "@/components/cta-teaser/CtaTeaser";
-import Navigation from "@/components/nav/Navigation";
-import Footer from "@/components/footer/Footer";
 import styles from "./Project.module.scss";
 
-const Project = ({ contents }: { contents: WorkInterface }) => {
-  const projectData = JSON.parse(contents.toString());
-  const router = useRouter();
+export async function generateStaticParams() {
+  const projects = await fs.readdirSync("data/projectsData");
+
+  return projects.map((projectName: string) => ({
+    slug: projectName,
+  }))
+}
+
+const Project = ({ params }: { params: { project: string } }) => {
+  const { project } = params;
+
+  const projectData: WorkInterface = JSON.parse(
+    fs.readFileSync(
+      path.join("data/projectsData", project + ".json")
+    ).toString()
+  );
 
   return (
     <>
@@ -94,7 +104,7 @@ const Project = ({ contents }: { contents: WorkInterface }) => {
             return <p key={index}>{post}</p>;
           })}
           <div className={styles.projectScreens}>
-            <ResponsiveFixedImageWrapper slug={router.query.slug} />
+            <ResponsiveFixedImageWrapper slug={project} />
           </div>
         </div>
         <CtaTeaser
@@ -107,29 +117,6 @@ const Project = ({ contents }: { contents: WorkInterface }) => {
       </main>
     </>
   );
-};
-
-export const getStaticPaths = async () => {
-  const files = fs.readdirSync("data/projectsData");
-
-  return {
-    paths: files.map((filename) => ({
-      params: {
-        slug: filename.replace(".json", ""),
-      },
-    })),
-    fallback: false,
-  };
-};
-
-export const getStaticProps = async ({ params: { slug } }: SlugPageProps) => {
-  const contents = fs.readFileSync(path.join("data/projectsData", slug + ".json")).toString();
-
-  return {
-    props: {
-      contents,
-    },
-  };
 };
 
 export default Project;

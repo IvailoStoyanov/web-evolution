@@ -2,6 +2,16 @@ export interface SlugPageProps {
   params: { slug: string };
 };
 
+export interface MetadataServiceProps {
+  params: { service: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
+
+export interface MetadataProjectProps {
+  params: { project: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}
+
 export interface CtaTeaserProps {
   headline: string;
   paragraph: string;

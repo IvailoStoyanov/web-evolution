@@ -8,9 +8,16 @@ import ContactForm from "@/components/contact-form/ContactForm";
 import styles from "./ServiceSlug.module.scss";
 import Image from "next/image";
 import ServicesFormWrapper from "@/components/ServicesFormWrapper";
-import { ServiceInterface } from "@/Interfaces/Interfaces";
-import Head from "next/head";
+import { ServiceInterface, MetadataServiceProps } from "@/Interfaces/Interfaces";
+import { Metadata } from 'next'
 
+const getServiceData = (service: string) => {
+  return JSON.parse(
+    fs.readFileSync(
+      path.join("data/servicesData", service + ".json")
+    ).toString()
+  );
+}
 
 export async function generateStaticParams() {
   const projects = await fs.readdirSync("data/servicesData");
@@ -20,29 +27,27 @@ export async function generateStaticParams() {
   }))
 }
 
+export async function generateMetadata({ params }: MetadataServiceProps): Promise<Metadata> {
+  const { service } = params;
+  const serviceData: ServiceInterface = getServiceData(service);
+
+  return {
+    title: `${serviceData.title} | Web Evolution`,
+    description: serviceData.headDescription,
+    openGraph: {
+      description: serviceData.headDescription,
+      images: ['https://web-evolution.co/images/other/share.jpg'],
+      type: 'website'
+    }
+  }
+}
+
 const Post = ({ params }: { params: { service: string } }) => {
   const { service } = params;
-
-  const serviceData: ServiceInterface = JSON.parse(
-    fs.readFileSync(
-      path.join("data/servicesData", service + ".json")
-    ).toString()
-  );
+  const serviceData: ServiceInterface = getServiceData(service);
 
   return (
     <>
-      <Head>
-        <title>{serviceData.title} | Web Evolution</title>
-        <meta content={`${serviceData.title} | Web Evolution`} property="og:title" />
-        <meta name="description" content={serviceData.headDescription} />
-        <meta property="og:description" content={serviceData.headDescription} />
-        <meta
-          content="https://web-evolution.co/images/other/share.jpg"
-          property="og:image"
-        />
-        <meta property="og:type" content="website" />
-        <link rel="icon" href="/logo/we-logo.svg" />
-      </Head>
       <header className={styles.serviceHeader}>
         <ImageWithOverlay
           src={serviceData.img}

@@ -4,10 +4,19 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import Image from "next/image";
-import { WorkInterface } from "@/Interfaces/Interfaces";
+import { MetadataProjectProps, WorkInterface } from "@/Interfaces/Interfaces";
 import ResponsiveFixedImageWrapper from "@/components/ResponsiveFixedImagesWrapper";
 import CtaTeaser from "@/components/cta-teaser/CtaTeaser";
 import styles from "./Project.module.scss";
+import { Metadata } from "next";
+
+const getProjectData = (project: string) => {
+  return JSON.parse(
+    fs.readFileSync(
+      path.join("data/projectsData", project + ".json")
+    ).toString()
+  );
+}
 
 export async function generateStaticParams() {
   const projects = await fs.readdirSync("data/projectsData");
@@ -17,29 +26,28 @@ export async function generateStaticParams() {
   }))
 }
 
+export async function generateMetadata({ params }: MetadataProjectProps): Promise<Metadata> {
+  const { project } = params;
+  const projectData: WorkInterface = getProjectData(project);
+
+  return {
+    title: `${projectData.title} | Web Evolution`,
+    description: projectData.headDescription,
+    openGraph: {
+      description: projectData.headDescription,
+      images: ['https://web-evolution.co/images/other/share.jpg'],
+      type: 'website'
+    }
+  }
+}
+
 const Project = ({ params }: { params: { project: string } }) => {
   const { project } = params;
 
-  const projectData: WorkInterface = JSON.parse(
-    fs.readFileSync(
-      path.join("data/projectsData", project + ".json")
-    ).toString()
-  );
+  const projectData = getProjectData(project);
 
   return (
     <>
-      <Head>
-        <title>{`${projectData.projectPageInfo.longTitle} | Web Evolution`}</title>
-        <meta content={`${projectData.title} | Web Evolution`} property="og:title" />
-        <meta name="description" content={projectData.headDescription} />
-        <meta property="og:description" content={projectData.headDescription} />
-        <meta
-          content="https://web-evolution.co/images/other/share.jpg"
-          property="og:image"
-        />
-        <meta property="og:type" content="website" />
-        <link rel="icon" href="/logo/we-logo.svg" />
-      </Head>
       <header className={styles.header}>
         <p>
           {projectData.services} - {projectData.projectPageInfo.date}
